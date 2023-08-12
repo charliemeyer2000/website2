@@ -1,0 +1,108 @@
+:root {
+
+  /* Spacing */
+  --gap-quarter: 0.25rem;
+  --gap-half: 0.5rem;
+  --gap-single: 1rem;
+  --gap-double: 2rem;
+  --gap-triple: 3rem;
+  /* other */
+  --main-content: 45rem;
+  --small-border-radius: 5px;
+  --middle-border-radius:10px;
+  --large-border-radius:20px;
+  --circle-border-radius:50%;
+
+  /* Typography: Helvetica */
+  --font-family: Helvetica, Arial, sans-serif;
+
+  /* Transitions */
+  --transition: 0.1s ease-in-out;
+  --transition-slow: 0.3s ease-in-out;
+
+  /* font-sizes */
+  --title: 2.125rem; /* 34px */
+  --heading: 1.6875rem; /* 27px */
+  --sub-heading: 1.125rem; /* 18px */
+  --text: 1rem; /* 16px */
+  --sub-text: 0.875rem; /* 14px */
+
+  /* colors */
+  --yellow: #F5D147;
+  --red: #DA4232;
+  --dark-blue: #253F8E;
+  --light-blue: #479CD5;
+  --green: #398241;
+  --pink: #E48BA0;
+  --brown: #A56342;
+  --button-background-blue: #5F8AB9;
+  --grey: #7B7B7D;
+  --gray: #7B7B7D;
+  --grey-50: rgb(#7B7B7D, 0.5); /* not sure if this works or not*/
+  --gray-50: rgb(#7B7B7D, 0.5); /* not sure if this works or not*/
+  --indicator-blue: #A2C0D7;
+  --black: #000000;
+  --background-white: #E9E9E9;
+  --background-black: #303030;
+  --text-color: #47343A;
+
+}
+
+/* courtesy of josh comeau */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; /* i did this one */
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button, font, textarea, select, input {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* end courtesy of josh comeau */
+
+/* default dark theme */
+
+html, body {
+  padding: 0;
+  background: var(--background-black);
+  color: var(--background-white);
+  text-rendering: optimizeLegibility;
+  transition: var(--transition);
+}
+
+/* light theme */
+// @media (prefers-color-scheme: light) {
+//   html, body {
+//     background: var(--background-white);
+//     color: var(--text-color);
+//   }
+// }
+[data-theme='light'] {
+  html, body {
+    background: var(--background-white);
+    color: var(--text-color);
+  }
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-family);
+}
