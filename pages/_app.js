@@ -20,7 +20,7 @@ Router.events.on("routeChangeError", () => {
 export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider defaultTheme="dark">
-      <Component {...pageProps} />
+        <Component {...pageProps} />
     </ThemeProvider>
   );
 }

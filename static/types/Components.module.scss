@@ -1,0 +1,14 @@
+.h1 {
+    font-size:var(--heading);
+    font-weight: bold;
+}
+
+.h2 {
+    font-size:var(--sub-heading);
+    font-weight: bold;
+}
+
+.p {
+    font-size: var(--text);
+    line-height: var(--title);
+}

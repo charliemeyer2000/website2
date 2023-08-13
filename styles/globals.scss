@@ -1,6 +1,7 @@
 :root {
 
   /* Spacing */
+  --gap-eighth: 0.125rem;
   --gap-quarter: 0.25rem;
   --gap-half: 0.5rem;
   --gap-single: 1rem;
@@ -29,6 +30,10 @@
   --text: 1rem; /* 16px */
   --sub-text: 0.875rem; /* 14px */
 
+  /* other sizes */
+  --arrow-size-link-width: 0.56731rem;
+  --arrow-size-link-height: 0.694rem;
+
   /* colors */
   --yellow: #F5D147;
   --red: #DA4232;
@@ -40,8 +45,8 @@
   --button-background-blue: #5F8AB9;
   --grey: #7B7B7D;
   --gray: #7B7B7D;
-  --grey-50: rgb(#7B7B7D, 0.5); /* not sure if this works or not*/
-  --gray-50: rgb(#7B7B7D, 0.5); /* not sure if this works or not*/
+  --grey-50: rgb(86, 86, 87); /* not sure if this works or not*/
+  --gray-50: rgb(86, 86, 87); /* not sure if this works or not*/
   --indicator-blue: #A2C0D7;
   --black: #000000;
   --background-white: #E9E9E9;
@@ -70,6 +75,11 @@ body {
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 button, font, textarea, select, input {

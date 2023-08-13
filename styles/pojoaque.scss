@@ -4,6 +4,8 @@
   color: var(--grey);
   background: var(--background-black-50);
   font-size: var(--sub-text);
+  border-radius: var(--small-border-radius);
+  margin: var(--gap-single) 0;
 }
 
 .hljs-params {

@@ -1,0 +1,11 @@
+.container {
+    height:100%;
+    width: 100%;
+    padding-bottom: var(--gap-single);
+}
+
+.main {
+    max-width: var(--main-content);
+    margin: 0 auto;
+    padding: 0 var(--gap-single);
+}

@@ -1,0 +1,43 @@
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    gap: var(--gap-double);  
+}
+
+.yearContainers {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-double);
+}
+
+.postListItemContainer {
+    transition: opacity 0.3s;
+  }
+  
+  .postListItemContainer:hover {
+    opacity: 1; /* Keep the hovered one fully opaque */
+  }
+  
+  .postListItemContainer:not(:hover) {
+    opacity: 0.5;
+  }
+  
+
+.postList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-double);
+    padding-top: var(--gap-double);
+}
+
+.year {
+    font-size: var(--text);
+}
+
+
+

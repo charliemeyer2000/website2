@@ -1,19 +1,14 @@
 import getPosts from "@/utils/hooks/getPosts";
+import PostList from "@/components/postList/PostList";
+import Page from "@/components/page/Page";
 
 export default function Blog({ posts }) {
+  console.log(posts);
+
   return (
-    <div>
-      <h1>Blog</h1>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <h2>{post.title}</h2>
-            <p>{post.date}</p>
-            <div dangerouslySetInnerHTML={{ __html: post.body }} />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Page title="All articles" description="All articles on charliemeyer.xyz">
+      <PostList posts={posts} />
+    </Page>
   );
 }
 

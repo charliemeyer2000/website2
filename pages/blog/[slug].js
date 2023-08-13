@@ -1,18 +1,15 @@
 import getPosts from "@/utils/hooks/getPosts";
-import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import { MDXProvider } from "@mdx-js/react";
-import components from "@/static/types/Components";
 import rehypeHighlight from "rehype-highlight/lib";
-import { useTheme } from "next-themes";
+import Post from "@/components/post/Post";
 
 // options for code highlighting
 const options = {
   mdxOptions: {
     remarkPlugins: [],
-    rehypePlugins: [rehypeHighlight]
-  }
-}
+    rehypePlugins: [rehypeHighlight],
+  },
+};
 
 // get static props which will be passed to the page component as props
 export async function getStaticProps({ params: { slug } }) {
@@ -39,14 +36,7 @@ export const getStaticPaths = () => {
   };
 };
 
-// page component (move to components folder later once testing is done)
+// page component
 export default function PostPage(props) {
-  const { theme, setTheme } = useTheme();
-  return (
-    <MDXProvider components={components}>
-      <button onClick={() => setTheme("light")}>Light Mode</button>
-      <button onClick={() => setTheme("dark")}>Dark Mode</button>
-      <MDXRemote {...props.mdxSource} />
-    </MDXProvider>
-  );
+  return <Post {...props} />;
 }
