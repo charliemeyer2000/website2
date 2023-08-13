@@ -10,7 +10,7 @@ export default function PostListItem({ date, title, ...props }) {
   });
 
   return (
-    <Link href={`/blog/${props.slug}`}>
+    <Link href={`/posts/${props.slug}`}>
       <div className={classNames(styles.container)}>
         <p className={styles.date}>{formattedDate}</p>
         <p className={styles.articleTitle}>{title}</p>

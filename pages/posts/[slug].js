@@ -31,7 +31,7 @@ export async function getStaticProps({ params: { slug } }) {
 // get static paths which will be passed to the page component as props
 export const getStaticPaths = () => {
   return {
-    paths: getPosts().map((p) => `/blog/${p.slug}`),
+    paths: getPosts().map((p) => `/posts/${p.slug}`),
     fallback: false,
   };
 };

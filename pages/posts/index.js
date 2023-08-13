@@ -3,8 +3,6 @@ import PostList from "@/components/postList/PostList";
 import Page from "@/components/page/Page";
 
 export default function Blog({ posts }) {
-  console.log(posts);
-
   return (
     <Page title="All articles" description="All articles on charliemeyer.xyz">
       <PostList posts={posts} />

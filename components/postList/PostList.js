@@ -18,6 +18,7 @@ export default function PostList({ posts, ...props }) {
       const postItems = yearPosts.map((yearPost) => (
         <div
           className={classNames(styles.postListItemContainer)}
+          key={yearPost.slug}
         >
           <PostListItem
             key={yearPost.slug}
