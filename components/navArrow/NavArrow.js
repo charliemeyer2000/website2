@@ -1,22 +1,16 @@
-import styles from './NavArrow.module.scss';
-import Arrow from '../arrow/Arrow';
-import useSound from 'use-sound';
+import styles from "./NavArrow.module.scss";
+import Arrow from "../arrow/Arrow";
+import useSound from "use-sound";
 import Link from "next/link";
-
-export default function NavArrow({
-  angle,
-  indicator = false,
-  href = "/",
-  ...props
-}) {
+export default function NavArrow({ angle, indicator = false, ...props }) {
   const [play, { stop }] = useSound("static/audio/cute-click.mp3", {
-    volume: 0.5,
+    volume: 1,
     forceSoundEnabled: true,
     preload: true,
   });
 
   return (
-    <Link href={href}>
+    <Link href={props.href}>
       <div
         className={styles.container}
         onMouseEnter={play}

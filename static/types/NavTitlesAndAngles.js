@@ -12,7 +12,7 @@ const NavTitlesAndAngles = {
         href: "/",
     },
     "/posts/[slug]": {
-        angle: -45,
+        angle: 180,
         text: "Posts",
         href: "/posts",
     },    
