@@ -1,8 +1,12 @@
 .nav {
-    // z-index:10;
+    z-index:10;
     margin: var(--gap-single) auto var(--gap-double) auto;
     position: sticky;
     padding: var(--gap-single) 0;
     top: 0;
     max-width: calc(var(--main-content) + var(--gap-double)); // adjust for how you want it to look
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }

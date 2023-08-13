@@ -1,8 +1,8 @@
 import styles from './Nav.module.scss';
 import Link from "next/link";
 import NavArrow from "../navArrow/NavArrow";
-// import useNavTitles from '@/utils/hooks/useNavTitles';
 import useSound from "use-sound";
+import ThemeToggle from '../themeToggle/ThemeToggle';
 
 export default function Nav({ children, ...props }) {
   const { angle, text, href } = props.navArrowObject;
@@ -17,6 +17,9 @@ export default function Nav({ children, ...props }) {
       <NavArrow href={href} angle={angle}>
         {text}
       </NavArrow>
+      <div className={styles.rightWrapper}>
+        <ThemeToggle />
+      </div>
     </nav>
   );
 }

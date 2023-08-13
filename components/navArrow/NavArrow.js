@@ -2,6 +2,7 @@ import styles from "./NavArrow.module.scss";
 import Arrow from "../arrow/Arrow";
 import useSound from "use-sound";
 import Link from "next/link";
+
 export default function NavArrow({ angle, indicator = false, ...props }) {
   const [play, { stop }] = useSound("static/audio/cute-click.mp3", {
     volume: 1,
