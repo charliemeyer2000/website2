@@ -16,7 +16,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <p>The current theme is {theme}</p>
         <button onClick={() => setTheme("light")}>Light Mode</button>
         <button onClick={() => setTheme("dark")}>Dark Mode</button>
       </main>

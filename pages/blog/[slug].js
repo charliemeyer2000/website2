@@ -4,6 +4,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXProvider } from "@mdx-js/react";
 import components from "@/static/types/Components";
 import rehypeHighlight from "rehype-highlight/lib";
+import { useTheme } from "next-themes";
 
 // options for code highlighting
 const options = {
@@ -40,8 +41,11 @@ export const getStaticPaths = () => {
 
 // page component (move to components folder later once testing is done)
 export default function PostPage(props) {
+  const { theme, setTheme } = useTheme();
   return (
     <MDXProvider components={components}>
+      <button onClick={() => setTheme("light")}>Light Mode</button>
+      <button onClick={() => setTheme("dark")}>Dark Mode</button>
       <MDXRemote {...props.mdxSource} />
     </MDXProvider>
   );

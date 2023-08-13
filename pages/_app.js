@@ -1,4 +1,4 @@
-import '@/styles/pojoaque.css';
+import '@/styles/pojoaque.scss';
 import "@/styles/globals.scss";
 import nProgress from "nprogress";
 import debounce from "lodash.debounce";

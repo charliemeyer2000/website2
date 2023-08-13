@@ -19,6 +19,8 @@
   /* Transitions */
   --transition: 0.1s ease-in-out;
   --transition-slow: 0.3s ease-in-out;
+  --theme-transition: color 350ms ease 0s, background 350ms ease 0s; /* i snooped josh comeau's css */
+
 
   /* font-sizes */
   --title: 2.125rem; /* 34px */
@@ -43,7 +45,9 @@
   --indicator-blue: #A2C0D7;
   --black: #000000;
   --background-white: #E9E9E9;
+  --background-white-90: rgba(225, 225, 225);
   --background-black: #303030;
+  --background-black-50: #232323;
   --text-color: #47343A;
 
 }
@@ -85,22 +89,31 @@ html, body {
   background: var(--background-black);
   color: var(--background-white);
   text-rendering: optimizeLegibility;
-  transition: var(--transition);
+  transition: var(--theme-transition);
+
+  /* change the color of selection */
+  ::selection {
+    background: var(--background-white);
+    color: var(--background-black);
+  }
 }
 
 /* light theme */
-// @media (prefers-color-scheme: light) {
-//   html, body {
-//     background: var(--background-white);
-//     color: var(--text-color);
-//   }
-// }
+
 [data-theme='light'] {
   html, body {
     background: var(--background-white);
     color: var(--text-color);
+
+    /* change the color of selection */
+    ::selection {
+      background: var(--background-black);
+      color: var(--background-white);
+    }
   }
 }
+
+/* just in case */
 
 body {
   min-height: 100vh;
