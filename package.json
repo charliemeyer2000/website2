@@ -15,6 +15,7 @@
     "add": "^2.0.6",
     "classnames": "^2.3.2",
     "cmdk": "^0.2.0",
+    "file-loader": "^6.2.0",
     "gray-matter": "^4.0.3",
     "lodash.debounce": "^4.0.8",
     "marked": "^7.0.2",
@@ -28,7 +29,8 @@
     "rehype-highlight": "^6.0.0",
     "remark": "^14.0.3",
     "remark-html": "^15.0.2",
-    "sass": "^1.65.1"
+    "sass": "^1.65.1",
+    "use-sound": "^4.0.1"
   },
   "devDependencies": {}
 }

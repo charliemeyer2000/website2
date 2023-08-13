@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useTheme } from "next-themes";
+import NavArrow from '@/components/navArrow/NavArrow';
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
@@ -18,6 +19,8 @@ export default function Home() {
       <main>
         <button onClick={() => setTheme("light")}>Light Mode</button>
         <button onClick={() => setTheme("dark")}>Dark Mode</button>
+        <h1>Charlie Meyer</h1>
+        <NavArrow angle={-135} indicator={false}>Hello</NavArrow>
       </main>
     </>
   );
