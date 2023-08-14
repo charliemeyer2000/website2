@@ -46,3 +46,22 @@
     font-size: var(--sub-text);
     cursor: pointer;
 }
+
+.arrow {
+    transition: var(--transition);
+}
+.next:hover {
+    .nextArrow {
+        transform: translateX(5px) rotate(0deg);
+        transition: var(--transition);
+    }
+}
+
+
+.previous:hover {
+    .previousArrow{
+        transform: translateX(-5px) rotate(180deg);
+        transition: var(--transition);
+    }
+
+}

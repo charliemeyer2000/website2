@@ -9,6 +9,7 @@ import useSound from "use-sound";
 import { useSoundContext } from "@/components/soundToggle/SoundContext";
 import StuffItem from "@/components/stuffItem/StuffItem";
 import quotes from "@/static/types/Quotes";
+import Link from "@/components/link/Link";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
@@ -34,11 +35,14 @@ export default function Home() {
         <section className={styles.section}>
           <h1 className={styles.title}>Currently</h1>
           <p className={styles.text}>
-            I am a student @ UVA majoring in CS. Here are some other things that
-            I do, including my clubs that I participate in, some of my
-            interests, and other things. This should be multiple lines and
-            should be interesting ish, but also should be incredibly humble. No
-            showing off.{" "}
+            I'm an second year @ UVA majoring in CS. I'm into weightlighting,
+            skateboarding, embroidery, guitar, any type of outdoor activity, and
+            coding. Right now, I've started training for the San Francisco
+            marathon in 2024 (or the NYC marathon, if I get lucky) while also
+            hoping to get into the 2-3-4 club. I'm also a big Model UN nerd,
+            currently treasurer of the International Relations Organization at
+            UVA. Thanks for stopping by, and take a look at some of my posts if
+            you want.
           </p>
         </section>
         <section className={styles.section}>
@@ -92,7 +96,7 @@ export default function Home() {
                   // never gonna give you up youtube link
                   href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                   angle={-45}
-                  description="The next thing I'm working on."
+                  description="The next big thing I'm working on."
                 />
               </div>
             </div>
@@ -101,23 +105,30 @@ export default function Home() {
         <section className={styles.section}>
           <h1 className={styles.title}>Future</h1>
           <p className={styles.text}>
-            This is where you write about your philosophy moving forward and
-            your main interests. This is <strong>some important text</strong>{" "}
-            that you’ll emphasize, by the way.{" "}
+            My goal is to live in a van or somewhere relatively mobile while
+            working remotely/hybrid as a coder. I think it would be incredibly
+            comical to be working for <em>_insert big tech company_</em> while
+            living in a van and just skating, surfing, hiking, and enjoying
+            nature. Oh and if I can play Sitting, Waiting, Wishing by Jack
+            Johnson, that would be great.
           </p>
           <p className={styles.text}>
-            Here you could talk about your desire to build good full-stack
-            applications and how you’ll do that using AWS. You can talk about
-            the certificaites that you’ll complete, like cloud practitioner and
-            solutions architect. Maybe even CI/CD.
+            Technically speaking, I want to be a full-stack developer,
+            especially doing so with a focus on AWS Cloud computing and using
+            AWS to do things better. There's just so many options of
+            technologies to use - so that's why I'll be doing various
+            certification courses to get a better understanding of the cloud.
+            But realistically, certification courses don't mean too much (a lot
+            of show) - anyone can just study for a test. So I'll be working on
+            projects using AWS to get a better understanding of the cloud in a
+            more practical sense.
           </p>
           <p className={styles.text}>
-            And then here is some longer text where you can write about larger
-            aspirations, like in life. Where do you see yourself living, and
-            how? Me personally i wanna be relatively mobile and live with little
-            physically but be full of experiences. I want to live somewhere that
-            allows me to ski, surf, skate, and also try new things that I didn’t
-            know I liked until now.
+            Aside from the NYC/SF marathon, I'd want to get to the{" "}
+            <Link href="https://www.cphopen.com/">Copenhagen Open</Link> or{" "}
+            <Link href="https://dimemtl.com/">Dime</Link> but also participate
+            in local skate events just for the fun of it. Also it would be sick
+            to see MACBA in Barcelona.
           </p>
         </section>
         <section className={styles.section}>
@@ -134,7 +145,9 @@ export default function Home() {
               }}
             >
               <Arrow angle={0} height={1} className={styles.animatedArrow} />
-              <p className={styles.contactListText}>charlie@charliemeyer.xyz</p>
+              <Link className={styles.contactListText}>
+                charlie@charliemeyer.xyz
+              </Link>
             </div>
             <div
               className={styles.contactListItem}
@@ -144,7 +157,9 @@ export default function Home() {
               }}
             >
               <Arrow angle={0} height={1} className={styles.animatedArrow} />
-              <p className={styles.contactListText}>abs6bd@virginia.edu</p>
+              <Link className={styles.contactListText}>
+                abs6bd@virginia.edu
+              </Link>
             </div>
             <div
               className={styles.contactListItem}
@@ -157,9 +172,9 @@ export default function Home() {
               }}
             >
               <Arrow angle={0} height={1} className={styles.animatedArrow} />
-              <p className={styles.contactListText}>
+              <Link className={styles.contactListText}>
                 charlie-meyer-loves-you on Linkedin
-              </p>
+              </Link>
             </div>
           </div>
         </section>
