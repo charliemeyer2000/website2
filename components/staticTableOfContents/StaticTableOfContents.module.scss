@@ -1,0 +1,19 @@
+.stop {
+    position: absolute;
+    top: var(--position);
+    left: 20%; 
+}
+
+
+.rail {
+    position: absolute;
+    top: var(--starting-position);
+    width: 10px;
+    height: var(--rail-height);
+    background: var(--red);
+    left: calc(20% + 10px); // 20% left + 1/2 of the size of each stop
+}
+
+
+
+

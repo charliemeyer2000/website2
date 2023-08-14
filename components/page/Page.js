@@ -6,6 +6,8 @@ import useNavTitles from "@/utils/hooks/useNavTitles";
 import PageTransition from "../pageTransition/PageTransition";
 import { usePageTransitionContext } from "../pageTransition/PageTransitionContext";
 import Footer from "../footer/Footer";
+import useProgress from "@/utils/hooks/useProgress";
+import { useScroll, useMotionValueEvent } from "framer-motion";
 
 export default function Page(props) {
   const { title, description, date, children } = props;
@@ -13,6 +15,10 @@ export default function Page(props) {
   const { pageTransition, newPageTransition } = usePageTransitionContext();
 
   newPageTransition(navArrowObject.pageTransition);
+
+  const progress = useProgress();
+  console.log(progress)
+
 
   return (
     <PageTransition>

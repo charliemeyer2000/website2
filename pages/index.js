@@ -11,6 +11,7 @@ import StuffItem from "@/components/stuffItem/StuffItem";
 import quotes from "@/static/types/Quotes";
 import Link from "@/components/link/Link";
 import { useState, useEffect } from "react";
+import StaticTableOfContents from "@/components/staticTableOfContents/StaticTableOfContents";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
@@ -33,6 +34,7 @@ export default function Home() {
       title="Home"
       description="Hey, I'm Charlie Meyer. Thanks for stopping by."
     >
+      <StaticTableOfContents />
       <article className={styles.main}>
         <section className={styles.section}>
           <h1 className={styles.title}>Hey, I'm Charlie Meyer.</h1>
@@ -93,7 +95,7 @@ export default function Home() {
             <div className={styles.stuffItem}>
               <p className={styles.stuffItemTitle}>Other</p>
               <div className={styles.stuffItemContent}>
-              <StuffItem
+                <StuffItem
                   title="Posts"
                   href="/posts"
                   newWindow={false}
