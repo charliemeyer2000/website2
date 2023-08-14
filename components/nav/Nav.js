@@ -3,6 +3,7 @@ import Link from "next/link";
 import NavArrow from "../navArrow/NavArrow";
 import useSound from "use-sound";
 import ThemeToggle from '../themeToggle/ThemeToggle';
+import SoundToggle from "../soundToggle/SoundToggle";
 
 export default function Nav({ children, ...props }) {
   const { angle, text, href } = props.navArrowObject;
@@ -19,6 +20,7 @@ export default function Nav({ children, ...props }) {
           {text}
         </NavArrow>
         <div className={styles.rightWrapper}>
+          <SoundToggle />
           <ThemeToggle />
         </div>
       </div>

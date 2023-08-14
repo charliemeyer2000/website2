@@ -5,12 +5,14 @@ import darkMode from "@/static/icons/dark-mode.svg";
 import Image from "next/image";
 import useSound from "use-sound";
 import classNames from "classnames";
+import { useSoundContext } from "../soundToggle/SoundContext";
 
 export default function ThemeToggle() {
   const { theme: activeTheme, systemTheme, setTheme } = useTheme();
+  const { soundOn } = useSoundContext();
 
   const [play] = useSound("static/audio/wet-click.wav", {
-    volume: 0.5,
+    volume: soundOn ? 0.5 : 0,
     forceSoundEnabled: true,
   });
 

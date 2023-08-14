@@ -23,6 +23,12 @@
     max-width: calc(var(--main-content) + var(--gap-double)); // adjust for how you want it to look
 }
 
+.rightWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--gap-double);
+}
 
 [data-theme='light'] {
     .nav {

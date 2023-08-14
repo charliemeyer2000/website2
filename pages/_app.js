@@ -8,6 +8,7 @@ import PageTransition from "@/components/pageTransition/PageTransition";
 import { AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 import useSound from "use-sound";
+import { SoundProvider } from "@/components/soundToggle/SoundContext";
 
 const start = debounce(nProgress.start, 200);
 Router.events.on("routeChangeStart", start);
@@ -24,8 +25,10 @@ Router.events.on("routeChangeError", () => {
 export default function App({ Component, pageProps }) {
 
   return (
-    <ThemeProvider defaultTheme="dark">
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <SoundProvider>
+      <ThemeProvider defaultTheme="dark">
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </SoundProvider>
   );
 }
