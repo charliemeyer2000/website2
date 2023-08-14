@@ -8,7 +8,7 @@ export default function Home() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <Page>
+    <Page title="Home" description="Hey, I'm Charlie Meyer. Thanks for stopping by.">
       <h1>Charlie Meyer</h1>
     </Page>
   );

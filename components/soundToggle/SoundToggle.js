@@ -17,10 +17,10 @@ export default function SoundToggle() {
     play();
   }
 
-  const soundUrl = "static/audio/wet-click.wav"
+  const soundUrl = soundOn ? "static/audio/sound-off.wav" : "static/audio/sound-on.wav";
 
   const [play] = useSound(soundUrl, {
-    volume: 0.5,
+    volume: 7,
     forceSoundEnabled: true,
   });
 
