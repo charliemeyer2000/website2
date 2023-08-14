@@ -1,0 +1,48 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: var(--gap-double) 0 var(--gap-double) 0;
+}
+
+.containerPreviousOnly {
+    justify-content: flex-start;
+}
+
+.containerNextOnly {
+    justify-content: flex-end;
+}
+
+// when there's only one 
+
+.previous {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-single);
+}
+
+.next {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: var(--gap-single);
+}
+
+.arrowTextContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--gap-single);
+    cursor: pointer;
+}
+
+.title {
+    color: var(--grey);
+    font-size: var(--sub-text);
+    cursor: pointer;
+}

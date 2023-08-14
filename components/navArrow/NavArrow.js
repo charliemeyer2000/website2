@@ -14,8 +14,7 @@ export default function NavArrow({ angle, indicator = false, ...props }) {
     <Link href={props.href}>
       <div
         className={styles.container}
-        onMouseEnter={play}
-        onMouseLeave={() => stop()}
+        onClick={play}
       >
         <Arrow
           angle={angle}

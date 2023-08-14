@@ -5,9 +5,12 @@ import { MDXRemote } from "next-mdx-remote";
 import { MDXProvider } from "@mdx-js/react";
 import components from "@/static/types/Components";
 import { useTheme } from "next-themes";
+import PreviousNext from "../previousNext/PreviousNext";
 
 export default function Post(props) {
   const { title, date, mdxSource, previous, next, slug } = props;
+
+  console.log('previous', previous, 'next', next);
 
   return (
     <Page title={title} description={title} date={date}>
@@ -18,6 +21,7 @@ export default function Post(props) {
       <MDXProvider components={components}>
         <MDXRemote {...mdxSource} />
       </MDXProvider>
+      <PreviousNext previous={previous} next={next} />
     </Page>
   );
 }
