@@ -7,6 +7,7 @@ import volumeOnLight from "@/static/icons/volume-on-light.svg";
 import { useTheme } from "next-themes";
 import useSound from "use-sound";
 import { useSoundContext } from "./SoundContext";
+import { useEffect } from "react";
 
 export default function SoundToggle() {
   const { theme: activeTheme, systemTheme, setTheme } = useTheme();
@@ -15,7 +16,7 @@ export default function SoundToggle() {
   const handleToggleSound = () => {
     toggleSound();
     play();
-  }
+  };
 
   const soundUrl = soundOn ? "static/audio/sound-off.wav" : "static/audio/sound-on.wav";
 
