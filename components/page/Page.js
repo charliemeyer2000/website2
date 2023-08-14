@@ -17,7 +17,6 @@ export default function Page(props) {
   newPageTransition(navArrowObject.pageTransition);
 
   const progress = useProgress();
-  console.log(progress)
 
 
   return (

@@ -15,15 +15,12 @@ const NavTitlesAndAngles = {
     href: "/posts",
     pageTransition: {
       initial: {
-        x: "-100%",
         opacity: 0,
       },
       animate: {
-        x: 0,
         opacity: 1,
       },
       exit: {
-        x: "100%",
         opacity: 0,
       },
       transition: {
@@ -38,15 +35,12 @@ const NavTitlesAndAngles = {
     href: "/",
     pageTransition: {
       initial: {
-        x: "100%",
         opacity: 0,
       },
       animate: {
-        x: 0,
         opacity: 1,
       },
       exit: {
-        x: "-100%",
         opacity: 0,
       },
       transition: {
@@ -54,6 +48,24 @@ const NavTitlesAndAngles = {
         ease: "easeInOut",
       },
     },
+    // pageTransition: {
+    //   initial: {
+    //     x: "100%",
+    //     opacity: 0,
+    //   },
+    //   animate: {
+    //     x: 0,
+    //     opacity: 1,
+    //   },
+    //   exit: {
+    //     x: "-100%",
+    //     opacity: 0,
+    //   },
+    //   transition: {
+    //     duration: 0.6,
+    //     ease: "easeInOut",
+    //   },
+    // },
   },
   "/posts/[slug]": {
     angle: 180,

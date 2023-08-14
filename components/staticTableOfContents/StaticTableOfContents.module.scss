@@ -10,7 +10,7 @@
     top: var(--starting-position);
     width: 10px;
     height: var(--rail-height);
-    background: var(--red);
+    background: var(--color);
     left: calc(20% + 10px); // 20% left + 1/2 of the size of each stop
 }
 
