@@ -8,7 +8,13 @@ export default function Arrow({ angle = 0, height = 2.25, className }) {
   const { theme: activeTheme, systemTheme, setTheme } = useTheme();
   return (
     <Image
-      src={activeTheme === 'dark' || activeTheme === undefined ? lightArrow : darkArrow}
+      src={
+        activeTheme === "dark" ||
+        activeTheme === undefined ||
+        systemTheme === "light"
+          ? lightArrow
+          : darkArrow
+      }
       alt="arrow"
       className={classNames(styles.arrow, className)}
       style={{

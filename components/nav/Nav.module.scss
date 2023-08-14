@@ -1,8 +1,8 @@
 .nav {
     z-index:10;
-    margin: var(--gap-single) auto var(--gap-double) auto;
+    margin: 0 auto var(--gap-double) auto;
     position: sticky;
-    padding: var(--gap-single) 0;
+    padding: var(--gap-double) 0 var(--gap-single) 0;
     top: 0;
     max-width: calc(var(--main-content) + var(--gap-double)); // adjust for how you want it to look
     display: flex;

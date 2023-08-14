@@ -1,0 +1,19 @@
+.lightMode {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.lightModeActive {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.darkMode {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.darkModeActive {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
