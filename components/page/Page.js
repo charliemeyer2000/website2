@@ -7,7 +7,7 @@ import PageTransition from "../pageTransition/PageTransition";
 import { usePageTransitionContext } from "../pageTransition/PageTransitionContext";
 import Footer from "../footer/Footer";
 import useProgress from "@/utils/hooks/useProgress";
-import { useScroll, useMotionValueEvent } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export default function Page(props) {
   const { title, description, date, children } = props;
@@ -17,6 +17,20 @@ export default function Page(props) {
   newPageTransition(navArrowObject.pageTransition);
 
   const progress = useProgress();
+
+  // handling not mounted errors (hydration errors). This is a hacky solution, but it works for now.
+  /* see docs here: 
+  https://nextjs.org/docs/messages/react-hydration-error
+  */
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect((() => {
+    setIsMounted(true);
+  }), [])
+
+  if (!isMounted) {
+    return null;
+  }
 
 
   return (
