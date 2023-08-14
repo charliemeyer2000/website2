@@ -2,10 +2,17 @@
     height:100%;
     width: 100%;
     padding-bottom: var(--gap-single);
+    // min-height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+
 }
 
 .main {
     max-width: var(--main-content);
+    width: 100%;
     margin: 0 auto;
     padding: 0 var(--gap-single);
 }

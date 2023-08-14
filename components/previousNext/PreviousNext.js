@@ -3,13 +3,11 @@ import Arrow from "../arrow/Arrow";
 import Link from "next/link";
 import classNames from "classnames";
 import useSound from "use-sound";
-import { usePageTransitionContext } from "../pageTransition/PageTransitionContext";
 
 export default function PreviousNext({ previous, next }) {
   const mostRecentPost = next === null;
   const earliestPost = previous === null;
 
-  const { newPageTransition } = usePageTransitionContext();
 
   const [play, { stop }] = useSound("static/audio/cute-click.mp3", {
     volume: 1,
@@ -26,19 +24,15 @@ export default function PreviousNext({ previous, next }) {
       )}
     >
       {previous && (
-          <Link
-            href={previous.slug}
-            as={previous.slug}
-            onClick={play}
-          >
-            <div className={styles.previous}>
-              <div className={styles.arrowTextContainer}>
-                <Arrow angle={180} height={1.2} className={styles.arrow} />
-                <p className={styles.text}>Previous</p>
-              </div>
-              <p className={styles.title}>{previous.title}</p>
+        <Link href={previous.slug} as={previous.slug}>
+          <div className={styles.previous} onClick={play}>
+            <div className={styles.arrowTextContainer}>
+              <Arrow angle={180} height={1.2} className={styles.arrow} />
+              <p className={styles.text}>Previous</p>
             </div>
-          </Link>
+            <p className={styles.title}>{previous.title}</p>
+          </div>
+        </Link>
       )}
       {next && (
         <Link href={next.slug} as={next.slug} onClick={play}>

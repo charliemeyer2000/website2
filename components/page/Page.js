@@ -5,13 +5,14 @@ import Nav from "../nav/Nav";
 import useNavTitles from "@/utils/hooks/useNavTitles";
 import PageTransition from "../pageTransition/PageTransition";
 import { usePageTransitionContext } from "../pageTransition/PageTransitionContext";
+import Footer from "../footer/Footer";
 
 export default function Page(props) {
   const { title, description, date, children } = props;
   const navArrowObject = useNavTitles();
   const { pageTransition, newPageTransition } = usePageTransitionContext();
 
-  newPageTransition(navArrowObject.pageTransition)
+  newPageTransition(navArrowObject.pageTransition);
 
   return (
     <PageTransition>
@@ -21,10 +22,9 @@ export default function Page(props) {
           description={description}
           date={date}
         />
-        {/* add header here */}
         <Nav navArrowObject={navArrowObject} />
-
         <main className={classNames(styles.main)}>{children}</main>
+        <Footer />
       </div>
     </PageTransition>
   );
