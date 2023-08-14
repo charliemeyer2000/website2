@@ -19,7 +19,7 @@ export default function PostListItem({ date, title, ...props }) {
   });
 
   return (
-    <Link href={`/posts/${props.slug}`} onMouseOver={play}>
+    <Link href={`/posts/${props.slug}`} onMouseOver={play} scroll={false}>
       <div className={classNames(styles.container)}>
         <p className={styles.date}>{formattedDate}</p>
         <p className={styles.articleTitle}>{title}</p>

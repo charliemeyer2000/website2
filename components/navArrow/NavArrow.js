@@ -13,7 +13,7 @@ export default function NavArrow({ angle, indicator = false, ...props }) {
   });
 
   return (
-    <Link href={props.href}>
+    <Link href={props.href} scroll={false}>
       <div
         className={styles.container}
         onClick={play}

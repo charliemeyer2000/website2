@@ -6,11 +6,10 @@ import { MDXProvider } from "@mdx-js/react";
 import components from "@/static/types/Components";
 import { useTheme } from "next-themes";
 import PreviousNext from "../previousNext/PreviousNext";
+import PageTransition from "../pageTransition/PageTransition";
 
 export default function Post(props) {
   const { title, date, mdxSource, previous, next, slug } = props;
-
-  console.log('previous', previous, 'next', next);
 
   return (
     <Page title={title} description={title} date={date}>

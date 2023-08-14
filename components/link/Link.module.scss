@@ -2,9 +2,11 @@
     border-bottom: 0.5px solid var(--grey);
     text-decoration: none;
     color: inherit;
+    transition: var(--transition);
 }
 
 .link:hover {
     color: var(--grey);
+    transition: var(--transition);
 }
 

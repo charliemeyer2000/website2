@@ -3,6 +3,7 @@ import Arrow from "../arrow/Arrow";
 import Link from "next/link";
 import classNames from "classnames";
 import useSound from "use-sound";
+import PageTransition from "../pageTransition/PageTransition";
 
 export default function PreviousNext({ previous, next }) {
   const mostRecentPost = next === null;
@@ -23,15 +24,19 @@ export default function PreviousNext({ previous, next }) {
       )}
     >
       {previous && (
-        <Link href={previous.slug} as={previous.slug} onClick={play}>
-          <div className={styles.previous}>
-            <div className={styles.arrowTextContainer}>
-              <Arrow angle={180} height={1.2} className={styles.arrow} />
-              <p className={styles.text}>Previous</p>
+          <Link
+            href={previous.slug}
+            as={previous.slug}
+            onClick={play}
+          >
+            <div className={styles.previous}>
+              <div className={styles.arrowTextContainer}>
+                <Arrow angle={180} height={1.2} className={styles.arrow} />
+                <p className={styles.text}>Previous</p>
+              </div>
+              <p className={styles.title}>{previous.title}</p>
             </div>
-            <p className={styles.title}>{previous.title}</p>
-          </div>
-        </Link>
+          </Link>
       )}
       {next && (
         <Link href={next.slug} as={next.slug} onClick={play}>
