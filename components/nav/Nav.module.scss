@@ -2,11 +2,29 @@
     z-index:10;
     margin: 0 auto var(--gap-double) auto;
     position: sticky;
-    padding: var(--gap-double) 0 var(--gap-single) 0;
+    padding: var(--gap-single) 0 var(--gap-single) 0;
     top: 0;
-    max-width: calc(var(--main-content) + var(--gap-double)); // adjust for how you want it to look
+    // max-width: calc(var(--main-content) + var(--gap-double)); // adjust for how you want it to look
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-black);
+}
+
+.container {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    // align-self: stretch;
+    max-width: calc(var(--main-content) + var(--gap-double)); // adjust for how you want it to look
+}
+
+
+[data-theme='light'] {
+    .nav {
+        background: var(--background-white);
+    }
 }

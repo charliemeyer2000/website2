@@ -14,11 +14,13 @@ export default function Nav({ children, ...props }) {
 
   return (
     <nav className={styles.nav}>
-      <NavArrow href={href} angle={angle}>
-        {text}
-      </NavArrow>
-      <div className={styles.rightWrapper}>
-        <ThemeToggle />
+      <div className={styles.container}>
+        <NavArrow href={href} angle={angle}>
+          {text}
+        </NavArrow>
+        <div className={styles.rightWrapper}>
+          <ThemeToggle />
+        </div>
       </div>
     </nav>
   );

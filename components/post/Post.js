@@ -11,6 +11,10 @@ export default function Post(props) {
 
   return (
     <Page title={title} description={title} date={date}>
+      <div className={styles.headerContainer}>
+        <h1 className={styles.title}>{title}</h1>
+        <p className={styles.date}>{date}</p>
+      </div>
       <MDXProvider components={components}>
         <MDXRemote {...mdxSource} />
       </MDXProvider>
