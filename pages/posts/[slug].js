@@ -16,6 +16,7 @@ export async function getStaticProps({ params: { slug } }) {
   const posts = getPosts();
   const postIndex = posts.findIndex((post) => post.slug === slug);
   const post = posts[postIndex];
+
   const { body, ...stuff } = post;
 
   return {
@@ -32,7 +33,7 @@ export async function getStaticProps({ params: { slug } }) {
 export const getStaticPaths = () => {
   return {
     paths: getPosts().map((p) => `/posts/${p.slug}`),
-    fallback: false,
+    fallback: false
   };
 };
 

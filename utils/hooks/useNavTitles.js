@@ -10,7 +10,7 @@ export default function useNavTitles() {
   return (
     matchingObject || {
       angle: 180,
-      text: "FUCK",
+      text: "Back",
       href: "/",
       pageTransition: {
         initial: {
