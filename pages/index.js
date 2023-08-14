@@ -10,6 +10,7 @@ import { useSoundContext } from "@/components/soundToggle/SoundContext";
 import StuffItem from "@/components/stuffItem/StuffItem";
 import quotes from "@/static/types/Quotes";
 import Link from "@/components/link/Link";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
@@ -20,6 +21,13 @@ export default function Home() {
     volume: soundOn ? 1 : 0,
   });
 
+  const [randomQuote, setRandomQuote] = useState("");
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    setRandomQuote(quotes[randomIndex]);
+  }, []);
+
   return (
     <Page
       title="Home"
@@ -29,7 +37,7 @@ export default function Home() {
         <section className={styles.section}>
           <h1 className={styles.title}>Hey, I'm Charlie Meyer.</h1>
           <p className={styles.text}>
-            <em>{quotes[Math.floor(Math.random() * quotes.length)]}</em>
+            <em>{randomQuote}</em>
           </p>
         </section>
         <section className={styles.section}>
@@ -85,6 +93,13 @@ export default function Home() {
             <div className={styles.stuffItem}>
               <p className={styles.stuffItemTitle}>Other</p>
               <div className={styles.stuffItemContent}>
+              <StuffItem
+                  title="Posts"
+                  href="/posts"
+                  newWindow={false}
+                  angle={-45}
+                  description="Check out stuff I've written."
+                />
                 <StuffItem
                   title="Resume"
                   href="static/images/resume.pdf"

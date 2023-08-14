@@ -7,7 +7,7 @@ export default function Link({ children, ...props }) {
       className={styles.link}
       href={props.href}
       rel="noopener noreferer"
-      target="_blank"
+      target={props.newWindow ? "_blank" : "_self"}
     >
       {children}
     </a>

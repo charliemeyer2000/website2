@@ -9,18 +9,18 @@ export default function useNavTitles() {
 
   return (
     matchingObject || {
-      angle: 0,
-      text: "Error",
-      href: "/error",
+      angle: 180,
+      text: "FUCK",
+      href: "/",
       pageTransition: {
         initial: {
-          x: "-100%",
+          x: "100%",
         },
         animate: {
           x: 0,
         },
         exit: {
-          x: "100%",
+          x: "-100%",
         },
         transition: {
           duration: 0.6,

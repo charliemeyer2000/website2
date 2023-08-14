@@ -19,7 +19,7 @@ export default function StuffItem({
   return (
     <div className={styles.container}>
       <div className={styles.top} onMouseEnter={play}>
-        <Link href={href}>{title}</Link>
+        <Link href={href} newWindow={props.newWindow} >{title}</Link>
         <Arrow angle={angle} height={0.694} className={styles.animatedArrow} />
       </div>
       <p className={styles.text}>{description}</p>
