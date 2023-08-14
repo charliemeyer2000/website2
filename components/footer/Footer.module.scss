@@ -3,18 +3,22 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    align-items: center;
     gap: var(--gap-double);
-    padding: 0 var(--gap-single);
 
     width: 100%;
-    max-width: var(--main-content);
 
     flex-grow: 1;
     align-self: center;
 
     font-size: var(--sub-text);
-}
 
+}
+.border {
+    height: 0.1px;
+    background: var(--grey-50);
+    width: 100%;
+}
 .top {
     display: flex;
     flex-direction: row;
@@ -22,6 +26,8 @@
     justify-content: flex-start;
     width: 100%;
     gap: 12rem;
+    max-width: var(--main-content);
+
 }
 
 .box {
@@ -39,4 +45,24 @@
     align-items: center;
     justify-content: flex-start;
     width: 100%;
+    max-width: var(--main-content);
+
 }
+
+.regularText {
+    color: var(--grey);
+}
+
+.text {
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.text:not(:hover) {
+    opacity: 0.5;
+}
+
+.text:hover {
+    opacity: 1;
+}
+
