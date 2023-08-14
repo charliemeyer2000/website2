@@ -11,8 +11,10 @@ import darkStar from "@/static/icons/dark-star.svg";
 import lightStar from "@/static/icons/light-star.svg";
 
 const MetroTrackStops = {
-  lightMode: [lightSquare, lightCircle, lightTriangle, lightStar],
-  darkMode: [darkSquare, darkCircle, darkTriangle, darkStar],
+  lightMode: [lightSquare, lightCircle, lightTriangle],
+  darkMode: [darkSquare, darkCircle, darkTriangle],
 };
+
+// didn't use the stars because they don't look great
 
 export default MetroTrackStops;

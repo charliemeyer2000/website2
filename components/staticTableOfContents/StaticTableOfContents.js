@@ -36,8 +36,11 @@ export default function StaticTableOfContents({ ...props }) {
         className: title.className,
         title: title.innerText,
         position: rect.top,
+        imageSrc: isDarkMode ? MetroTrackStops.darkMode[Math.floor(Math.random() * MetroTrackStops.darkMode.length)] : MetroTrackStops.lightMode[Math.floor(Math.random() * MetroTrackStops.lightMode.length)],
       };
     });
+
+    
     setIds(ids);
   }, []);
 
@@ -55,10 +58,8 @@ export default function StaticTableOfContents({ ...props }) {
         {ids.map((item, index) => {
           return (
             <Image
-              src={  
-                isDarkMode
-                  ? MetroTrackStops.darkMode[0]
-                  : MetroTrackStops.lightMode[0]
+              src={
+                item.imageSrc
               }
               key={index}
               alt="square"

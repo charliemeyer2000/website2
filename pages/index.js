@@ -65,12 +65,14 @@ export default function Home() {
                   title="HymnAi"
                   href="https://www.hymn.market"
                   angle={-45}
+                  newWindow={true}
                   description="Create music with generative samples."
                 />
                 <StuffItem
                   title="Iro-Vics"
                   href="https://www.iro-vics.org"
                   angle={-45}
+                  newWindow={true}
                   description="Go and register for VICS XXVIII."
                 />
               </div>
@@ -82,12 +84,14 @@ export default function Home() {
                   title="Cloud Practitioner"
                   href="https://aws.amazon.com/certification/certified-cloud-practitioner/"
                   angle={-45}
+                  newWindow={true}
                   description="On my way to being a Cloud Practitioner."
                 />
                 <StuffItem
                   title="Forge Launch 2023"
                   href="https://www.joinforge.co"
                   angle={-45}
+                  newWindow={true}
                   description="Completed Forge Launch program bootcamp."
                 />
               </div>
@@ -106,11 +110,12 @@ export default function Home() {
                   title="Resume"
                   href="static/images/resume.pdf"
                   angle={-45}
+                  newWindow={true}
                   description="Take a look at my general resume."
                 />
                 <StuffItem
                   title="Secret Project"
-                  // never gonna give you up youtube link
+                  newWindow={true}
                   href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                   angle={-45}
                   description="The next big thing I'm working on."
