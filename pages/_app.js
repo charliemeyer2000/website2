@@ -5,6 +5,7 @@ import debounce from "lodash.debounce";
 import Router from "next/router";
 import { ThemeProvider } from "next-themes";
 import { SoundProvider } from "@/components/soundToggle/SoundContext";
+import { PageTransitionProvider } from "@/components/pageTransition/PageTransitionContext";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from 'next/router';
 
@@ -25,16 +26,23 @@ const onExitComplete = () => {
 }
 
 export default function App({ Component, pageProps }) {
+  // necessary for page transitions to work for slugs
   const router = useRouter();
   const pageKey = router.asPath;
 
   return (
-    <AnimatePresence initial={false} mode="popLayout" onExitComplete={onExitComplete}>
-      <SoundProvider>
-        <ThemeProvider defaultTheme="dark">
-          <Component key={pageKey} {...pageProps} />
-        </ThemeProvider>
-      </SoundProvider>
+    <AnimatePresence
+      initial={false}
+      mode="popLayout"
+      onExitComplete={onExitComplete}
+    >
+      <PageTransitionProvider>
+        <SoundProvider>
+          <ThemeProvider defaultTheme="dark">
+            <Component key={pageKey} {...pageProps} />
+          </ThemeProvider>
+        </SoundProvider>
+      </PageTransitionProvider>
     </AnimatePresence>
   );
 }

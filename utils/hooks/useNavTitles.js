@@ -12,6 +12,21 @@ export default function useNavTitles() {
       angle: 0,
       text: "Error",
       href: "/error",
+      pageTransition: {
+        initial: {
+          x: "-100%",
+        },
+        animate: {
+          x: 0,
+        },
+        exit: {
+          x: "100%",
+        },
+        transition: {
+          duration: 0.6,
+          ease: "easeInOut",
+        },
+      },
     }
   );
 }

@@ -1,23 +1,20 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./PageTransition.module.scss";
+import { usePageTransitionContext } from "./PageTransitionContext";
 
 export default function PageTransition({ children, ...props }) {
 
-  const onTheRight = { x: "100%" };
-  const inTheCenter = { x: 0 };
-  const onTheLeft = { x: "-100%" };
-  const transition = { duration: 0.6, ease: "easeInOut" };
-  // don't show the scroll bar during page transitions
+  const { pageTransition } = usePageTransitionContext();
 
   return (
     <div className={styles.root}>
       <motion.div
         key={props.key}
-        initial={onTheRight}
-        animate={inTheCenter}
-        exit={onTheLeft}
-        transition={transition}
+        initial={pageTransition.initial}
+        animate={pageTransition.animate}
+        exit={pageTransition.exit}
+        transition={pageTransition.transition}
         className={styles.root}
       >
         {children}

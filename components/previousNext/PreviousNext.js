@@ -3,11 +3,13 @@ import Arrow from "../arrow/Arrow";
 import Link from "next/link";
 import classNames from "classnames";
 import useSound from "use-sound";
-import PageTransition from "../pageTransition/PageTransition";
+import { usePageTransitionContext } from "../pageTransition/PageTransitionContext";
 
 export default function PreviousNext({ previous, next }) {
   const mostRecentPost = next === null;
   const earliestPost = previous === null;
+
+  const { newPageTransition } = usePageTransitionContext();
 
   const [play, { stop }] = useSound("static/audio/cute-click.mp3", {
     volume: 1,
