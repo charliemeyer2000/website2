@@ -6,7 +6,7 @@ import { MDXProvider } from "@mdx-js/react";
 import components from "@/static/types/Components";
 import { useTheme } from "next-themes";
 import PreviousNext from "../previousNext/PreviousNext";
-import PageTransition from "../pageTransition/PageTransition";
+import PostTableOfContents from '../postTableOfContents/PostTableOfContents';
 
 export default function Post(props) {
   const { title, date, mdxSource, previous, next, slug } = props;
@@ -17,6 +17,7 @@ export default function Post(props) {
         <h1 className={styles.title}>{title}</h1>
         <p className={styles.date}>{date}</p>
       </div>
+      <PostTableOfContents />
       <MDXProvider components={components}>
         <MDXRemote {...mdxSource} />
       </MDXProvider>
