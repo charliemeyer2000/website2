@@ -73,7 +73,7 @@ export default function StaticTableOfContents({ ...props }) {
               alt="square"
               className={styles.stop}
               style={{
-                "--position": `${item.position + (index !== 0 ? 34 : 0)}px`, // weird visual bug
+                "--position": `${item.position + (index !== 0 ? 10 : 0)}px`, // weird visual bug
               }}
             />
           );
