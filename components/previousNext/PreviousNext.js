@@ -3,14 +3,17 @@ import Arrow from "../arrow/Arrow";
 import Link from "next/link";
 import classNames from "classnames";
 import useSound from "use-sound";
+import { useSoundContext } from "../soundToggle/SoundContext";
 
 export default function PreviousNext({ previous, next }) {
   const mostRecentPost = next === null;
   const earliestPost = previous === null;
 
+  const {soundOn } = useSoundContext();
+
 
   const [play, { stop }] = useSound("static/audio/cute-click.mp3", {
-    volume: 1,
+    volume: soundOn ? 1 : 0,
     forceSoundEnabled: true,
     preload: true,
   });
