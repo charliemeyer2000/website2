@@ -89,7 +89,7 @@ export default function Home() {
                 />
                 <StuffItem
                   title="Forge Launch 2023"
-                  href="https://www.joinforge.co"
+                  href="https://www.joinforge.co/launch"
                   angle={-45}
                   newWindow={true}
                   description="Completed Forge Launch program bootcamp."
