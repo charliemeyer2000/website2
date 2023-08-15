@@ -136,7 +136,7 @@ export default function Home() {
           <p className={styles.text}>
             Aside from the NYC/SF marathon, I'd want to get to the{" "}
             <Link href="https://www.cphopen.com/" newWindow>Copenhagen Open</Link> or{" "}
-            <Link href="https://dimemtl.com/" newWindow>Dime</Link> but also participate
+            <Link href="https://dimemtl.com/blogs/videos" newWindow>Dime</Link> but also participate
             in local skate events just for the fun of it. Also it would be sick
             to see MACBA in Barcelona.
           </p>
