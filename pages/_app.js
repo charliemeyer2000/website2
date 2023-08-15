@@ -1,5 +1,6 @@
 import '@/styles/pojoaque.scss';
 import "@/styles/globals.scss";
+import '@/styles/nprogress.scss';
 import nProgress from "nprogress";
 import debounce from "lodash.debounce";
 import Router from "next/router";
