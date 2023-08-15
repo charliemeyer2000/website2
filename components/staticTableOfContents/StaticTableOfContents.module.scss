@@ -16,4 +16,8 @@
 
 
 
-
+@media only screen and (width < 1320px) {
+    .root {
+        display: none;
+    }
+}
