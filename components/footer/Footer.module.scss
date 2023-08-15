@@ -65,3 +65,14 @@
     opacity: 1;
 }
 
+
+@media only screen and (width < 540px) {
+    .top {
+        gap: var(--gap-double);
+        justify-content: space-evenly;
+    }
+
+    .bottom {
+        justify-content: center;
+    }
+}

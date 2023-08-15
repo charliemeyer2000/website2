@@ -7,7 +7,7 @@
     
     // positioning
     position: fixed;
-    left: 20%;
+    left: 10%;
     top: 40%;
     
 }
@@ -34,11 +34,17 @@
 /* copied from link.module.scss */
 .stopTitle {
     transition: var(--transition);
-    border-bottom: 0.5px solid var(--grey);
+    max-width: 8rem;
 }
 
 .stopTitle:hover {
     color: var(--grey);
     transition: var(--transition);
 
+}
+
+@media only screen and (width < 1320px) {
+    .root {
+        display: none;
+    }
 }
