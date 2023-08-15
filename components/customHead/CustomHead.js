@@ -7,6 +7,8 @@ export default function Head({
   title = "Charlie Meyer",
   description = "Hey, I'm Charlie. Thanks for stopping by.",
   date,
+  keywords = [],
+  categories = [],
   children,
 }) {
   const path = useRouter().pathname;
@@ -22,6 +24,22 @@ export default function Head({
       {/* description */}
       <meta name="description" content={description} />
       <meta name="og:description" content={description} />
+
+      {/* keywords */}
+      {keywords.length > 0 && (
+        <meta
+          name="keywords"
+          content={keywords.join(', ')}
+        />
+      )}
+
+      {/* categories */}
+      {categories.length > 0 && (
+        <meta
+          name="categories"
+          content={categories.join(', ')}
+        />
+      )}
 
       {/* canonical */}
       <meta name="og:url" content="https://charliemeyer.xyz" />
