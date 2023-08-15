@@ -82,3 +82,11 @@
         transition: var(--transition);
     }
 }
+
+@media only screen and (width < 580px) {
+
+    .stuffWrapper {
+        gap: var(--gap-single);
+        // flex-wrap: wrap;
+    }
+}
