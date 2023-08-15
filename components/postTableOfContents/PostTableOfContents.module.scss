@@ -34,12 +34,11 @@
 /* copied from link.module.scss */
 .stopTitle {
     transition: var(--transition);
-    border-bottom: 0.5px solid transparent;
-
+    border-bottom: 0.5px solid var(--grey);
 }
 
 .stopTitle:hover {
-    border-bottom: 0.5px solid var(--grey);
+    color: var(--grey);
     transition: var(--transition);
 
 }

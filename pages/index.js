@@ -5,8 +5,6 @@ import { useTheme } from "next-themes";
 import NavArrow from "@/components/navArrow/NavArrow";
 import styles from "./index.module.scss";
 import Arrow from "@/components/arrow/Arrow";
-import useSound from "use-sound";
-import { useSoundContext } from "@/components/soundToggle/SoundContext";
 import StuffItem from "@/components/stuffItem/StuffItem";
 import quotes from "@/static/types/Quotes";
 import Link from "@/components/link/Link";
@@ -16,16 +14,12 @@ import StaticTableOfContents from "@/components/staticTableOfContents/StaticTabl
 export default function Home() {
   const { theme, setTheme } = useTheme();
 
-  const { soundOn } = useSoundContext();
 
-  const [play, { stop }] = useSound("static/audio/mouse-over.wav", {
-    volume: soundOn ? 1 : 0,
-  });
 
   const [randomQuote, setRandomQuote] = useState("");
 
   useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
+  const randomIndex = Math.floor(Math.random() * quotes.length);
     setRandomQuote(quotes[randomIndex]);
   }, []);
 
@@ -161,7 +155,6 @@ export default function Home() {
           <div className={styles.contactListWrapper}>
             <div
               className={styles.contactListItem}
-              onMouseOver={play}
               onClick={() => {
                 window.open("mailto:charlie@charliemeyer.xyz", "_blank");
               }}
@@ -173,7 +166,6 @@ export default function Home() {
             </div>
             <div
               className={styles.contactListItem}
-              onMouseOver={play}
               onClick={() => {
                 window.open("mailto:abs6bd@virginia.edu", "_blank");
               }}
@@ -185,7 +177,6 @@ export default function Home() {
             </div>
             <div
               className={styles.contactListItem}
-              onMouseOver={play}
               onClick={() => {
                 window.open(
                   "https://www.linkedin.com/in/charlie-meyer-loves-you/",
