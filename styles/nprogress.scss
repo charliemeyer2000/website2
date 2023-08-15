@@ -21,4 +21,10 @@
     height: 5px;
     background: transparent;
   }
+
+[data-theme='light'] {
+    #nprogress .bar {
+      background: var(--background-black);
+    }
+}
   
