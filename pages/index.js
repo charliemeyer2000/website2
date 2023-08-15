@@ -1,8 +1,5 @@
 import React from "react";
 import Page from "@/components/page/Page";
-import { Howl, Howler } from "howler";
-import { useTheme } from "next-themes";
-import NavArrow from "@/components/navArrow/NavArrow";
 import styles from "./index.module.scss";
 import Arrow from "@/components/arrow/Arrow";
 import StuffItem from "@/components/stuffItem/StuffItem";
@@ -12,9 +9,6 @@ import { useState, useEffect } from "react";
 import StaticTableOfContents from "@/components/staticTableOfContents/StaticTableOfContents";
 
 export default function Home() {
-  const { theme, setTheme } = useTheme();
-
-
 
   const [randomQuote, setRandomQuote] = useState("");
 
@@ -39,7 +33,7 @@ export default function Home() {
         <section className={styles.section}>
           <h1 className={styles.title}>Currently</h1>
           <p className={styles.text}>
-            I'm an second year @ UVA majoring in CS. I'm into weightlighting,
+            I'm an second year @ UVA majoring in CS. I'm into weightlifting,
             skateboarding, embroidery, guitar, any type of outdoor activity, and
             coding. Right now, I've started training for the San Francisco
             marathon in 2024 (or the NYC marathon, if I get lucky) while also

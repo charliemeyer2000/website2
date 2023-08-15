@@ -9,11 +9,10 @@ export default function NavArrow({ angle, indicator = false, ...props }) {
   const [play, { stop }] = useSound("static/audio/cute-click.mp3", {
     volume: soundOn ? 1 : 0,
     forceSoundEnabled: true,
-    preload: true,
   });
 
   return (
-    <Link href={props.href} scroll={false}>
+    <Link href={props.href} scroll={false} legacyBehavior={props.legacyBehavior} passHref={props.passHref}>
       <div
         className={styles.container}
         onClick={play}

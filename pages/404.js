@@ -2,13 +2,13 @@ import Page from "@/components/page/Page";
 import { useEffect } from "react";
 
 export default function Custom404() {
-  useEffect(() => {
-    const unsubscribe = window.addEventListener("click", () => {
-      window.history.back();
-    });
+  // useEffect(() => {
+  //   const unsubscribe = window.addEventListener("click", () => {
+  //     window.history.back();
+  //   });
 
-    return unsubscribe;
-  }, []);
+  //   return unsubscribe;
+  // }, []);
 
 
   return (

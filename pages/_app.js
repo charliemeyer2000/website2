@@ -30,7 +30,6 @@ export default function App({ Component, pageProps }) {
   // necessary for page transitions to work for slugs
   const router = useRouter();
   const pageKey = router.asPath 
-  // consider routes that are error routes
   
 
   return (

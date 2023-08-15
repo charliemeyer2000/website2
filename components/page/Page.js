@@ -6,18 +6,12 @@ import useNavTitles from "@/utils/hooks/useNavTitles";
 import PageTransition from "../pageTransition/PageTransition";
 import { usePageTransitionContext } from "../pageTransition/PageTransitionContext";
 import Footer from "../footer/Footer";
-import useProgress from "@/utils/hooks/useProgress";
 import { useState, useEffect } from "react";
 
 export default function Page(props) {
   const { title, description, date, children } = props;
   const navArrowObject = useNavTitles();
   const { pageTransition, newPageTransition } = usePageTransitionContext();
-
-  newPageTransition(navArrowObject.pageTransition);
-
-  const progress = useProgress();
-
   // handling not mounted errors (hydration errors). This is a hacky solution, but it works for now.
   /* see docs here: 
   https://nextjs.org/docs/messages/react-hydration-error
@@ -26,6 +20,7 @@ export default function Page(props) {
 
   useEffect((() => {
     setIsMounted(true);
+    newPageTransition(navArrowObject.pageTransition); // put this inside!! that causes bad routing 
   }), [])
 
   if (!isMounted) {
