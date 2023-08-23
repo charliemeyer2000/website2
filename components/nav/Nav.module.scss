@@ -36,3 +36,11 @@
         background: var(--background-white);
     }
 }
+
+@media only screen and (width < 768px) {
+
+    .nav {
+        padding: var(--gap-single) var(--gap-single);
+
+    }
+}

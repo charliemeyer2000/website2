@@ -1,5 +1,4 @@
 import styles from './Nav.module.scss';
-import Link from "next/link";
 import NavArrow from "../navArrow/NavArrow";
 import useSound from "use-sound";
 import ThemeToggle from '../themeToggle/ThemeToggle';
