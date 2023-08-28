@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import StaticTableOfContents from "@/components/staticTableOfContents/StaticTableOfContents";
 
 export default function Home() {
+  // uh
 
   const [randomQuote, setRandomQuote] = useState("");
 
