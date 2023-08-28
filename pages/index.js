@@ -51,10 +51,10 @@ export default function Home() {
               <div className={styles.stuffItemContent}>
                 <StuffItem
                   title="HymnAi"
-                  href="https://www.hymn.market"
+                  href="https://www.hymnai.net"
                   angle={-45}
                   newWindow={true}
-                  description="Create music with generative samples."
+                  description="A creative shift on the HymnAI brand."
                 />
                 <StuffItem
                   title="Iro-Vics"
@@ -69,11 +69,11 @@ export default function Home() {
               <p className={styles.stuffItemTitle}>Classes, Certifications</p>
               <div className={styles.stuffItemContent}>
                 <StuffItem
-                  title="Cloud Practitioner"
-                  href="https://aws.amazon.com/certification/certified-cloud-practitioner/"
+                  title="Solutions Architect"
+                  href="https://aws.amazon.com/certification/certified-solutions-architect-associate/?trk=1d3789b7-cdfb-4b92-a125-75424f21eaaf&sc_channel=ps"
                   angle={-45}
                   newWindow={true}
-                  description="On my way to being a Cloud Practitioner."
+                  description="On my way to being a Solutions Architect."
                 />
                 <StuffItem
                   title="Forge Launch 2023"
