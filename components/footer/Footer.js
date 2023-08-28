@@ -3,6 +3,8 @@ import useSound from "use-sound";
 import { useSoundContext } from "../soundToggle/SoundContext";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/router";
+import classNames from "classnames";
 
 export default function Footer() {
   const { soundOn } = useSoundContext();
@@ -15,6 +17,7 @@ export default function Footer() {
 
   const [copied, setCopied] = useState(false);
 
+  const router = useRouter();
 
   return (
     <footer className={styles.footer}>
@@ -32,10 +35,11 @@ export default function Footer() {
             </p>
           </Link>
           <p
-            className={styles.text}
+            className={classNames(styles.text, "contactFooterText")}
             onMouseOver={play}
+            // navigate to the home page and scroll to the contact section
             onClick={() => {
-              window.open("mailto:charlie@charliemeyer.xyz", "_blank");
+              router.push("/");
             }}
           >
             Contact

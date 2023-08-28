@@ -115,12 +115,11 @@ export default function Home() {
         <section className={styles.section}>
           <h1 className={styles.title}>Future</h1>
           <p className={styles.text}>
-            My goal is to live in a van or somewhere relatively mobile while
-            working remotely/hybrid as a coder. I think it would be incredibly
-            comical to be working for <em>_insert big tech company_</em> while
-            living in a van and just skating, surfing, hiking, and enjoying
-            nature. Oh and if I can play Sitting, Waiting, Wishing by Jack
-            Johnson, that would be great.
+            My mid-term goal is to live in a van/small apartment and be
+            relatively mobile while working remotely/hybrid as a coder. I think
+            it would be incredibly comical to be working for{" "}
+            <em>insert big tech company</em> while living simply and enjoying
+            hobbies - skating, surfing, guitar, etc.
           </p>
           <p className={styles.text}>
             Technically speaking, I want to be a full-stack developer,
@@ -135,10 +134,15 @@ export default function Home() {
           </p>
           <p className={styles.text}>
             Aside from the NYC/SF marathon, I'd want to get to the{" "}
-            <Link href="https://www.cphopen.com/" newWindow>Copenhagen Open</Link> or{" "}
-            <Link href="https://dimemtl.com/blogs/videos" newWindow>Dime</Link> but also participate
-            in local skate events just for the fun of it. Also it would be sick
-            to see MACBA in Barcelona.
+            <Link href="https://www.cphopen.com/" newWindow>
+              Copenhagen Open
+            </Link>{" "}
+            or{" "}
+            <Link href="https://dimemtl.com/blogs/videos" newWindow>
+              Dime
+            </Link>{" "}
+            but also participate in local skate events just for the fun of it.
+            Also it would be sick to see MACBA in Barcelona.
           </p>
         </section>
         <section className={styles.section}>
