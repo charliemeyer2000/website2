@@ -48,16 +48,15 @@ def main(request, response):
     # Generate a summary of the commit with OpenAI API
     commit_summary = generate_summary(code_added=lines_added, code_removed=lines_removed, commit_message=commit_message)
 
-    # Create a commit and a detailed commit
+    # Create a commit
     create_commit(...params)
-    create_detailed_commit(...params) # can you tell i'm a javascript dev? 
 
     return 'Success'
 ```
 
-The anonymous functions <BackTicks>create_commit</BackTicks> and <BackTicks>create_detailed_commit</BackTicks>
-are functions that create a commit using the GitHub API, with a GPT summary and the entire commit, editing the 
-<BackTicks>logs.md</BackTicks> file and <BackTicks>detailed-logs.md</BackTicks> files accordingly. 
+The anonymous function <BackTicks>create_commit</BackTicks> creates a commit using the GitHub API, 
+with a GPT summary and the entire commit, editing the 
+<BackTicks>logs.md</BackTicks> file with the new commit.
 
 Ok, cool! But this worked on JSON dummy data - how do I get this to work with GitHub's webhook?
 
@@ -93,8 +92,6 @@ def lambda_handler(event, context):
     ...
 
     create_commit(...params)
-    create_detailed_commit(...params)
-
     return 'Success'
 ```
 
