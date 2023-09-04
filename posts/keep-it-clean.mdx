@@ -28,7 +28,7 @@ about readability. I think a file could be cluttered with 100-200 lines of code,
 import styles from '@/path/to/styles/page.module.css';
 import fs from 'fs';
 import { useRouter } from 'next/router';
-import styles from '@/path/to/styles/page.module.css';
+import { smallerHook } from '@/path/to/hooks/smallerHook';
 import { useState, useEffect } from 'react';
 ```
 
@@ -63,9 +63,9 @@ difficult to read. For example, one of the first days at my internship, I encoun
 ```
 
 Now, moving past the types and unknown that's going on here, there is realistically no way that one could understand what's going on here. 
-Using variable names like <BackTicks>s</BackTicks> or <BackTicks>i</BackTicks> make it more difficult upon first glance, and 
-the naming convention to use <BackTicks>stage</BackTicks> and <BackTicks>stages</BackTicks> and <BackTicks>stageKey</BackTicks> 
-and <BackTicks>orderedStages</BackTicks> can make this all blur together. Something as simple as adding comments, spaces, and some 
+Using variable names like `s` or `i` make it more difficult upon first glance, and 
+the naming convention to use `stage` and `stages` and `stageKey` 
+and `orderedStages` can make this all blur together. Something as simple as adding comments, spaces, and some 
 explanation here and there goes a long way! Maybe how I rewrote it is not your style, but it's definitely easier for me.
 
 ```javascript
@@ -130,12 +130,8 @@ Those are two high-level ideas, and I'm sure even the code that I wrote this web
 ## Keep it Lean - UI
 
 I'm a simplistic designer when it comes to websites, and I think not only is it easier on the coder, but it's easy on the eyes. 
-I see it as <BackTicks>less content = less clutter</BackTicks>. With less clutter, the user is directed to what actually matters, 
+I see it as `less content = less clutter`. With less clutter, the user is directed to what actually matters, 
 and the website will serve its purpose more effectively, **especially** those that are selling products.
-
-# En fin
-
-Swag boi!
 
 
 

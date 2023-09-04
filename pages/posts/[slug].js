@@ -2,12 +2,24 @@ import getPosts from "@/utils/hooks/getPosts";
 import { serialize } from "next-mdx-remote/serialize";
 import rehypeHighlight from "rehype-highlight/lib";
 import Post from "@/components/post/Post";
+import remarkMath from "remark-math";
+import remarkImages from "remark-images";
+import rehypeKatex from "rehype-katex";
+// import the katex.min.css
+import "katex/dist/katex.min.css";
 
 // options for code highlighting
 const options = {
   mdxOptions: {
-    remarkPlugins: [],
-    rehypePlugins: [rehypeHighlight],
+    remarkPlugins: [remarkMath, remarkImages],
+    rehypePlugins: [
+      [rehypeHighlight],
+      // exclude anything that doesn't include katex in the class name
+      [
+        rehypeKatex,
+        { output: "math" },
+      ],
+    ],
   },
 };
 

@@ -1,0 +1,18 @@
+--- 
+title: Testing Math and Images in MDX
+slug: test-Math
+date: September 4, 2023
+description: Testing Math in MDX using remark-Math
+---
+
+THis document tests adding LaTeX to my MDX documents. $\forall_x \in \mathbb{N}, \text{there exists a } y \in \mathbb{N} \text{ such that } x < y$.
+
+$\int_0^1 x^2 dx$
+
+Ok wow! I think this works great. However, I can't do centered equations as you usually can with double dollar signs. I'll have to look into that.
+Maybe i'll just make a "Centered" component that achieves this instead. Oh well :shrug:
+
+This is also an image test that auto centers. ![test image](/static/images/gwa-gwa-cat.png) This is just the default image using the `! [alt tag] (/path/to/image)` syntax, 
+but i could also make a custom image component to do more fancy things if I want too. But for now, this is fine. Thanks `rehype-images`!
+
+Also i cleaned up the usage of this `<BackTicks />` component I wrote, not necessary anymore!

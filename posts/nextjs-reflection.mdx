@@ -18,26 +18,26 @@ The resounding theme of these two projects was that it was **_so damn easy_** to
 ## Deployment
 
 Having previously used Kubernetes and Google Cloud Run to deploy my applications, NextJs made deployment so much easier. While I certianly learned a lot about Docker
-and GitHub actions having to write some complicated workflows to get my applications to fully deploy on pushes to <BackTicks>main</BackTicks>, NextJs made it so easy, 
+and GitHub actions having to write some complicated workflows to get my applications to fully deploy on pushes to `main`, NextJs made it so easy, 
 just as simple as verifying your GitHub and clicking a button. Not having to worry about SSL Certificates also was a huge plus - setting up an ingress with Kubernetes
 was not simple. So when it came time to deploy this website to prod, Vercel made the process of connecting DNS records super easy, and as of writing this article, 
 I haven't had to pay a dime for hosting. So right now, I'm just paying around $2/month for my email server on Vultr, and that's it! 
 
 ## Developer Experience
 
-Everyone talks about developer experience (<BackTicks>DX</BackTicks>) and I never batted an eye at it, but I really didn't enjoy NextJs as much as people hyped it up to be. 
+Everyone talks about developer experience ()`DX`) and I never batted an eye at it, but I really didn't enjoy NextJs as much as people hyped it up to be. 
 I'll give them credit, their compiler, fast refresh, and easy integrations with TS and ESLint (both of which I didn't use) are great, and the way they do code-splitting with bundles
 also makes it great to speed up your application. Plus, their head component made SEO so much easier! The only gripe I really had was dealing with pre-rendering and hyration. Note to anyone reading, if you're encountering hydration errors
 like "Text content does not match server-rendered HTML", check out [this](https://nextjs.org/docs/messages/react-hydration-error) documentation by NextJs, but in summary:
 
-* Avoid nested <BackTicks>p</BackTicks> and <BackTicks>a</BackTicks> tags.
+* Avoid nested `p` and `a` tags.
 
-* Avoid using <BackTicks>dangerouslySetInnerHTML</BackTicks> on the client.
-    * This was a very tempting solution to quickly configure my MDX, but using <BackTicks>next-mdx-remote</BackTicks> was a much better solution.
+* Avoid using `dangerouslySetInnerHTML` on the client.
+    * This was a very tempting solution to quickly configure my MDX, but using `next-mdx-remote` was a much better solution.
 
-* Using <BackTicks>emotion-js</BackTicks> which is not supported yet :(
+* Using `emotion-js` which is not supported yet :(
 
-P.S., the easiest solution was to simply put this code into my <BackTicks>page.js</BackTicks> file that wrapped every page. Hackey, but works:
+P.S., the easiest solution was to simply put this code into my `page.js` file that wrapped every page. Hackey, but works:
 
 ```javascript
 import { useState, useEffect } from 'react';
@@ -56,8 +56,8 @@ return (
 );
 ```
 
-Also, another thing to really understand and take time before coding is the <BackTicks>getStaticProps</BackTicks> and <BackTicks>getStaticPaths</BackTicks> functions, and 
-also if you want <BackTicks>getServerSideProps</BackTicks> and others. You can Google what these do, but they generally allow you to control how your pages are pre-rendered. 
+Also, another thing to really understand and take time before coding is the `getStaticProps` and `getStaticPaths` functions, and 
+also if you want `getServerSideProps` and others. You can Google what these do, but they generally allow you to control how your pages are pre-rendered. 
 
 # En fin
 
@@ -66,6 +66,5 @@ With that being said though, support is both its biggest strength and weakness. 
 
 So, I think if you want to make a quick website or app, use NextJs for speed and ease of deployment. But also don't get in your head about picking the "right" framework or tech stack, it really doesn't matter. Just start. 
 
-Swag boi!
 
 

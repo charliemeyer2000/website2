@@ -18,8 +18,9 @@ full details of the commit and updates the repository.
 
 I first accomplished this task locally hosting a flask server that I sent a dummy 
 JSON payload to that resembled a JSON payload of a push event. With this, I made a quick script
-that would summarize the commit and push it to the repository. The main function, <BackTicks>main</BackTicks>
-takes in two arguments, <BackTicks>event</BackTicks> and <BackTicks>context</BackTicks>.
+that would summarize the commit and push it to the repository. The main function at `/webhook`
+takes in two arguments, `request` and `response` - `request` is the payload from the webhook,
+and `response` is the response that the server will send back to the webhook.
 You can see the code of the entire function on GitHub, but here's a pseudocode outline:
 
 ```python
@@ -54,9 +55,9 @@ def main(request, response):
     return 'Success'
 ```
 
-The anonymous function <BackTicks>create_commit</BackTicks> creates a commit using the GitHub API, 
+The anonymous function `create_commit` creates a commit using the GitHub API, 
 with a GPT summary and the entire commit, editing the 
-<BackTicks>logs.md</BackTicks> file with the new commit.
+`logs.md` file with the new commit.
 
 Ok, cool! But this worked on JSON dummy data - how do I get this to work with GitHub's webhook?
 
@@ -95,8 +96,9 @@ def lambda_handler(event, context):
     return 'Success'
 ```
 
-Then, with a little bit of fanagling with API Gateway, I had this function running on POST at <BackTicks>api.charliemeyer.xyz/logging-repository</BackTicks>. 
-I then pointed the webhook to this URL, and it worked! You can also navigate to [api.charliemeyer.xyz/test](https://api.charliemeyer.xyz/test) to see lambda working in action.
+Then, with a little bit of fanagling with API Gateway, I had this function running on POST at `api.charliemeyer.xyz/logging-repository`. 
+I then pointed the webhook to this URL, and it worked! You can also navigate to [api.charliemeyer.xyz/test](https://api.charliemeyer.xyz/test) to see lambda working in action just returning
+`Hello from Lambda!`.
 
 # Attempt 4 - The Future
 
