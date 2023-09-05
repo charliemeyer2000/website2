@@ -9,6 +9,7 @@ import { SoundProvider } from "@/components/soundToggle/SoundContext";
 import { PageTransitionProvider } from "@/components/pageTransition/PageTransitionContext";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from 'next/router';
+import { DefaultSeo } from "next-seo";
 
 const start = debounce(nProgress.start, 200);
 Router.events.on("routeChangeStart", start);

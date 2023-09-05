@@ -27,18 +27,12 @@ export default function Head({
 
       {/* keywords */}
       {keywords.length > 0 && (
-        <meta
-          name="keywords"
-          content={keywords.join(', ')}
-        />
+        <meta name="keywords" content={keywords.join(", ")} />
       )}
 
       {/* categories */}
       {categories.length > 0 && (
-        <meta
-          name="categories"
-          content={categories.join(', ')}
-        />
+        <meta name="categories" content={categories.join(", ")} />
       )}
 
       {/* canonical */}
@@ -56,25 +50,6 @@ export default function Head({
       />
       <meta name="og:type" content="website" />
       <meta name="og:site_name" content="Charlie Meyer" />
-
-      {/* favicon */}
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="https://em-content.zobj.net/thumbs/120/apple/325/waving-hand_1f44b.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="https://em-content.zobj.net/thumbs/120/apple/325/waving-hand_1f44b.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="https://em-content.zobj.net/thumbs/120/apple/325/waving-hand_1f44b.png"
-      />
 
       {children}
     </NextHead>
