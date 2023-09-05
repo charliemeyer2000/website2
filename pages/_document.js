@@ -39,7 +39,7 @@ export default function Document() {
         /> */}
 
         {/* OG image */}
-        <meta property="og:image" content="/static/images/main-img.png" />
+        <meta property="og:image" content="/main-img.png" />
       </Head>
       <body>
         <Main />
