@@ -5,7 +5,7 @@ import useSound from "use-sound";
 
 export default function Link({ children, ...props }) {
   const { soundOn } = useSoundContext();
-  const [play] = useSound("static/audio/mouse-over.wav", {
+  const [play] = useSound("/audio/mouse-over.wav", {
     volume: soundOn ? 1 : 0,
   });
   
