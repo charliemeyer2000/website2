@@ -25,15 +25,14 @@ export default function StaticTableOfContents({ ...props }) {
 
   useEffect(() => {
     const titles = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
     setRailStartingPosition(titles[0].getBoundingClientRect().top);
     setRailHeight(
       titles[titles.length - 1].getBoundingClientRect().bottom -
         titles[0].getBoundingClientRect().top
-    );    
+    );
 
     setRailColor(colors[Math.floor(Math.random() * colors.length)]);
-
-    
 
     const ids = Array.prototype.slice.call(titles).map((title) => {
       const rect = title.getBoundingClientRect();
