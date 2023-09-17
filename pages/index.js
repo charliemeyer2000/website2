@@ -7,7 +7,6 @@ import quotes from "@/static/types/Quotes";
 import Link from "@/components/link/Link";
 import { useState, useEffect } from "react";
 import StaticTableOfContents from "@/components/staticTableOfContents/StaticTableOfContents";
-import XKCD from "@/components/xkcd/XKCD";
 
 export default function Home() {
   const [randomQuote, setRandomQuote] = useState("");
