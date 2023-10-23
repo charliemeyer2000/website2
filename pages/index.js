@@ -7,6 +7,7 @@ import quotes from "@/static/types/Quotes";
 import Link from "@/components/link/Link";
 import { useState, useEffect } from "react";
 import StaticTableOfContents from "@/components/staticTableOfContents/StaticTableOfContents";
+import NextLink from "next/link";
 
 export default function Home() {
   const [randomQuote, setRandomQuote] = useState("");
@@ -32,14 +33,28 @@ export default function Home() {
         <section className={styles.section}>
           <h1 className={styles.title}>Currently</h1>
           <p className={styles.text}>
-            I'm an second year @ UVA majoring in CS. I'm into weightlifting,
-            skateboarding, embroidery, guitar, any type of outdoor activity, and
-            coding. Right now, I've started training for the San Francisco
-            marathon in 2024 (or the NYC marathon, if I get lucky) while also
-            hoping to get into the 2-3-4 club. I'm also a big Model UN nerd,
-            currently treasurer of the International Relations Organization at
-            UVA. Thanks for stopping by, and take a look at some of my posts if
+            I'm a second year @ UVA majoring in CS. I'm into weightlifting,
+            skateboarding, embroidery, guitar, any type of outdoor activity and
+            coding. Right now, I've <em>definitely</em> started training for the
+            San Francisco marathon in 2024 (I will do it though, much to my
+            roommate's chagrin😶) while also hoping to get into the 2-3-4 club.
+            I'm also a big Model UN nerd, currently treasurer of the
+            International Relations Organization at UVA. Thanks for stopping by,
+            and take a look at some of my <Link href="/posts">posts</Link> if
             you want.
+          </p>
+          <p className={styles.text}>
+            In terms of technically what I'm up to, I'm working as a contracted
+            Software Engineer at{" "}
+            <Link href="https://joinforge.co" newWindow>
+              Forge
+            </Link>{" "}
+            and will be working at{" "}
+            <Link href="https://principal.com" newWindow>
+              Principal
+            </Link>{" "}
+            this summer. Also, as per, I'm still working with Ryland on HymnAi,
+            working to make cool new products that we're passionate about.
           </p>
         </section>
         <section className={styles.section}>
@@ -129,10 +144,12 @@ export default function Home() {
             But realistically, certification courses don't mean too much (a lot
             of show) - anyone can just study for a test. So I'll be working on
             projects using AWS to get a better understanding of the cloud in a
-            more practical sense.
+            more practical sense. One day AWS will release the Elastic Service
+            Service, AWS ESS, the service of services.
           </p>
           <p className={styles.text}>
-            Aside from the NYC/SF marathon, I'd want to get to the{" "}
+            Aside from the SF marathon, I need to also run in the NYC TCS
+            Marathon. I'd want to get to the{" "}
             <Link href="https://www.cphopen.com/" newWindow>
               Copenhagen Open
             </Link>{" "}
@@ -140,8 +157,9 @@ export default function Home() {
             <Link href="https://dimemtl.com/blogs/videos" newWindow>
               Dime
             </Link>{" "}
-            but also participate in local skate events just for the fun of it.
-            Also it would be sick to see MACBA in Barcelona.
+            but also participate in local skate events and support the skaters I
+            love at events (keeping an eye on QuarterSnacks and Pocket Skate
+            Mag).
           </p>
         </section>
         <section className={styles.section}>

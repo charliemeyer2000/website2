@@ -9,12 +9,15 @@ import PreviousNext from "../previousNext/PreviousNext";
 import PostTableOfContents from '../postTableOfContents/PostTableOfContents';
 
 export default function Post(props) {
-  const { title, date, mdxSource, previous, next, slug } = props;
+  const { title, date, mdxSource, previous, next, slug, description } = props;
 
   return (
     <Page title={title} description={title} date={date}>
       <div className={styles.headerContainer}>
         <h1 className={styles.title}>{title}</h1>
+        {description && (
+          <p className={styles.description}>{description}</p>
+        )}{" "}
         <p className={styles.date}>{date}</p>
       </div>
       <PostTableOfContents />
