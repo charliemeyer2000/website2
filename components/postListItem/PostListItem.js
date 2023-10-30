@@ -24,8 +24,10 @@ export default function PostListItem({ date, title, ...props }) {
   return (
     <Link href={`/posts/${props.slug}`} onMouseOver={play} scroll={false}>
       <div className={classNames(styles.container)}>
-        <p className={styles.date}>{formattedDate}</p>
-        <p className={styles.articleTitle}>{title}</p>
+        <>
+          <p className={styles.date}>{formattedDate}</p>
+          <p className={styles.articleTitle}>{title}</p>
+        </>
         <p className={styles.views}>
           {new Intl.NumberFormat("en-US").format(numViews)}{" "}
           {numViews > 1 ? "views" : "view"}

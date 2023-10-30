@@ -19,9 +19,24 @@
 
 .views {
     margin-left: auto;
+    flex-basis: auto;
+    font-size: var(--sub-text);
+    color: var(--grey);
 }
 
 .hovered {
     cursor: pointer;
     color: var(--grey);
+}
+
+@media only screen and (max-width: 555px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--gap-half);
+    }
+
+    .views {
+        margin-left: 0;
+    }
 }

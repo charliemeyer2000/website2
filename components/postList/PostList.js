@@ -1,7 +1,5 @@
-import React, { useEffect } from "react";
 import styles from "./PostList.module.scss";
 import PostListItem from "@/components/postListItem/PostListItem";
-import { useState } from "react";
 import classNames from "classnames";
 
 export default function PostList({ posts, ...props }) {
