@@ -1,6 +1,7 @@
 import styles from "./PostList.module.scss";
 import PostListItem from "@/components/postListItem/PostListItem";
 import classNames from "classnames";
+import { motion } from "framer-motion";
 
 export default function PostList({ posts, ...props }) {
   let currentYear = null;
@@ -13,10 +14,16 @@ export default function PostList({ posts, ...props }) {
       const yearPosts = posts.filter(
         (p) => new Date(p.date).getFullYear() === year
       );
-      const postItems = yearPosts.map((yearPost) => (
-        <div
+      const postItems = yearPosts.map((yearPost, index) => (
+        <motion.div
           className={classNames(styles.postListItemContainer)}
           key={yearPost.slug}
+          initial={{ opacity: 0, scale: 1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 1,
+            delay: yearContainers.length * 0.1 + index * 0.1,
+          }}
         >
           <PostListItem
             key={yearPost.slug}
@@ -24,7 +31,7 @@ export default function PostList({ posts, ...props }) {
             title={yearPost.title}
             slug={yearPost.slug}
           />
-        </div>
+        </motion.div>
       ));
 
       yearContainers.push(
@@ -40,7 +47,17 @@ export default function PostList({ posts, ...props }) {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>All articles</h1>
-      <div className={styles.yearContainers}>{yearContainers}</div>
+      <motion.div
+        className={styles.yearContainers}
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+        }}
+      >
+        {yearContainers}
+      </motion.div>
     </div>
   );
 }

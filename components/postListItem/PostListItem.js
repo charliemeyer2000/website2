@@ -5,6 +5,7 @@ import Link from "next/link";
 import useSound from "use-sound";
 import { useSoundContext } from "../soundToggle/SoundContext";
 import useViews from "@/utils/hooks/useViews";
+import { motion } from "framer-motion";
 
 export default function PostListItem({ date, title, ...props }) {
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
@@ -23,7 +24,12 @@ export default function PostListItem({ date, title, ...props }) {
 
   return (
     <Link href={`/posts/${props.slug}`} onMouseOver={play} scroll={false}>
-      <div className={classNames(styles.container)}>
+      <motion.div
+        initial={{ opacity: 0, scale: 1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }} // Adjust the duration as needed
+        className={classNames(styles.container)}
+      >
         <>
           <p className={styles.date}>{formattedDate}</p>
           <p className={styles.articleTitle}>{title}</p>
@@ -32,7 +38,7 @@ export default function PostListItem({ date, title, ...props }) {
           {new Intl.NumberFormat("en-US").format(numViews)}{" "}
           {numViews > 1 ? "views" : "view"}
         </p>
-      </div>
+      </motion.div>
     </Link>
   );
 }
