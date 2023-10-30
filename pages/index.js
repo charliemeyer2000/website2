@@ -7,23 +7,16 @@ import quotes from "@/static/types/Quotes";
 import Link from "@/components/link/Link";
 import { useState, useEffect } from "react";
 import StaticTableOfContents from "@/components/staticTableOfContents/StaticTableOfContents";
-import axios from "axios";
+import useViews from "@/utils/hooks/useViews";
 
 export default function Home() {
   const [randomQuote, setRandomQuote] = useState("");
-  const [ip, setIp] = useState("");
+
+  const { ip, views, numViews } = useViews("my-fourth-post");
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     setRandomQuote(quotes[randomIndex]);
-
-    const fetchDynamoTest = async () => {
-      const res = await axios.post('/api/dynamo/fetchSlugViews', {
-        slug: 'my-first-post'
-      })
-      setIp(res.data.ip);
-    }
-    fetchDynamoTest()
   }, []);
   return (
     <Page
@@ -33,7 +26,18 @@ export default function Home() {
       <StaticTableOfContents />
       <article className={styles.main}>
         <section className={styles.section}>
-          <h1 className={styles.title}>Hey, I'm Charlie Meyer.{ip} </h1>
+          <h1 className={styles.title}>Hey, I'm Charlie Meyer.</h1>
+          <h4>
+            ip, {ip}, views,{" "}
+            {views.map((view) => {
+              return (
+                <div>
+                  {view.ip}, {view.visitDate}
+                </div>
+              );
+            })}
+            , numViews, {numViews}
+          </h4>
           <p className={styles.text}>
             <em>{randomQuote}</em>
           </p>
