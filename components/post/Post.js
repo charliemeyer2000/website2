@@ -7,9 +7,17 @@ import components from "@/static/types/Components";
 import { useTheme } from "next-themes";
 import PreviousNext from "../previousNext/PreviousNext";
 import PostTableOfContents from '../postTableOfContents/PostTableOfContents';
+import useViews from "@/utils/hooks/useViews";
+import { useEffect } from "react";
 
 export default function Post(props) {
   const { title, date, mdxSource, previous, next, slug, description } = props;
+
+  const { numViews, updateItem } = useViews(slug);
+
+  useEffect(() => {
+    updateItem(slug);
+  }, []);
 
   return (
     <Page title={title} description={title} date={date}>
@@ -18,7 +26,10 @@ export default function Post(props) {
         {description && (
           <p className={styles.description}>{description}</p>
         )}{" "}
-        <p className={styles.date}>{date}</p>
+        <p className={styles.date}>
+          {date} | {new Intl.NumberFormat("en-US").format(numViews)}{" "}
+          {numViews > 1 ? "views" : "view"}
+        </p>
       </div>
       <PostTableOfContents />
       <MDXProvider components={components}>

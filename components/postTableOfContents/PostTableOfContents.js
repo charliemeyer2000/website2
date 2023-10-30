@@ -44,7 +44,6 @@ export default function PostTableOfContents() {
             ],
       };
     });
-    console.log(ids);
     setIds(ids);
     setRailColor(colors[Math.floor(Math.random() * colors.length)]);
   }, [isDarkMode]);
