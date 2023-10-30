@@ -12,12 +12,18 @@ import useViews from "@/utils/hooks/useViews";
 export default function Home() {
   const [randomQuote, setRandomQuote] = useState("");
 
-  const { ip, views, numViews } = useViews("my-fourth-post");
+  const { ip, views, numViews, updateItem } = useViews("my-fourth-post");
+
+  const formatDate = (date) => {
+    return new Date(parseInt(date)).toLocaleString();
+  };
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     setRandomQuote(quotes[randomIndex]);
   }, []);
+
+
   return (
     <Page
       title="Home"
@@ -32,12 +38,15 @@ export default function Home() {
             {views.map((view) => {
               return (
                 <div>
-                  {view.ip}, {view.visitDate}
+                  {view.ip}, {formatDate(view.visitDate)}
                 </div>
               );
             })}
             , numViews, {numViews}
           </h4>
+          <button onClick={() => updateItem("my-fourth-post")}>
+            Click me to update item
+          </button>
           <p className={styles.text}>
             <em>{randomQuote}</em>
           </p>

@@ -1,4 +1,4 @@
-import dynamodb from "@/utils/other/dynamoConfig";
+import dynamodb from "@/utils/config/dynamoConfig";
 
 export default async (req, res) => {
   // Check for missing slug
