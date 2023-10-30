@@ -26,7 +26,7 @@ export default function PostListItem({ date, title, ...props }) {
     <Link href={`/posts/${props.slug}`} onMouseOver={play} scroll={false}>
       <motion.div
         initial={{ opacity: 0, scale: 1 }}
-        animate={{ opacity: 1, scale: 1 }}
+        animate={{ opacity: 0.5, scale: 1 }}
         transition={{ duration: 1 }} // Adjust the duration as needed
         className={classNames(styles.container)}
       >

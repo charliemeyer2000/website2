@@ -6,6 +6,15 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: var(--gap-double);
+    transition: opacity 0.3s;
+}
+
+.container:not(:hover) {
+    opacity: 0.5;
+}
+
+.container:hover {
+    opacity: 1 !important;
 }
 
 .date {
