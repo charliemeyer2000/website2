@@ -54,9 +54,9 @@ export default async (req, res) => {
     const views = data.Item?.ips?.L || [];
     const now = Date.now();
 
-    const fiveMinutesAgo = now - 5 * 60 * 1000;
+    const oneSecondAgo = now - 1000;
     const ipAlreadyExists = views.some((view) => {
-      return view.M.ip.S === ip && view.M.visitDate.N > fiveMinutesAgo.toString();
+      return view.M.ip.S === ip && view.M.visitDate.N > oneSecondAgo.toString();
     });
 
     if (ipAlreadyExists) {

@@ -1,6 +1,7 @@
 import getPosts from "@/utils/hooks/getPosts";
 import PostList from "@/components/postList/PostList";
 import Page from "@/components/page/Page";
+import useViews from "@/utils/hooks/useViews";
 
 export default function Blog({ posts }) {
   return (
