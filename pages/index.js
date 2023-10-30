@@ -11,6 +11,7 @@ import axios from "axios";
 
 export default function Home() {
   const [randomQuote, setRandomQuote] = useState("");
+  const [ip, setIp] = useState("");
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * quotes.length);
@@ -20,6 +21,7 @@ export default function Home() {
       const res = await axios.post('/api/dynamo/fetchSlugViews', {
         slug: 'my-first-post'
       })
+      setIp(res.data.ip);
     }
     fetchDynamoTest()
   }, []);
@@ -31,7 +33,7 @@ export default function Home() {
       <StaticTableOfContents />
       <article className={styles.main}>
         <section className={styles.section}>
-          <h1 className={styles.title}>Hey, I'm Charlie Meyer.</h1>
+          <h1 className={styles.title}>Hey, I'm Charlie Meyer.{ip} </h1>
           <p className={styles.text}>
             <em>{randomQuote}</em>
           </p>

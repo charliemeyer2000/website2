@@ -19,7 +19,10 @@ export default async (req, res) => {
 
   try {
     const data = await dynamodb.getItem(params).promise();
-    res.status(200).json({ views: data.Item.ips.SS});
+    res.status(200).json({
+      views: data.Item.ips.SS,
+      ip: req.headers["x-forwarded-for"] || req.connection.remoteAddress,
+    });
   } catch (error) {
     console.log(error);
     res.status(400).json({ error: "Could not fetch views" });
