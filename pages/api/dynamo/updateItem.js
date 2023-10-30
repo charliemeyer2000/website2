@@ -13,6 +13,13 @@ export default async (req, res) => {
 
   const { slug } = req.body;
   const ip = req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+  const buf = await crypto.subtle.digest(
+    "SHA-256",
+    new TextEncoder("utf-8").encode(ip)
+  );
+  const hash = Array.from(new Uint8Array(buf))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
 
   const readParams = {
     TableName: process.env.DYNAMO_TABLE_NAME,
@@ -35,7 +42,7 @@ export default async (req, res) => {
             L: [
               {
                 M: {
-                  ip: { S: ip },
+                  ip: { S: hash },
                   visitDate: { N: Date.now().toString() },
                 },
               },
@@ -54,9 +61,12 @@ export default async (req, res) => {
     const views = data.Item?.ips?.L || [];
     const now = Date.now();
 
-    const oneSecondAgo = now - 1000;
+    const oneSecondAgo = now - 1000; // used for testing
+    const fiveMinutesAgo = now - 300000;
     const ipAlreadyExists = views.some((view) => {
-      return view.M.ip.S === ip && view.M.visitDate.N > oneSecondAgo.toString();
+      return (
+        view.M.ip.S === hash && view.M.visitDate.N > fiveMinutesAgo.toString()
+      );
     });
 
     if (ipAlreadyExists) {
@@ -70,7 +80,7 @@ export default async (req, res) => {
 
     const newView = {
       M: {
-        ip: { S: ip },
+        ip: { S: hash },
         visitDate: { N: now.toString() },
       },
     };

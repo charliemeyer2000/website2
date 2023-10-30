@@ -26,6 +26,13 @@ export default async (req, res) => {
     const data = await dynamodb.getItem(params).promise();
 
     if (!data.Item || !data.Item.ips || !data.Item.ips.L) {
+      const buf = await crypto.subtle.digest(
+        "SHA-256",
+        new TextEncoder("utf-8").encode(ip)
+      );
+      const hash = Array.from(new Uint8Array(buf))
+        .map((b) => b.toString(16).padStart(2, "0"))
+        .join("");
       const createParams = {
         TableName: process.env.DYNAMO_TABLE_NAME,
         Item: {
@@ -34,7 +41,7 @@ export default async (req, res) => {
             L: [
               {
                 M: {
-                  ip: { S: ip },
+                  ip: { S: hash },
                   visitDate: { N: Date.now().toString() },
                 },
               },
