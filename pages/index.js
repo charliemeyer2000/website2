@@ -7,7 +7,7 @@ import quotes from "@/static/types/Quotes";
 import Link from "@/components/link/Link";
 import { useState, useEffect } from "react";
 import StaticTableOfContents from "@/components/staticTableOfContents/StaticTableOfContents";
-import NextLink from "next/link";
+import axios from "axios";
 
 export default function Home() {
   const [randomQuote, setRandomQuote] = useState("");
@@ -15,8 +15,14 @@ export default function Home() {
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     setRandomQuote(quotes[randomIndex]);
-  }, []);
 
+    const fetchDynamoTest = async () => {
+      const res = await axios.post('/api/dynamo/fetchSlugViews', {
+        slug: 'my-first-post'
+      })
+    }
+    fetchDynamoTest()
+  }, []);
   return (
     <Page
       title="Home"
