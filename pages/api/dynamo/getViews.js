@@ -13,6 +13,7 @@ export default async (req, res) => {
   }
 
   const { slug } = req.body;
+  const ip = req.headers["x-forwarded-for"] || req.connection.remoteAddress;
 
   const params = {
     TableName: process.env.DYNAMO_TABLE_NAME,
@@ -25,10 +26,27 @@ export default async (req, res) => {
     const data = await dynamodb.getItem(params).promise();
 
     if (!data.Item || !data.Item.ips || !data.Item.ips.L) {
+      const createParams = {
+        TableName: process.env.DYNAMO_TABLE_NAME,
+        Item: {
+          slug: { S: slug },
+          ips: {
+            L: [
+              {
+                M: {
+                  ip: { S: ip },
+                  visitDate: { N: Date.now().toString() },
+                },
+              },
+            ],
+          },
+        },
+      };
+      await dynamodb.putItem(createParams).promise();
       res.status(200).json({
-        views: [],
-        ip: req.headers["x-forwarded-for"] || req.connection.remoteAddress,
+        message: "Successfully created views",
       });
+      console.log("created new item");
       return;
     }
 
@@ -37,9 +55,6 @@ export default async (req, res) => {
       ip: entry.M.ip.S,
       visitDate: parseInt(entry.M.visitDate.N, 10),
     }));
-
-    console.log(ipsData);
-
     res.status(200).json({
       views: ipsData,
       numViews: ipsData.length,

@@ -47,16 +47,16 @@ export default async (req, res) => {
       res.status(200).json({
         message: "Successfully created views",
       });
+      console.log('created new item');
       return;
     }
 
     const views = data.Item?.ips?.L || [];
     const now = Date.now();
-    const fiveMinutesAgo = now - 1000 * 60 * 5;
+
+    const fiveMinutesAgo = now - 5 * 60 * 1000;
     const ipAlreadyExists = views.some((view) => {
-      return (
-        view.M.ip.S === ip && view.M.visitDate.N > fiveMinutesAgo.toString()
-      );
+      return view.M.ip.S === ip && view.M.visitDate.N > fiveMinutesAgo.toString();
     });
 
     if (ipAlreadyExists) {
@@ -64,6 +64,7 @@ export default async (req, res) => {
         message:
           "This user has already visited this page in the last 5 minutes",
       });
+      console.log('already viewed within 5 minutes');
       return;
     }
 
@@ -88,7 +89,11 @@ export default async (req, res) => {
     };
 
     await dynamodb.updateItem(updateParams).promise();
+    res.json({
+      message: "Successfully updated views",
+    });
   } catch (error) {
+    console.log(error.message);
     res.status(400).json({
       error: "Could not update views due to dynamo error",
     });

@@ -8,11 +8,14 @@ import Link from "@/components/link/Link";
 import { useState, useEffect } from "react";
 import StaticTableOfContents from "@/components/staticTableOfContents/StaticTableOfContents";
 import useViews from "@/utils/hooks/useViews";
+import Image from "next/image";
 
 export default function Home() {
   const [randomQuote, setRandomQuote] = useState("");
 
-  const { ip, views, numViews, updateItem } = useViews("my-fourth-post");
+  const SLUG_NAME = "hello";
+
+  const { ip, views, numViews, updateItem } = useViews(SLUG_NAME);
 
   const formatDate = (date) => {
     return new Date(parseInt(date)).toLocaleString();
@@ -23,7 +26,6 @@ export default function Home() {
     setRandomQuote(quotes[randomIndex]);
   }, []);
 
-
   return (
     <Page
       title="Home"
@@ -33,20 +35,6 @@ export default function Home() {
       <article className={styles.main}>
         <section className={styles.section}>
           <h1 className={styles.title}>Hey, I'm Charlie Meyer.</h1>
-          <h4>
-            ip, {ip}, views,{" "}
-            {views.map((view) => {
-              return (
-                <div>
-                  {view.ip}, {formatDate(view.visitDate)}
-                </div>
-              );
-            })}
-            , numViews, {numViews}
-          </h4>
-          <button onClick={() => updateItem("my-fourth-post")}>
-            Click me to update item
-          </button>
           <p className={styles.text}>
             <em>{randomQuote}</em>
           </p>
