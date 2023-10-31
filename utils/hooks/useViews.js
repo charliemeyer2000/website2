@@ -3,7 +3,7 @@ import axios from "axios";
 
 const useViews = (slug) => {
   const [views, setViews] = useState([]);
-  const [numViews, setNumViews] = useState(0);
+  const [numViews, setNumViews] = useState(" - ");
   const [ip, setIp] = useState("");
   const [shouldRefetch, setShouldRefetch] = useState(false);
 

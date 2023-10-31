@@ -8,6 +8,7 @@ const components = {
   h2: (props) => <h2 className={styles.h2} {...props} />,
   p: (props) => <p className={styles.p} {...props} />,
   a: (props) => <Link {...props} />,
+  li: (props) => <li className={styles.li} {...props} />,
   YouTubeVideo: (props) => <YouTubeVideo {...props} />,
   // make the images centered
   img: (props) => <img className={styles.img} {...props} />,

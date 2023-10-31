@@ -15,6 +15,11 @@ export default function Post(props) {
 
   const { numViews, updateItem } = useViews(slug);
 
+  const handleNumberFormatting = (num) => {
+    if (typeof num !== "number") return num;
+    return new Intl.NumberFormat("en-US").format(num);
+  };
+
   useEffect(() => {
     updateItem(slug);
   }, []);
@@ -27,8 +32,10 @@ export default function Post(props) {
           <p className={styles.description}>{description}</p>
         )}{" "}
         <p className={styles.date}>
-          {date} | {new Intl.NumberFormat("en-US").format(numViews)}{" "}
-          {numViews > 1 ? "views" : "view"}
+          {date} |{" "}
+          {`${handleNumberFormatting(numViews)} ${
+            numViews !== 1 ? "views" : "view"
+          }`}
         </p>
       </div>
       <PostTableOfContents />

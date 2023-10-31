@@ -15,6 +15,11 @@ export default function PostListItem({ date, title, ...props }) {
 
   const { soundOn } = useSoundContext();
 
+  const handleNumberFormatting = (num) => {
+    if (typeof num !== "number") return num;
+    return new Intl.NumberFormat("en-US").format(num);
+  };
+
   const [play] = useSound("static/audio/mouse-over.wav", {
     volume: soundOn ? 0.75 : 0,
     forceSoundEnabled: true,
@@ -35,8 +40,9 @@ export default function PostListItem({ date, title, ...props }) {
           <p className={styles.articleTitle}>{title}</p>
         </>
         <p className={styles.views}>
-          {new Intl.NumberFormat("en-US").format(numViews)}{" "}
-          {numViews > 1 ? "views" : "view"}
+          {`${handleNumberFormatting(numViews)} ${
+            numViews !== 1 ? "views" : "view"
+          }`}
         </p>
       </motion.div>
     </Link>
