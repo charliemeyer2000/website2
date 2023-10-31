@@ -15,6 +15,12 @@
     margin: var(--gap-single) 0;
 }
 
+.li {
+    font-size: var(--text);
+    line-height: var(--title);
+    margin: var(--gap-single) 0;
+}
+
 .img {
     // center the image 
     display: block;

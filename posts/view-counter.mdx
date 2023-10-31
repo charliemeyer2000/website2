@@ -1,0 +1,158 @@
+---
+title: How I added a view counter to my blog
+description: How I leveraged DynamoDB to add a view counter to my blog
+slug: view-counter
+date: October 31, 2023
+keywords: ['dynamodb', 'aws', 'serverless', 'blog', 'view counter']
+categories: ['nextjs', 'website']
+---
+
+After stumbling across [chronark.com](https://chronark.com) (and admiring how damn beautiful it is), 
+I realized Andreas' blog had something mine doesn't - a view counter. Luckily, the tool he's building, 
+[upstash](https://upstash.com/), has an easy-to-use package & tutorial to use their Redis
+service to add a view counter to your blog. But why do that? As a certified AWS lover 🫶, I couldn't just 
+copy and paste mindlessly. I had to do it myself.
+
+## Pre-Code Design Decisions
+
+**DynamoDB** - While never having used Dynamo before, I knew it would be a quick and easy way to store unstructured data, 
+and bascially just _dump some json_ into a table. The configuration for Dynamo was smooth, barring warnings reminding me to shift to the 
+[AWS SDK for JS (v3)](https://a.co/7PzMCcy), which, admittely, would have made the coding experience significantly
+better. I also was consistently reminded that AWS doesn't want you to directly interface with Dynamo and generate keys for a Dynamo 
+role, as they _really_ try to get you to use Lambda/API Gateway to access Dynamo. Yes, this is absolute best practice, but not necessary 
+for a simple view counter.
+
+**What is a view?** - Before actually implementing a view counter, I had to decide what constitutes a view. Facebook 
+counts a view as at least 3 seconds of a video fully on screen. Although I would love to be flattered by an absurdly high view count, 
+I determined that a view would be a visit from a unique IP address at least 5 minutes apart. This way, I'd avoid "spam refreshing" 
+(although I appreciate your enthusiasm to increase my view count!).
+
+**Is this safe?** - The [upstash tutorial](https://upstash.com/blog/nextjs13-approuter-view-counter) makes sure that you are not directly storing 
+IP addresses in Dynamo by hashing using a simple function: 
+```js
+const ip = req.ip;
+// Hash the IP and turn it into a hex string
+const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(ip));
+const hash = Array.from(new Uint8Array(buf))
+.map((b) => b.toString(16).padStart(2, "0"))
+.join("");
+```
+I did the same, and stored the hashed IP address in Dynamo.
+
+**Dynamo Structure** - With the definition of a view in mind, I made the decision to set my sort key as `slug` and 
+structure each slug's data like:
+```json
+    {
+    "slug": {
+        "S": "todays-xkcd" // the slug of the post
+    },
+    "ips": {
+        "L": [ // a list of objects, each with an IP and a visit date
+            {
+                "M": {
+                    "ip": {
+                        "S": "eff8e..." // an abridged version of a hashed IP
+                    },
+                    "visitDate": {
+                        "N": "1698694949752" // some time in UTC
+                    }
+                }
+            },
+        ]
+    }
+    }
+```
+
+## Implementation 
+
+With the design decisions made, I leveraged NextJs' built in API routes coupled with abstraction using hooks
+to create a clean, easy-to-use view counter. To do this, I knew I needed to implement a few key features:
+
+**A `useViews()` hook** - This entire hook only took _30 lines of code_. With a useable interface
+of `const { views, numViews, ip, updateItem } = useViews(slug)`, I abstracted away the complexity of 
+interfacing with Dynamo and the API routes. Through this, each post & the post list merely needed to 
+get `numViews` for its slug, and the view counter was done. Just look at how clean, readable, and understandable this is!
+```js
+const useViews = (slug) => {
+  const [views, setViews] = useState([]);
+  const [numViews, setNumViews] = useState(" - ");
+  const [ip, setIp] = useState("");
+  const [shouldRefetch, setShouldRefetch] = useState(false);
+
+  const fetchViews = async () => {
+    const res = await axios.post("/api/dynamo/getViews", { slug: slug });
+    const data = res.data;
+    setViews(data.views);
+    setNumViews(data.numViews);
+    setIp(data.ip);
+  };
+  
+  const updateItem = async (slug) => {
+    await axios.post("/api/dynamo/updateItem", { slug: slug });
+    setShouldRefetch((prevState) => !prevState);
+  }
+
+  useEffect(() => {
+    fetchViews();
+  }, [slug, shouldRefetch]);
+
+  return { views, numViews, ip, updateItem };
+};
+```
+
+**A route to `getViews`** - This route is called by the `useViews` hook, and returns the number of views.
+Furthermore, if an item in Dynamo does not exist for this slug, it creates that item. This way, creating new
+posts (like this one!) does not require me to run some script to create a Dynamo entry for each post. Crucially, this 
+route just uses this simple query to get the object associated with a slug:
+```js
+const params = {
+    TableName: process.env.DYNAMO_TABLE_NAME,
+    Key: {
+        slug: { S: slug },
+    },
+};
+
+const data = await dynamodb.getItem(params).promise();
+
+const ipsData = data.Item.ips.L.map((entry) => ({
+    ip: entry.M.ip.S,
+    visitDate: parseInt(entry.M.visitDate.N, 10),
+}));
+
+res.status(200).json({
+    views: ipsData,
+    numViews: ipsData.length,
+});
+```
+
+**A route to `incrementViews`** - similar to `getViews`, incrementing views leverage's Dynamo's `updateItem` with a 
+set of params: 
+```js
+const updateParams = {
+    TableName: process.env.DYNAMO_TABLE_NAME,
+    Key: {
+        slug: { S: slug },
+    },
+    UpdateExpression:
+        "SET ips = list_append(if_not_exists(ips, :empty_list), :new_view)",
+    ExpressionAttributeValues: {
+        ":empty_list": { L: [newView] }, // make a new one if it doesn't exist
+        ":new_view": { L: [newView] },
+    },
+};
+const res = await dynamodb.updateItem(updateParams).promise();
+// calling, parsing, and returning the response
+```
+
+## Conclusion
+
+Since the code for this entire website is publically available [on my GitHub](https://github.com/charliemeyer2000/website2), 
+this isn't necessarily meant to be a comphrehensive walkthrough, but a discussion that touches on 
+ideas of abstraction, design decisions, and leveraging AWS while also going through the process of implementing
+some of the core methods that make up my view counter.
+
+This feature of my blog was aimed at implementing various code-quality best-practice ideas in a concrete manner, 
+more of a manner of practicing than anything else. 
+
+
+
