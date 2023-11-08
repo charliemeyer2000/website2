@@ -1,38 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is my second iteration of my [personal website](https://charliemeyer.xyz). 
 
-## Getting Started
+## Stack
 
-First, run the development server:
+1. This is a [Next.js](https://nextjs.org/) application (13.4.12) using the pages router & JS.
+1. AWS - uses dev and prod environments on [DynamoDB](https://aws.amazon.com/dynamodb/) for view count storage. 
+1. [MDX](https://mdxjs.com/) - website uses MDX with [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote) for loading MDX in `getStaticProps` and turn MDX (with components, of course) into pages.
+1. [SCSS](https://sass-lang.com/) - all components are custom-styled by hand with help from SCSS.
+1. [Framer-Motion](https://www.framer.com/motion/) - adding animation and interactivity w/framer.
+1. [Remark Rehype](https://github.com/remarkjs/remark-rehype) - for managing image syntax, LaTeX, syntax highlighting, etc. 
+
+## Design Inspiration
+
+This website was influenced by various blogs and design systems:
+
+Blogs:
+1. [Josh Comeau](https://www.joshwcomeau.com/)
+1. [Chronark](https://chronark.com)
+1. [Paco Coursey](https://paco.me/)
+1. [Maxime Heckel](https://blog.maximeheckel.com/)
+
+Design:
+1. [MTA Design](https://standardsmanual.com/products/nyctacompactedition)
+1. [NY Subway Signs](https://i.etsystatic.com/6628690/r/il/c18acd/1909287421/il_fullxfull.1909287421_dofm.jpg)
+1. [Mini Metro](https://www.google.com/search?q=mini+metro&source=lmns&bih=925&biw=1288&hl=en&sa=X&ved=2ahUKEwinqoeXybSCAxXlkokEHft9ApgQ0pQJKAB6BAgBEAI)
+
+## Goals
+
+You can see the original code for my [v1 website](https://github.com/charliemeyer2000/website) - it was super simple. It used (effectively) pure html, and, while it got the job done, it was painful to write articles. 
+
+Now that I use markdown exclusively as my note-taking format for almost everything, I've gotten used to this format, and it makes making posts much easier. 
+
+With this new format, I wanted to make a blog - it allows me to share my thoughts about literally anything, keeps me accountable, and is an expression of my thoughts on design/code as a whole, too. 
+
+## Unfinished
+
+This isn't supposed to be a "finished project" per se, unless I have the desire to entirely re-design and code a v3. With this, there are a couple features I want to add:
+
+1. Fading animations on the home screen similar to that of the PostList
+1. [Pocket Skate Mag "Followed"](https://www.google.com/search?q=pocket+skate+mag+followed&sourceid=chrome&ie=UTF-8) animation using Framer when you click on a title on a Post
+1. Add a train that travels through the stops on the home page/each post along with the user
+1. Nested stops on a post.
+1. Rendering my notes for classes on my [second year repo](https://github.com/charliemeyer2000/second-year) (written in Markdown, of course) and adding them as a sub-route.
+
+## Deployment
+
+If you want to clone this, it running it locally work because of the implementation of a view counter with Dynamo. If you want to fully copy, either (a) remove the stuff that uses dynamo (two api routes, the hook usage, and view counts on each post and on the post list) or (b) make a dynamo table with a primary key of "slug" and add the proper api keys to an `.env.development` file (if you want a prod table, make an `.env.prod` with the correct table name & api keys). 
 
 ```bash
-npm run dev
-# or
+# install dependencies
+yarn install
+
+# dev - looks at .env.development
 yarn dev
-# or
-pnpm dev
+
+# prod - looks at .env.production
+yarn start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This was also deployed on Vercel - as easy linking my repo and clicking "Deploy." 
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
