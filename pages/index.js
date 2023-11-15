@@ -7,19 +7,11 @@ import quotes from "@/static/types/Quotes";
 import Link from "@/components/link/Link";
 import { useState, useEffect } from "react";
 import StaticTableOfContents from "@/components/staticTableOfContents/StaticTableOfContents";
-import useViews from "@/utils/hooks/useViews";
-import Image from "next/image";
 
 export default function Home() {
   const [randomQuote, setRandomQuote] = useState("");
 
   const SLUG_NAME = "hello";
-
-  const { ip, views, numViews, updateItem } = useViews(SLUG_NAME);
-
-  const formatDate = (date) => {
-    return new Date(parseInt(date)).toLocaleString();
-  };
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * quotes.length);
@@ -44,13 +36,11 @@ export default function Home() {
           <p className={styles.text}>
             I'm a second year @ UVA majoring in CS. I'm into weightlifting,
             skateboarding, embroidery, guitar, any type of outdoor activity and
-            coding. Right now, I've <em>definitely</em> started training for the
-            San Francisco marathon in 2024 (I will do it though, much to my
-            roommate's chagrin😶) while also hoping to get into the 2-3-4 club.
-            I'm also a big Model UN nerd, currently treasurer of the
-            International Relations Organization at UVA. Thanks for stopping by,
-            and take a look at some of my <Link href="/posts">posts</Link> if
-            you want.
+            coding. Right now, started training for the San Francisco marathon
+            in 2024 while also hoping to get into the 2-3-4 club. I'm also a big
+            Model UN nerd, currently treasurer of the International Relations
+            Organization at UVA. Thanks for stopping by, and take a look at some
+            of my <Link href="/posts">posts</Link> if you want.
           </p>
           <p className={styles.text}>
             In terms of technically what I'm up to, I'm working as a contracted
@@ -64,6 +54,9 @@ export default function Home() {
             </Link>{" "}
             this summer. Also, as per, I'm still working with Ryland on HymnAi,
             working to make cool new products that we're passionate about.
+            Specifically, we're starting work on TextBuddy, looking at working
+            with either SwiftUI or React Native to build a product we think
+            would be cool.
           </p>
         </section>
         <section className={styles.section}>
