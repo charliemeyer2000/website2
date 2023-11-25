@@ -9,7 +9,7 @@ keywords: ['website', 'development', 'coding']
 
 As mentioned a while ago in a [Fireship Video](https://youtu.be/5ChkQKUzDCs?si=em1hCJpiXEQAaJdI),
 some major projects are beginning to ditch TypeScript in favor of JavaScript. 
-Despite the one true love of my life being the wild west of JavaScript (yummy [Object Object]),
+Despite the one true love of my life being the wild west of JavaScript (yummy [Object object]),
 my recent Software Development Essentials class has started to warm me up to type safety (🤯) and 
 using design principles to make something that makes sense!!
 
@@ -35,8 +35,8 @@ success and failure modals would not have to be managed by a component far down 
 
 ## Autocomplete 😋
 
-Something that I noticed quite quickly with TypeScript is how much I found myself going from parent to child component to check their props and ensure
-I had all the necessary types. It's an incredibly small thing, but the difference between having the compiler "yell" at me and tell
+Something that I noticed quite quickly with Javascript is how much I found myself going from parent to child component to check their props or `console.log()`ing the inputs/outputs of an api/function to ensure
+I had all the necessary & correct types. It's an incredibly small thing, but the difference between having the compiler "yell" at me and tell
 me exactly what props of what type are necessary for each component makes my life _so_ much easier. While this might not be best practice, I
 simply use interfaces to specify props for a component:
 
@@ -62,7 +62,8 @@ export default function SomeComponent(props: SomeComponentProps) {
 
 Even just having this _at the bare minimum_ changes the developer experience significantly. Having worked with Java for my Software Development 
 class, I didn't realize how much I relied on strict typing and working with interfaces until I worked on my website again with JS. Suffice it to say,
-my next(Js) projects are using TS. 
+my next(Js) projects are using TS. Furthermore, having used relay for AppSync, being able to generate types from a GraphQL schema is _so_ nice, and always
+ensures that the types in the frontend match the database in the backend (😙🤌).
 
 ## `As any`
 

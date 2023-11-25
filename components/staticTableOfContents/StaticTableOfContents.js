@@ -1,14 +1,13 @@
 import { useTheme } from "next-themes";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import styles from "./StaticTableOfContents.module.scss";
 import useProgress from "@/utils/hooks/useProgress";
 import MetroTrackStops from "@/static/types/MetroTrackStops";
 import Image from "next/image";
-import { useScroll, motion } from "framer-motion";
+import { motion, useTransform, useViewportScroll } from "framer-motion";
 import colors from "@/static/types/Colors";
 
 export default function StaticTableOfContents({ ...props }) {
-  const { proportionalProgress, absoluteProgress } = useProgress();
   const { theme: activeTheme, systemTheme, setTheme } = useTheme();
 
   const isDarkMode =
@@ -22,6 +21,14 @@ export default function StaticTableOfContents({ ...props }) {
 
   const [railColor, setRailColor] = useState(null);
   const ENDING_OFFSET = 50;
+
+  const { scrollYProgress } = useViewportScroll();
+
+  const yPosAnim = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [railStartingPosition - 110, railHeight - 32]
+  );
 
   useEffect(() => {
     const titles = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
@@ -63,18 +70,33 @@ export default function StaticTableOfContents({ ...props }) {
           "--color": railColor,
         }}
       ></div>
+      <motion.div
+        className={styles.train}
+        initial={railStartingPosition - ENDING_OFFSET}
+        style={{ y: yPosAnim, x: -21 / 4 }} // offset by the width of the train
+      >
+        <svg
+          width="21"
+          height="33"
+          viewBox="0 0 21 33"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="21" height="33" fill={railColor} />
+        </svg>
+      </motion.div>
       <div className={styles.stopsWrapper}>
         {ids.map((item, index) => {
           return (
-            <Image
-              src={item.imageSrc}
+            <div
               key={index}
-              alt="square"
               className={styles.stop}
               style={{
                 "--position": `${item.position + (index !== 0 ? 10 : 0)}px`, // weird visual bug
               }}
-            />
+            >
+              <Image src={item.imageSrc} alt="square" />
+            </div>
           );
         })}
       </div>
