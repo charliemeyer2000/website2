@@ -38,8 +38,8 @@ export default function Home() {
             skateboarding, embroidery, guitar, any type of outdoor activity and
             coding. Right now, started training for the San Francisco marathon
             in 2024 while also hoping to get into the 2-3-4 club. I'm also a big
-            Model UN nerd, currently treasurer of the International Relations
-            Organization at UVA. Thanks for stopping by, and take a look at some
+            Model UN nerd, working as the media manager for VICS XXVII (and the former treasurer!)
+            Thanks for stopping by, and take a look at some
             of my <Link href="/posts">posts</Link> if you want.
           </p>
           <p className={styles.text}>
