@@ -24,6 +24,7 @@
     "gray-matter": "^4.0.3",
     "howler": "^2.2.3",
     "katex": "^0.16.8",
+    "kmenu": "^1.4.32",
     "lodash.debounce": "^4.0.8",
     "marked": "^7.0.2",
     "next": "13.4.12",

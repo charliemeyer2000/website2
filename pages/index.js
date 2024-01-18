@@ -7,6 +7,7 @@ import quotes from "@/static/types/Quotes";
 import Link from "@/components/link/Link";
 import { useState, useEffect } from "react";
 import StaticTableOfContents from "@/components/staticTableOfContents/StaticTableOfContents";
+import CommandMenu from "@/components/commandMenu/CommandMenu";
 
 export default function Home() {
   const [randomQuote, setRandomQuote] = useState("");
@@ -23,6 +24,7 @@ export default function Home() {
       title="Home"
       description="Hey, I'm Charlie Meyer. Thanks for stopping by."
     >
+      <CommandMenu />
       <StaticTableOfContents />
       <article className={styles.main}>
         <section className={styles.section}>
@@ -38,8 +40,8 @@ export default function Home() {
             skateboarding, embroidery, guitar, any type of outdoor activity and
             coding. Right now, started training for the San Francisco marathon
             in 2024 while also hoping to get into the 2-3-4 club. I'm also a big
-            Model UN nerd, working as the media manager for VICS XXVII (and the former treasurer!)
-            Thanks for stopping by, and take a look at some
+            Model UN nerd, working as the media manager for VICS XXVII (and the
+            former treasurer!) Thanks for stopping by, and take a look at some
             of my <Link href="/posts">posts</Link> if you want.
           </p>
           <p className={styles.text}>

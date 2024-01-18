@@ -29,7 +29,7 @@ export default function Document() {
         {/* <link rel="shortcut icon" href="/static/images/arrow.png" />
         <link rel="apple-touch-icon" href="/static/images/arrow.png" /> */}
 
-        <link rel="shortcut icon" href={'/static/images/arrow-dark.png'} />
+        <link rel="shortcut icon" href={"/static/images/arrow-dark.png"} />
         {/* <link
           rel="icon"
           type="image/png"
