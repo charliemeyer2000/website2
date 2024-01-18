@@ -113,7 +113,7 @@ export default function Home() {
 
                                 <StuffItem
                                     title="Guestbook"
-                                    newWindow={true}
+                                    newWindow={false}
                                     href="/guestbook"
                                     angle={-45}
                                     description="Add your name to the guestbook."
