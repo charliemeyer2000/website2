@@ -1,10 +1,8 @@
-import Head from 'next/head';
 import styles from './Post.module.scss';
 import Page from "../page/Page";
 import { MDXRemote } from "next-mdx-remote";
 import { MDXProvider } from "@mdx-js/react";
 import components from "@/static/types/Components";
-import { useTheme } from "next-themes";
 import PreviousNext from "../previousNext/PreviousNext";
 import PostTableOfContents from '../postTableOfContents/PostTableOfContents';
 import useViews from "@/utils/hooks/useViews";
