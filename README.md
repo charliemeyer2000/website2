@@ -38,9 +38,8 @@ This isn't supposed to be a "finished project" per se, unless I have the desire 
 
 1. Fading animations on the home screen similar to that of the PostList
 1. [Pocket Skate Mag "Followed"](https://www.google.com/search?q=pocket+skate+mag+followed&sourceid=chrome&ie=UTF-8) animation using Framer when you click on a title on a Post
-1. Add a train that travels through the stops on the home page/each post along with the user
 1. Nested stops on a post.
-1. Rendering my notes for classes on my [second year repo](https://github.com/charliemeyer2000/second-year) (written in Markdown, of course) and adding them as a sub-route.
+1. Bad-word filtering and spam protection on the guestbook.
 
 ## Deployment
 
