@@ -3,12 +3,11 @@ import {getServerSession} from 'next-auth/next';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 
 export default async (req, res) => {
-
     const session = await getServerSession(req, res )
     
-    // if (!session) {
-    //     res.status(401).json({ message: 'Unauthorized' });
-    // }
+    if (!session) {
+        res.status(401).json({ message: 'Unauthorized' });
+    }
 
     if (req.method !== 'POST') {
         res.status(400).json({ message: 'Only POST requests allowed' });

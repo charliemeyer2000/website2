@@ -17,3 +17,14 @@
     color: var(--text-color);
 }
 
+// data theme dark
+[data-theme="light"] {
+    .button {
+        border: 0.5px solid var(--background-black-50); 
+    }
+    .button:hover {
+        background-color: var(--background-black-50);
+        color: var(--background-white);
+    }
+}
+

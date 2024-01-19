@@ -78,6 +78,7 @@ export default async (req, res) => {
       return;
     }
 
+
     const newView = {
       M: {
         ip: { S: hash },
