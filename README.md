@@ -1,4 +1,4 @@
-This is my second iteration of my [personal website](https://charliemeyer.xyz). 
+This is the second iteration of my [personal website](https://charliemeyer.xyz). 
 
 ## Stack
 
