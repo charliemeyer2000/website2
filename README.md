@@ -37,7 +37,7 @@ With this new format, I wanted to make a blog - it allows me to share my thought
 
 This isn't supposed to be a "finished project" per se, unless I have the desire to entirely re-design and code a v3. With this, there are a couple features I want to add:
 
-1. Fading animations on the home screen similar to that of the PostList
+1. Fading animations on the home screen and guestbook similar to that of the PostList
 1. [Pocket Skate Mag "Followed"](https://www.google.com/search?q=pocket+skate+mag+followed&sourceid=chrome&ie=UTF-8) animation using Framer when you click on a title on a Post
 1. Nested stops on a post.
 1. Bad-word filtering and spam protection on the guestbook.
