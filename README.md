@@ -4,7 +4,7 @@ This is the second iteration of my [personal website](https://charliemeyer.xyz).
 
 1. This is a [Next.js](https://nextjs.org/) application (13.4.12) using the pages router & JS.
 1. AWS - uses dev and prod environments on [DynamoDB](https://aws.amazon.com/dynamodb/) for view count storage and guestbook management.
-1. [NextAuth.js](https://next-auth.js.org/) - to ensure users are authenticated with GitHub to leave a note.
+1. [NextAuth.js](https://next-auth.js.org/) - to ensure users are authenticated with GitHub to leave a note in the guestbook.
 1. [MDX](https://mdxjs.com/) - website uses MDX with [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote) for loading MDX in `getStaticProps` and turn MDX (with components, of course) into pages.
 1. [SCSS](https://sass-lang.com/) - all components are custom-styled by hand with help from SCSS.
 1. [Framer-Motion](https://www.framer.com/motion/) - adding animation and interactivity w/framer.
