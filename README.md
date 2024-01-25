@@ -43,7 +43,7 @@ This isn't supposed to be a "finished project" per se, unless I have the desire 
 
 ## Deployment
 
-If you want to clone this, it running it locally work because of the implementation of a view counter with Dynamo. If you want to fully copy, either (a) remove the stuff that uses dynamo (two api routes, the hook usage, and view counts on each post and on the post list) or (b) make a dynamo table with a primary key of "slug" and add the proper api keys to an `.env.development` file (if you want a prod table, make an `.env.prod` with the correct table name & api keys). 
+If you want to clone this, it running it locally will not work because of the implementation of a view counter with Dynamo - you might encounter some errors. If you want to fully copy my website and have it run locally, either (a) remove the stuff that uses dynamo (two api routes, the hook usage, and view counts on each post and on the post list) or (b) make a dynamo tables with primary keys of "slug" and "note" (respectively) and add the proper api keys to an `.env.development` file (if you want a prod table, make an `.env.prod` with the correct table name & api keys). 
 
 ```bash
 # install dependencies
