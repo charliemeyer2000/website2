@@ -9,6 +9,7 @@ const quotes = [
   "In the end its not the years in your life that count, its the life in your years - Abraham Lincoln",
   "If i'd followed all the rules, I'd never have gotten anywhere - Marilyn Monroe",
   "Action expresses priorities - Mahatma Gandhi",
+  "They say i'm always Pushin P - pushing to prod"
 ];
 
 export default quotes;
