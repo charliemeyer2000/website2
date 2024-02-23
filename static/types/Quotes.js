@@ -12,4 +12,5 @@ const quotes = [
   "They say i'm always Pushin P - pushing to prod"
 ];
 
+
 export default quotes;

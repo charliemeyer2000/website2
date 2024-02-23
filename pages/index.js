@@ -35,12 +35,12 @@ export default function Home() {
                     <h1 className={styles.title}>Currently</h1>
                     <p className={styles.text}>
                         I'm a second year @ UVA majoring in CS. I'm into weightlifting,
-                        skateboarding, embroidery, guitar, any type of outdoor activity and
-                        coding. Right now, started training for the San Francisco marathon
+                        snowboarding (unabashedly an Epic pass holder), guitar, any type of outdoor activity and
+                        coding. Right now, I have started training  for the San Francisco marathon
                         in 2024 while also hoping to get into the 2-3-4 club. I'm also a big
                         Model UN nerd, working as the media manager for VICS XXVII (and the
                         former treasurer!) Thanks for stopping by, and take a look at some
-                        of my <Link href="/posts">posts</Link> if you want.
+                        of my <Link href="/posts">posts</Link> if you want or leave a note in my <Link href="/guestbook">guestbook</Link>.
                     </p>
                     <p className={styles.text}>
                         In terms of technically what I'm up to, I'm working as a contracted
@@ -54,9 +54,11 @@ export default function Home() {
                         </Link>{" "}
                         this summer. Also, as per, I'm still working with Ryland on HymnAi,
                         working to make cool new products that we're passionate about.
-                        Specifically, we're starting work on TextBuddy, looking at working
-                        with either SwiftUI or React Native to build a product we think
-                        would be cool.
+                        We're starting development on DoorShop, dipping our toes into mobile
+                        app development and looking to disrupt the market (like Clay Christensen's
+                        Toyota to GM). I'm absolutely loving my innovation course and working with
+                        Founders, VC's, and angels in the CVille area to empower entrepreneurs on
+                        grounds.
                     </p>
                 </section>
                 <section className={styles.section}>
@@ -136,8 +138,8 @@ export default function Home() {
                         My mid-term goal is to live in a van/small apartment and be
                         relatively mobile while working remotely/hybrid as a coder. I think
                         it would be incredibly comical to be working for{" "}
-                        <em>insert big tech company</em> while living simply and enjoying
-                        hobbies - skating, surfing, guitar, etc.
+                        <em>insert big tech company</em> (or myself?!?!) while living simply and enjoying
+                        hobbies - skating, snowboarding, guitar, and surfing.
                     </p>
                     <p className={styles.text}>
                         Technically speaking, I want to be a full-stack developer,
