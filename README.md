@@ -1,9 +1,10 @@
-This is my second iteration of my [personal website](https://charliemeyer.xyz). 
+This is the second iteration of my [personal website](https://charliemeyer.xyz). 
 
 ## Stack
 
 1. This is a [Next.js](https://nextjs.org/) application (13.4.12) using the pages router & JS.
-1. AWS - uses dev and prod environments on [DynamoDB](https://aws.amazon.com/dynamodb/) for view count storage. 
+1. AWS - uses dev and prod environments on [DynamoDB](https://aws.amazon.com/dynamodb/) for view count storage and guestbook management.
+1. [NextAuth.js](https://next-auth.js.org/) - to ensure users are authenticated with GitHub to leave a note in the guestbook.
 1. [MDX](https://mdxjs.com/) - website uses MDX with [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote) for loading MDX in `getStaticProps` and turn MDX (with components, of course) into pages.
 1. [SCSS](https://sass-lang.com/) - all components are custom-styled by hand with help from SCSS.
 1. [Framer-Motion](https://www.framer.com/motion/) - adding animation and interactivity w/framer.
@@ -36,14 +37,14 @@ With this new format, I wanted to make a blog - it allows me to share my thought
 
 This isn't supposed to be a "finished project" per se, unless I have the desire to entirely re-design and code a v3. With this, there are a couple features I want to add:
 
-1. Fading animations on the home screen similar to that of the PostList
+1. Fading animations on the home screen and guestbook similar to that of the PostList
 1. [Pocket Skate Mag "Followed"](https://www.google.com/search?q=pocket+skate+mag+followed&sourceid=chrome&ie=UTF-8) animation using Framer when you click on a title on a Post
 1. Nested stops on a post.
 1. Bad-word filtering and spam protection on the guestbook.
 
 ## Deployment
 
-If you want to clone this, it running it locally work because of the implementation of a view counter with Dynamo. If you want to fully copy, either (a) remove the stuff that uses dynamo (two api routes, the hook usage, and view counts on each post and on the post list) or (b) make a dynamo table with a primary key of "slug" and add the proper api keys to an `.env.development` file (if you want a prod table, make an `.env.prod` with the correct table name & api keys). 
+If you want to clone this, it running it locally will not work because of the implementation of a view counter with Dynamo - you might encounter some errors. If you want to fully copy my website and have it run locally, either (a) remove the stuff that uses dynamo (two api routes, the hook usage, and view counts on each post and on the post list) or (b) make a dynamo tables with primary keys of "slug" and "note" (respectively) and add the proper api keys to an `.env.development` file (if you want a prod table, make an `.env.prod` with the correct table name & api keys). 
 
 ```bash
 # install dependencies
