@@ -1,4 +1,4 @@
-This is the second iteration of my [personal website](https://charliemeyer.xyz). 
+This is the second iteration of my [personal website](https://charliemeyer.xyz). The repo to my first ever website is [here](https://github.com/charliemeyer2000/website).
 
 ## Stack
 
@@ -35,12 +35,14 @@ With this new format, I wanted to make a blog - it allows me to share my thought
 
 ## Unfinished
 
-This isn't supposed to be a "finished project" per se, unless I have the desire to entirely re-design and code a v3. With this, there are a couple features I want to add:
+This isn't supposed to be a "finished project" per se, unless I have the desire to entirely re-design and code a new v3. Instead of that, there are a couple features I want to add incrementally
 
 1. Fading animations on the home screen and guestbook similar to that of the PostList
 1. [Pocket Skate Mag "Followed"](https://www.google.com/search?q=pocket+skate+mag+followed&sourceid=chrome&ie=UTF-8) animation using Framer when you click on a title on a Post
-1. Nested stops on a post.
-1. Bad-word filtering and spam protection on the guestbook.
+1. Nested stops on a post depending on a `h1` versus an `h2`, `h3`, etc. 
+1. Bad-word filtering and spam protection on the guestbook, along with better filtering, checks, and other best-practice for adding to the guestbook.
+
+Also, I've definitely improved in my coding skills since I wrote this code, and this uses a _very_ old Next version, so I'm also considering re-writing most (to all) of this code, with SSR, server components, TypeScript, and overall improve the code quality. This website should not just be a demonstration of my UI/UX skills and style in a website, but also my coding style. 
 
 ## Deployment
 
