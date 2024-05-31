@@ -56,7 +56,7 @@ export default function Home() {
                 newWindow
               >
                 launched on the App Store
-              </Link>
+              </Link>{" "}
               and are working to develop new features to hit the ground running
               this fall. I'm absolutely loving working with my entrepreneurial
               peers and working with Founders, VC's, and angels in the CVille
