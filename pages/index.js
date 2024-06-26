@@ -86,21 +86,28 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.stuffItem}>
-                <p className={styles.stuffItemTitle}>Classes, Certifications</p>
+                <p className={styles.stuffItemTitle}>Certifications n' Stuff</p>
                 <div className={styles.stuffItemContent}>
                   <StuffItem
-                    title="Solutions Architect"
-                    href="https://aws.amazon.com/certification/certified-solutions-architect-associate/?trk=1d3789b7-cdfb-4b92-a125-75424f21eaaf&sc_channel=ps"
+                    title="AWS Cloud Practitioner"
+                    href="CloudPractitionerCert.pdf"
                     angle={-45}
                     newWindow={true}
-                    description="On my way to being a Solutions Architect."
+                    description="Check out my certificate for CLF-C02."
+                  />
+                  <StuffItem
+                    title="AWS Solutions Architect"
+                    href="https://aws.amazon.com/certification/certified-solutions-architect-associate/"
+                    angle={-45}
+                    newWindow={true}
+                    description="I'm on my way to taking the exam for SAA-CO3!"
                   />
                   <StuffItem
                     title="Forge Launch 2023"
                     href="https://www.joinforge.co/launch"
                     angle={-45}
                     newWindow={true}
-                    description="Completed Forge Launch program bootcamp."
+                    description="Completed Forge's 150hr bootcamp → internship"
                   />
                 </div>
               </div>
