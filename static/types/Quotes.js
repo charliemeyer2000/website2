@@ -12,6 +12,7 @@ const quotes = [
   "\"What if this works\" is more important than \"what if this fails\" - Tommy Nicholas",
   'Life should not be a journey to the grave with the intention of arriving safely in a pretty and well preserved body, but rather to skid in broadside in a cloud of smoke, thoroughly used up, totally worn out, and loudly proclaiming "Wow! What a Ride" - Hunter S Thompson',
   "Live the dash - Eric Martin & Linda Ellis", 
+  "Do or do not. There is no try - Yoda",
 ];
 
 
