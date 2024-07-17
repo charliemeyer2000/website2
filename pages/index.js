@@ -59,7 +59,7 @@ export default function Home() {
               </Link>{" "}
               and are working to develop new features to hit the ground running
               this fall. I'm absolutely loving working with my entrepreneurial
-              peers and working with Founders, VC's, and angels in the CVille
+              peers with Founders@UVA and working with founders, VC's, and angels in the Cville
               area to empower entrepreneurs on grounds.
             </p>
           </section>
@@ -70,11 +70,11 @@ export default function Home() {
                 <p className={styles.stuffItemTitle}>Projects</p>
                 <div className={styles.stuffItemContent}>
                   <StuffItem
-                    title="HymnAi"
-                    href="https://www.hymnai.net"
+                    title="simpletext"
+                    href="https://simpletext.dev"
                     angle={-45}
                     newWindow={true}
-                    description="A creative shift on the HymnAI brand."
+                    description="Stupidly simple sms & otp service."
                   />
                   <StuffItem
                     title="DoorShop"
