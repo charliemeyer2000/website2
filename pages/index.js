@@ -36,12 +36,12 @@ export default function Home() {
             <p className={styles.text}>
               I'm a third year @ UVA majoring in CS. I'm into weightlifting,
               snowboarding (unabashedly an Epic pass holder), guitar, any type
-              of outdoor activity and coding. Right now, I have started training
-              for the San Francisco marathon in 2024 while also hoping to get
-              into the 2-3-4 club. I'm also a big Model UN nerd, currently the
-              Secretary-General of VICS XXIX. Thanks for stopping by, and take a
-              look at some of my <Link href="/posts">posts</Link> or leave a
-              note in my <Link href="/guestbook">guestbook</Link>.
+              of outdoor activity and building cool stuff. Right now, I'm about
+              to run in the San Francisco marathon in 2024 while also hoping to
+              get into the 2-3-4 club. I'm also a big Model UN nerd, currently
+              the Secretary-General of VICS XXIX. Thanks for stopping by, and
+              take a look at some of my <Link href="/posts">posts</Link> or
+              leave a note in my <Link href="/guestbook">guestbook</Link>.
             </p>
             <p className={styles.text}>
               In terms of technically what I'm up to, I'm a working at{" "}
@@ -57,10 +57,15 @@ export default function Home() {
               >
                 launched on the App Store
               </Link>{" "}
-              and are working to develop new features to hit the ground running
-              this fall. I'm absolutely loving working with my entrepreneurial
-              peers with Founders@UVA and working with founders, VC's, and angels in the Cville
-              area to empower entrepreneurs on grounds.
+              , and I also just launched{" "}
+              <Link href="https://simpletext.dev" newWindow>
+                simpletext.dev
+              </Link>{" "}
+              - a stupidly simple sms & otp service. Also, I'm absolutely loving
+              working with my entrepreneurial peers with Founders@UVA and
+              working with founders, VC's, and angels in the Cville area to
+              empower entrepreneurs on grounds - looking forward to the new
+              launch of UVA's entrepreneruship house!
             </p>
           </section>
           <section className={styles.section}>
@@ -90,17 +95,17 @@ export default function Home() {
                 <div className={styles.stuffItemContent}>
                   <StuffItem
                     title="AWS Cloud Practitioner"
-                    href="CloudPractitionerCert.pdf"
+                    href="https://www.credly.com/badges/4d6f0528-03d5-4e23-8ee9-92a1f288ff7b/public_url"
                     angle={-45}
                     newWindow={true}
                     description="Check out my certificate for CLF-C02."
                   />
                   <StuffItem
                     title="AWS Solutions Architect"
-                    href="https://aws.amazon.com/certification/certified-solutions-architect-associate/"
+                    href="https://www.credly.com/badges/f70da3a7-8b88-4fe4-8e78-96ada999bba2/public_url"
                     angle={-45}
                     newWindow={true}
-                    description="I'm on my way to taking the exam for SAA-CO3!"
+                    description="Check out my certification for SAA-C03."
                   />
                   <StuffItem
                     title="Forge Launch 2023"
@@ -143,25 +148,21 @@ export default function Home() {
           <section className={styles.section}>
             <h1 className={styles.title}>Future</h1>
             <p className={styles.text}>
-              My mid-term goal is to live in a van/small apartment and be
-              relatively mobile while working remotely/hybrid as a coder. I
-              think it would be incredibly comical to be working for{" "}
-              <em>insert big tech company</em> (or myself?!?!) while living
-              simply and enjoying hobbies - skating, snowboarding, guitar, and
-              surfing.
+              My goal is to live out in SF - it's just hours from some of the
+              best hiking, skiing, and surfing in the US, and also a hub for
+              entrepreneurship. I want to work on technically challenging
+              projects while living simply and enjoying hobbies - skating,
+              snowboarding, guitar, and surfing.
             </p>
-            <p className={styles.text}>
+            {/* <p className={styles.text}>
               Technically speaking, I want to be a full-stack developer,
               especially doing so with a focus on AWS Cloud computing and using
-              AWS to do things better. There's just so many options of
-              technologies to use - so that's why I'll be doing various
-              certification courses to get a better understanding of the cloud.
-              But realistically, certification courses don't mean too much (a
-              lot of show) - anyone can just study for a test. So I'll be
-              working on projects using AWS to get a better understanding of the
-              cloud in a more practical sense. One day AWS will release the
-              Elastic Service Service, AWS ESS, the service of services.
-            </p>
+              AWS to do things better. I'm now an AWS Solutions Architect
+              Associate, but I specifically enjoy working on projects using AWS
+              to get a better understanding of the cloud in a more practical
+              sense. One day AWS will release the Elastic Service Service, AWS
+              ES2, the service to end all services.
+            </p> */}
             <p className={styles.text}>
               Aside from the SF marathon, I need to also run in the NYC TCS
               Marathon. I'd want to get to the{" "}
