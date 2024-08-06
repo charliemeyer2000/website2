@@ -36,28 +36,27 @@ export default function Home() {
             <p className={styles.text}>
               I'm a third year @ UVA majoring in CS. I'm into weightlifting,
               snowboarding (unabashedly an Epic pass holder), guitar, any type
-              of outdoor activity and building cool stuff. Right now, I'm about
-              to run in the San Francisco marathon in 2024 while also hoping to
-              get into the 2-3-4 club. I'm also a big Model UN nerd, currently
-              the Secretary-General of VICS XXIX. Thanks for stopping by, and
-              take a look at some of my <Link href="/posts">posts</Link> or
-              leave a note in my <Link href="/guestbook">guestbook</Link>.
+              of outdoor activity and building cool stuff. I just finished my
+              first marathon in SF (🎉🎉) while also hoping to get into the
+              2-3-4 club. I'm also a big Model UN nerd, currently the
+              Secretary-General of VICS XXIX & also am chairing VAMUN XLIV.
+              Thanks for stopping by, and take a look at some of my{" "}
+              <Link href="/posts">posts</Link> or leave a note in my{" "}
+              <Link href="/guestbook">guestbook</Link>.
             </p>
             <p className={styles.text}>
-              In terms of technically what I'm up to, I'm a working at{" "}
+              In terms of technically what I'm up to, I finished my role working
+              at{" "}
               <Link href="https://principal.com" newWindow>
                 Principal's
               </Link>{" "}
-              asset management team this summer as a software engineer, building
-              cloud infrastructure as code with AWS. Also, as per, I'm working
-              with Ryland on DoorShop which we just recently{" "}
-              <Link
-                href="https://apps.apple.com/us/app/doorshop/id6496682406"
-                newWindow
-              >
-                launched on the App Store
+              asset management team this summer building cloud infrastructure as
+              code with AWS. Also, as per, I'm working with Ryland & others on
+              DocuDiver which we just recently{" "}
+              <Link href="https://www.docudiver.com" newWindow>
+                launched{" "}
               </Link>{" "}
-              , and I also just launched{" "}
+              and are pitching to companies, and I also just launched{" "}
               <Link href="https://simpletext.dev" newWindow>
                 simpletext.dev
               </Link>{" "}
@@ -80,6 +79,13 @@ export default function Home() {
                     angle={-45}
                     newWindow={true}
                     description="Stupidly simple sms & otp service."
+                  />
+                  <StuffItem
+                    title="DocuDiver"
+                    href="https://www.docudiver.com"
+                    angle={-45}
+                    newWindow={true}
+                    description="Modern document management & intelligence."
                   />
                   <StuffItem
                     title="DoorShop"
