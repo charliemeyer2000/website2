@@ -38,29 +38,29 @@ export default function Home() {
               snowboarding (unabashedly an Epic pass holder), guitar, any type
               of outdoor activity and building cool stuff. I just finished my
               first marathon in SF (🎉🎉) while also hoping to get into the
-              2-3-4 club. I'm also a big Model UN nerd, currently the
-              Secretary-General of VICS XXIX & also am chairing VAMUN XLIV.
-              Thanks for stopping by, and take a look at some of my{" "}
+              2-3-4 club. I'm a big Model UN nerd, currently the
+              Secretary-General of VICS XXIX and am chairing VAMUN XLIV. Thanks
+              for stopping by, and take a look at some of my{" "}
               <Link href="/posts">posts</Link> or leave a note in my{" "}
               <Link href="/guestbook">guestbook</Link>.
             </p>
             <p className={styles.text}>
               In terms of technically what I'm up to, I finished my role working
-              at{" "}
+              on{" "}
               <Link href="https://principal.com" newWindow>
                 Principal's
               </Link>{" "}
               asset management team this summer building cloud infrastructure as
-              code with AWS. Also, as per, I'm working with Ryland & others on
-              DocuDiver which we just recently{" "}
+              code with AWS. Also, as per, I'm working with Ryland & others on{" "}
               <Link href="https://www.docudiver.com" newWindow>
-                launched{" "}
+                DocuDiver{" "}
               </Link>{" "}
-              and are pitching to companies, and I also just launched{" "}
+              which we are pitching to companies - if you struggle with keeping
+              documentation in order, email me! I also just launched{" "}
               <Link href="https://simpletext.dev" newWindow>
-                simpletext.dev
+                simpletext
               </Link>{" "}
-              - a stupidly simple sms & otp service. Also, I'm absolutely loving
+              - a stupidly simple sms & otp service. I'm absolutely loving
               working with my entrepreneurial peers with Founders@UVA and
               working with founders, VC's, and angels in the Cville area to
               empower entrepreneurs on grounds - looking forward to the new
@@ -170,8 +170,8 @@ export default function Home() {
               ES2, the service to end all services.
             </p> */}
             <p className={styles.text}>
-              Aside from running again in the 2025 SF marathon, I need to also run in
-              the NYC Marathon. I'd want to get to the{" "}
+              Aside from running again in the 2025 SF marathon, I need to run in
+              the NYC Marathon. Moreover, I'd want to get to the{" "}
               <Link href="https://www.cphopen.com/" newWindow>
                 Copenhagen Open
               </Link>{" "}
@@ -179,9 +179,8 @@ export default function Home() {
               <Link href="https://dimemtl.com/blogs/videos" newWindow>
                 Dime
               </Link>{" "}
-              but also participate in local skate events and support the skaters
-              I love at events (keeping an eye on QuarterSnacks and Pocket Skate
-              Mag).
+              while participating in local skate events to support the skaters I
+              love (keeping an eye on Thrasher and Pocket Skate Mag).
             </p>
           </section>
           <section className={styles.section}>
