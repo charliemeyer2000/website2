@@ -170,8 +170,8 @@ export default function Home() {
               ES2, the service to end all services.
             </p> */}
             <p className={styles.text}>
-              Aside from the SF marathon, I need to also run in the NYC TCS
-              Marathon. I'd want to get to the{" "}
+              Aside from running again in the 2025 SF marathon, I need to also run in
+              the NYC Marathon. I'd want to get to the{" "}
               <Link href="https://www.cphopen.com/" newWindow>
                 Copenhagen Open
               </Link>{" "}
