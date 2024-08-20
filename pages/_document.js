@@ -1,7 +1,7 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 export default function Document() {
-
   return (
     <Html lang="en">
       <Head>
@@ -40,6 +40,15 @@ export default function Document() {
 
         {/* OG image */}
         <meta property="og:image" content="/main-img.png" />
+
+        {/* MS Clarity Tracking */}
+        <Script strategy="lazyOnload" id="clarity">
+          {`          (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "nqgs34wo64");`}
+        </Script>
       </Head>
       <body>
         <Main />
