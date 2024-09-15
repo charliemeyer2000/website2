@@ -63,6 +63,12 @@ export default function Home() {
               entrepreneurs on grounds - looking forward to the new launch of
               UVA's entrepreneruship house!
             </p>
+            <p className={styles.text}>
+              {"\u002A"}
+              {"\u002A"}PS - I'm thinking of building a service for the
+              Fediverse, if you're interested, LMK!{"\u002A"}
+              {"\u002A"}
+            </p>
           </section>
           <section className={styles.section}>
             <h1 className={styles.title}>Stuff</h1>
