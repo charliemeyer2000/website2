@@ -51,20 +51,17 @@ export default function Home() {
                 Principal's
               </Link>{" "}
               asset management team this summer building cloud infrastructure as
-              code with AWS. Also, as per, I'm working with Ryland & others on{" "}
-              <Link href="https://www.docudiver.com" newWindow>
-                DocuDiver{" "}
-              </Link>{" "}
-              which we are pitching to companies - if you struggle with keeping
-              documentation in order, email me! I also just launched{" "}
+              code with AWS. Over the summer I just launched{" "}
               <Link href="https://simpletext.dev" newWindow>
                 simpletext
               </Link>{" "}
-              - a stupidly simple sms & otp service. I'm absolutely loving
-              working with my entrepreneurial peers with Founders@UVA and
-              working with founders, VC's, and angels in the Cville area to
-              empower entrepreneurs on grounds - looking forward to the new
-              launch of UVA's entrepreneruship house!
+              - a stupidly simple sms & otp service. I'm excited about building
+              this service further and building new services within the
+              developer tooling space as a whole! I'm absolutely loving working
+              with my entrepreneurial peers with Founders@UVA and working with
+              founders, VC's, and angels in the Cville area to empower
+              entrepreneurs on grounds - looking forward to the new launch of
+              UVA's entrepreneruship house!
             </p>
           </section>
           <section className={styles.section}>
