@@ -64,11 +64,9 @@ export default function Home() {
               of events for the launch of UVA's entrepreneurship house (The
               Foundry)!
             </p>
-            <p className={styles.text}>
-              {"\u002A"}
-              {"\u002A"}PS - I'm cooking on an idea about the Fediverse, if
-              you're interested, LMK!{"\u002A"}
-              {"\u002A"}
+            <p className={styles.text} style={{ fontStyle: "italic" }}>
+              PS - I'm cooking on an idea about the Fediverse, if you're
+              interested, LMK!
             </p>
           </section>
           <section className={styles.section}>
@@ -164,15 +162,13 @@ export default function Home() {
               projects while living simply and enjoying hobbies - skating,
               snowboarding, guitar, and surfing.
             </p>
-            {/* <p className={styles.text}>
-              Technically speaking, I want to be a full-stack developer,
-              especially doing so with a focus on AWS Cloud computing and using
-              AWS to do things better. I'm now an AWS Solutions Architect
-              Associate, but I specifically enjoy working on projects using AWS
-              to get a better understanding of the cloud in a more practical
-              sense. One day AWS will release the Elastic Service Service, AWS
-              ES2, the service to end all services.
-            </p> */}
+            <p className={styles.text}>
+              Technically speaking, I want to work at a startup to get a feel
+              for the fast-paced environment. I'm interested in
+              frontend/fullstack development, but also love building distributed
+              & cloud systems (AWS rocks). Looking at Series A/B startups in the
+              bay area.
+            </p>
             <p className={styles.text}>
               Aside from running again in the 2025 SF marathon, I need to run in
               the NYC Marathon. Moreover, I'd want to get to the{" "}
