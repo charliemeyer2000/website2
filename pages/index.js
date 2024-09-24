@@ -57,11 +57,12 @@ export default function Home() {
               </Link>{" "}
               - a stupidly simple sms & otp service. I'm excited about building
               this service further and building new services within the
-              developer tooling space as a whole! I'm absolutely loving working
-              with my entrepreneurial peers with Founders@UVA and working with
-              founders, VC's, and angels in the Cville area to empower
-              entrepreneurs on grounds - looking forward to the new launch of
-              UVA's entrepreneruship house!
+              developer tooling space as a whole! I'm also starting to build
+              EasyList - simplifying the UX from physical product to online
+              store for small businesses. I'm absolutely loving working with my
+              entrepreneurial peers with Founders@UVA - we're now hosting a week
+              of events for the launch of UVA's entrepreneurship house (The
+              Foundry)! 
             </p>
             <p className={styles.text}>
               {"\u002A"}
