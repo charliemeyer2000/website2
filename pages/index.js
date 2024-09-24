@@ -62,12 +62,12 @@ export default function Home() {
               store for small businesses. I'm absolutely loving working with my
               entrepreneurial peers with Founders@UVA - we're now hosting a week
               of events for the launch of UVA's entrepreneurship house (The
-              Foundry)! 
+              Foundry)!
             </p>
             <p className={styles.text}>
               {"\u002A"}
-              {"\u002A"}PS - I'm thinking of building a service for the
-              Fediverse, if you're interested, LMK!{"\u002A"}
+              {"\u002A"}PS - I'm cooking on an idea about the Fediverse, if
+              you're interested, LMK!{"\u002A"}
               {"\u002A"}
             </p>
           </section>
