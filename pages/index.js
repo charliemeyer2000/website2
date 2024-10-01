@@ -34,7 +34,7 @@ export default function Home() {
           <section className={styles.section}>
             <h1 className={styles.title}>Currently</h1>
             <p className={styles.text}>
-              I'm a third year @ UVA majoring in CS. I'm into weightlifting,
+              I'm a third year @ UVA studying CS. I'm into weightlifting,
               snowboarding (unabashedly an Epic pass holder), guitar, any type
               of outdoor activity and building cool stuff. I just finished my
               first marathon in SF (🎉🎉) while also hoping to get into the
