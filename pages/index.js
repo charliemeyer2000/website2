@@ -45,13 +45,10 @@ export default function Home() {
               <Link href="/guestbook">guestbook</Link>.
             </p>
             <p className={styles.text}>
-              In terms of technically what I'm up to, I finished my role working
-              on{" "}
-              <Link href="https://principal.com" newWindow>
-                Principal's
-              </Link>{" "}
-              asset management team this summer building cloud infrastructure as
-              code with AWS. Over the summer I just launched{" "}
+              In terms of technically what I'm up to, I just became a{" "}
+              <Link href="https://neo.com">Neo Scholar</Link>! I'm so hyped to
+              get truly involved in the startup space and meet awesome builders.
+              Also, over the summer I launched{" "}
               <Link href="https://simpletext.dev" newWindow>
                 simpletext
               </Link>{" "}
@@ -65,8 +62,8 @@ export default function Home() {
               Foundry)!
             </p>
             <p className={styles.text} style={{ fontStyle: "italic" }}>
-              PS - I'm cooking on an idea about the Fediverse, if you're
-              interested, LMK!
+              PS - I'm always looking to build new things. Please, <b>please</b>{" "}
+              reach out to me!
             </p>
           </section>
           <section className={styles.section}>
@@ -101,6 +98,13 @@ export default function Home() {
               <div className={styles.stuffItem}>
                 <p className={styles.stuffItemTitle}>Certifications n' Stuff</p>
                 <div className={styles.stuffItemContent}>
+                  <StuffItem
+                    title="Neo Scholar"
+                    href="https://neo.com"
+                    angle={-45}
+                    newWindow={true}
+                    description="Just became a Neo Scholar!"
+                  />
                   <StuffItem
                     title="AWS Cloud Practitioner"
                     href="https://www.credly.com/badges/4d6f0528-03d5-4e23-8ee9-92a1f288ff7b/public_url"
