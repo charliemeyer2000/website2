@@ -36,42 +36,54 @@ export default function Home() {
             <p className={styles.text}>
               I'm a third year @ UVA studying CS. I'm into weightlifting,
               snowboarding (unabashedly an Epic pass holder), guitar, any type
-              of outdoor activity and building cool stuff. I just finished my
-              first marathon in SF (🎉🎉) while also hoping to get into the
-              2-3-4 club. I'm a big Model UN nerd, currently the
-              Secretary-General of VICS XXIX and am chairing VAMUN XLIV. Thanks
-              for stopping by, and take a look at some of my{" "}
-              <Link href="/posts">posts</Link> or leave a note in my{" "}
+              of outdoor activity and building cool stuff. I just became a{" "}
+              <Link href="https://neo.com">Neo Scholar</Link> and will be taking
+              off from school (January → May) to build in SF with other
+              Scholars. Super excited to get to the Bay, but will definitely
+              miss Grounds! Thanks for stopping by, and take a look at some of
+              my <Link href="/posts">posts</Link> or leave a note in my{" "}
               <Link href="/guestbook">guestbook</Link>.
             </p>
             <p className={styles.text}>
-              In terms of technically what I'm up to, I just became a{" "}
-              <Link href="https://neo.com">Neo Scholar</Link>! I'm so hyped to
-              get truly involved in the startup space and meet awesome builders.
-              Also, over the summer I launched{" "}
+              In terms of technically what I'm up to, I'm starting to build{" "}
+              <Link href="https://swll.io">Swell</Link> with a friend and am
+              always hacking on one-off ideas like{" "}
+              <Link href="https://tinypds.com">tinypds</Link>. Also, over the
+              summer I launched{" "}
               <Link href="https://simpletext.dev" newWindow>
                 simpletext
               </Link>{" "}
-              - a stupidly simple sms & otp service. I'm excited about building
-              this service further and building new services within the
-              developer tooling space as a whole! I'm also starting to build
-              EasyList - simplifying the UX from physical product to online
-              store for small businesses. I'm absolutely loving working with my
-              entrepreneurial peers with Founders@UVA - we're now hosting a week
-              of events for the launch of UVA's entrepreneurship house (The
-              Foundry)!
+              - a stupidly simple sms & otp service. I'm also going to try my hand at 
+              "growth hacking," sharing my progress on <Link href="https://x.com/charlie_meyer_">Twitter</Link> throughout the semester off.
             </p>
             <p className={styles.text} style={{ fontStyle: "italic" }}>
               PS - I'm always looking to build new things. Please, <b>please</b>{" "}
-              reach out to me!
+              <Link href="https://calendly.com/abs6bd-virginia/1-1-with-charlie">
+                reach out
+              </Link>{" "}
+              to me!
             </p>
           </section>
           <section className={styles.section}>
             <h1 className={styles.title}>Stuff</h1>
             <div className={styles.stuffWrapper}>
               <div className={styles.stuffItem}>
-                <p className={styles.stuffItemTitle}>Projects</p>
+                <p className={styles.stuffItemTitle}>Hacking on:</p>
                 <div className={styles.stuffItemContent}>
+                  <StuffItem
+                    title="Swell"
+                    href="https://www.swll.io"
+                    angle={-45}
+                    newWindow={true}
+                    description="Put your Etsy marketing on autopilot."
+                  />
+                  <StuffItem
+                    title="tinypds"
+                    href="https://tinypds.com"
+                    angle={-45}
+                    newWindow={true}
+                    description="BlueSky PDS hosting on your domain."
+                  />
                   <StuffItem
                     title="simpletext"
                     href="https://simpletext.dev"
@@ -79,20 +91,13 @@ export default function Home() {
                     newWindow={true}
                     description="Stupidly simple sms & otp service."
                   />
-                  <StuffItem
-                    title="DocuDiver"
-                    href="https://www.docudiver.com"
-                    angle={-45}
-                    newWindow={true}
-                    description="Modern document management & intelligence."
-                  />
-                  <StuffItem
+                  {/* <StuffItem
                     title="DoorShop"
                     href="https://apps.apple.com/us/app/doorshop/id6496682406"
                     angle={-45}
                     newWindow={true}
                     description="Download DoorShop on the App Store."
-                  />
+                  /> */}
                 </div>
               </div>
               <div className={styles.stuffItem}>
@@ -212,7 +217,7 @@ export default function Home() {
               >
                 <Arrow angle={0} height={1} className={styles.animatedArrow} />
                 <Link className={styles.contactListText}>
-                  abs6bd@virginia.edu
+                  charliemeyer@virginia.edu
                 </Link>
               </div>
               <div
