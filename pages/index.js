@@ -53,8 +53,10 @@ export default function Home() {
               <Link href="https://simpletext.dev" newWindow>
                 simpletext
               </Link>{" "}
-              - a stupidly simple sms & otp service. I'm also going to try my hand at 
-              "growth hacking," sharing my progress on <Link href="https://x.com/charlie_meyer_">Twitter</Link> throughout the semester off.
+              - a stupidly simple sms & otp service. I'm also going to try my
+              hand at "growth hacking," sharing my progress on{" "}
+              <Link href="https://x.com/charlie_meyer_">Twitter</Link>{" "}
+              throughout the semester off.
             </p>
             <p className={styles.text} style={{ fontStyle: "italic" }}>
               PS - I'm always looking to build new things. Please, <b>please</b>{" "}
@@ -201,37 +203,47 @@ export default function Home() {
               <div
                 className={styles.contactListItem}
                 onClick={() => {
-                  window.open("mailto:charlie@charliemeyer.xyz", "_blank");
+                  window.open("https://x.com/charlie_meyer_", "_blank");
                 }}
               >
                 <Arrow angle={0} height={1} className={styles.animatedArrow} />
-                <Link className={styles.contactListText}>
-                  charlie@charliemeyer.xyz
-                </Link>
-              </div>
-              <div
-                className={styles.contactListItem}
-                onClick={() => {
-                  window.open("mailto:abs6bd@virginia.edu", "_blank");
-                }}
-              >
-                <Arrow angle={0} height={1} className={styles.animatedArrow} />
-                <Link className={styles.contactListText}>
-                  charliemeyer@virginia.edu
-                </Link>
+                <Link className={styles.contactListText}>Twitter/X</Link>
               </div>
               <div
                 className={styles.contactListItem}
                 onClick={() => {
                   window.open(
-                    "https://www.linkedin.com/in/charlie-meyer-loves-you/",
+                    "https://bsky.app/profile/charliemeyer.xyz",
                     "_blank"
                   );
                 }}
               >
                 <Arrow angle={0} height={1} className={styles.animatedArrow} />
                 <Link className={styles.contactListText}>
-                  charlie-meyer-loves-you on Linkedin
+                  Bluesky
+                </Link>
+              </div>
+              <div
+                className={styles.contactListItem}
+                onClick={() => {
+                  window.open(
+                    "https://linkedin.com/in/charlie-meyer-loves-you",
+                    "_blank"
+                  );
+                }}
+              >
+                <Arrow angle={0} height={1} className={styles.animatedArrow} />
+                <Link className={styles.contactListText}>LinkedIn</Link>
+              </div>
+              <div
+                className={styles.contactListItem}
+                onClick={() => {
+                  window.open("mailto:charlie@charliemeyer.xyz", "_blank");
+                }}
+              >
+                <Arrow angle={0} height={1} className={styles.animatedArrow} />
+                <Link className={styles.contactListText}>
+                  Email
                 </Link>
               </div>
             </div>
