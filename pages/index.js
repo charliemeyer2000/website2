@@ -39,9 +39,10 @@ export default function Home() {
               of outdoor activity and building cool stuff. I just became a{" "}
               <Link href="https://neo.com">Neo Scholar</Link> and will be taking
               off from school (January → May) to build in SF with other
-              Scholars. Super excited to get to the Bay, but will definitely
-              miss Grounds! Thanks for stopping by, and take a look at some of
-              my <Link href="/posts">posts</Link> or leave a note in my{" "}
+              Scholars, and I'll also be in SF over the summer, as well. Super
+              excited to get to the Bay, but will definitely miss Grounds!
+              Thanks for stopping by, and take a look at some of my{" "}
+              <Link href="/posts">posts</Link> or leave a note in my{" "}
               <Link href="/guestbook">guestbook</Link>.
             </p>
             <p className={styles.text}>
@@ -174,11 +175,12 @@ export default function Home() {
               snowboarding, guitar, and surfing.
             </p>
             <p className={styles.text}>
-              Technically speaking, I want to work at a startup to get a feel
-              for the fast-paced environment. I'm interested in
-              frontend/fullstack development, but also love building distributed
-              & cloud systems (AWS rocks). Looking at Series A/B startups in the
-              bay area.
+              I want to build my own company, tackling problems that will
+              improve people's lives (first with software, then with hardware).
+              I'm interested in frontend/fullstack development, but also love
+              building distributed & cloud systems (AWS rocks). I eventually
+              want to build hardware, especially interested in non-invasive
+              methods to use tech to remove mundane tasks from people's lives. 
             </p>
             <p className={styles.text}>
               Aside from running again in the 2025 SF marathon, I need to run in
@@ -219,9 +221,7 @@ export default function Home() {
                 }}
               >
                 <Arrow angle={0} height={1} className={styles.animatedArrow} />
-                <Link className={styles.contactListText}>
-                  Bluesky
-                </Link>
+                <Link className={styles.contactListText}>Bluesky</Link>
               </div>
               <div
                 className={styles.contactListItem}
@@ -242,9 +242,7 @@ export default function Home() {
                 }}
               >
                 <Arrow angle={0} height={1} className={styles.animatedArrow} />
-                <Link className={styles.contactListText}>
-                  Email
-                </Link>
+                <Link className={styles.contactListText}>Email</Link>
               </div>
             </div>
           </section>
