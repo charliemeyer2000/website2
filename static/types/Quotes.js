@@ -7,12 +7,13 @@ const quotes = [
   "One who makes no mistakes makes nothing at all - Giacomo Casanova",
   "Do one thing every day that scares you - Eleanor Roosevelt",
   "In the end its not the years in your life that count, its the life in your years - Abraham Lincoln",
-  "If i'd followed all the rules, I'd never have gotten anywhere - Marilyn Monroe",
+  "If I'd followed all the rules, I'd never have gotten anywhere - Marilyn Monroe",
   "Action expresses priorities - Mahatma Gandhi",
-  "\"What if this works\" is more important than \"what if this fails\" - Tommy Nicholas",
-  'Life should not be a journey to the grave with the intention of arriving safely in a pretty and well preserved body, but rather to skid in broadside in a cloud of smoke, thoroughly used up, totally worn out, and loudly proclaiming "Wow! What a Ride" - Hunter S Thompson',
-  "Live the dash - Eric Martin & Linda Ellis", 
-  "Do or do not. There is no try - Yoda",
+  "'What if this works' is more important than 'what if this fails' - Tommy Nicholas",
+  "Wow! What a ride - Hunter S Thompson",
+  "Live the dash - Eric Martin & Linda Ellis",
+  "Do, or do not. There is no try - Yoda",
+  "If you obey all the rules, you miss all the fun - Katharine Hepburn",
 ];
 
 
