@@ -25,24 +25,29 @@ export default function Footer() {
       <div className={styles.top}>
         <div className={styles.box}>
           <Link href="/">
-            <p className={styles.text} onMouseOver={play}>
-              Home
+            <p
+              className={styles.text}
+              onMouseOver={play}
+              onClick={() => {
+                window.open("https://www.linkedin.com/in/charlie-meyer-loves-you", "_blank");
+              }}
+            >
+              Linkedin
             </p>
           </Link>
-          <Link href="/posts">
+          <Link href="https://calendly.com/abs6bd-virginia/1-1-with-charlie">
             <p className={styles.text} onMouseOver={play}>
-              Posts
+              Schedule a call w/me!
             </p>
           </Link>
           <p
             className={classNames(styles.text, "contactFooterText")}
             onMouseOver={play}
-            // navigate to the home page and scroll to the contact section
             onClick={() => {
-              router.push("/");
+              window.open("mailto:charlie@charliemeyer.xyz", "_blank");
             }}
           >
-            Contact
+            Email
           </p>
         </div>
         <div className={styles.box}>
@@ -51,12 +56,12 @@ export default function Footer() {
             onMouseOver={play}
             onClick={() => {
               window.open(
-                "https://www.linkedin.com/in/charlie-meyer-loves-you",
+                "https://bsky.app/profile/charliemeyer.xyz",
                 "_blank"
               );
             }}
           >
-            Linkedin
+            Bluesky
           </p>
           <p
             className={styles.text}
@@ -71,10 +76,10 @@ export default function Footer() {
             className={styles.text}
             onMouseOver={play}
             onClick={() => {
-              window.open("https://www.youtube.com/@charliegmeyer", "_blank");
+              window.open("https://www.x.com/charlie_meyer_", "_blank");
             }}
           >
-            YouTube
+            Twitter/X
           </p>
         </div>
         <div className={styles.box}>
