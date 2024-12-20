@@ -1,7 +1,7 @@
 const quotes = [
   "Life is either a daring adventure or nothing at all - Helen Keller",
   "Buy the ticket, take the ride - Hunter S Thompson",
-  "You only live once, but if you do it, right once is enough - Mae West",
+  "You only live once, but if you do it right, once is enough - Mae West",
   "Above all, try something - Franklin D Roosevelt",
   "I never worry about the future, it comes soon enough - Albert Einstein",
   "One who makes no mistakes makes nothing at all - Giacomo Casanova",
