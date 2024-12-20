@@ -47,24 +47,29 @@ export default function Home() {
             </p>
             <p className={styles.text}>
               In terms of technically what I'm up to, I'm starting to build{" "}
-              <Link href="https://swll.io">Swell</Link> with a friend and am
-              always hacking on one-off ideas like{" "}
-              <Link href="https://tinypds.com">tinypds</Link>. Also, over the
-              summer I launched{" "}
-              <Link href="https://simpletext.dev" newWindow>
-                simpletext
+              <Link href="https://hufflo.com">Hufflo</Link> with my friend{" "}
+              <Link
+                href="https://www.linkedin.com/in/rylandbirchmeier/"
+                newWindow
+              >
+                Ryland,
               </Link>{" "}
-              - a stupidly simple sms & otp service. I'm also going to try my
-              hand at "growth hacking," sharing my progress on{" "}
+              and I'm always hacking on one-off ideas like{" "}
+              <Link href="https://tinypds.com">tinypds</Link>. However, I'm open
+              to building almost anything - spaces I'm interested in building in
+              include tech that optimizes (or replaces) email, music production
+              tech, EdTech, closed-loop social networks, and any LLM-powered or
+              agentic-powered tools that optimize tasks. I'm also going to try
+              my hand at "growth hacking," sharing my progress on{" "}
               <Link href="https://x.com/charlie_meyer_">Twitter</Link>{" "}
               throughout the semester off.
             </p>
             <p className={styles.text} style={{ fontStyle: "italic" }}>
-              PS - I'm always looking to build new things. Please, <b>please</b>{" "}
-              <Link href="https://calendly.com/abs6bd-virginia/1-1-with-charlie">
+              I'm always looking to build new things. Please, <b>please</b>{" "}
+              <Link href="https://calendly.com/abs6bd-virginia/1-1-with-charlie" newWindow>
                 reach out
               </Link>{" "}
-              to me!
+              to me if you're interested in building something together!
             </p>
           </section>
           <section className={styles.section}>
@@ -74,8 +79,8 @@ export default function Home() {
                 <p className={styles.stuffItemTitle}>Hacking on:</p>
                 <div className={styles.stuffItemContent}>
                   <StuffItem
-                    title="Swell"
-                    href="https://www.swll.io"
+                    title="Hufflo"
+                    href="https://hufflo.com"
                     angle={-45}
                     newWindow={true}
                     description="Put your Etsy marketing on autopilot."
@@ -180,10 +185,10 @@ export default function Home() {
               I'm interested in frontend/fullstack development, but also love
               building distributed & cloud systems (AWS rocks). I eventually
               want to build hardware, especially interested in non-invasive
-              methods to use tech to remove mundane tasks from people's lives. 
+              methods to use tech to remove mundane tasks from people's lives.
             </p>
             <p className={styles.text}>
-              Aside from running again in the 2025 SF marathon, I need to run in
+              Aside from running the SF Marathon again, I need to run in
               the NYC Marathon. Moreover, I'd want to get to the{" "}
               <Link href="https://www.cphopen.com/" newWindow>
                 Copenhagen Open
