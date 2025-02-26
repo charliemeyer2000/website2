@@ -46,7 +46,7 @@ export default function Home() {
               <Link href="/guestbook">guestbook</Link>.
             </p>
             <p className={styles.text}>
-              In terms of technically what I'm up to, I'm starting to build{" "}
+              In terms of technically what I'm up to, I'm scaling{" "}
               <Link href="https://hufflo.com">Hufflo</Link> with my friend{" "}
               <Link
                 href="https://www.linkedin.com/in/rylandbirchmeier/"
@@ -55,7 +55,7 @@ export default function Home() {
                 Ryland,
               </Link>{" "}
               and I'm always hacking on one-off ideas like{" "}
-              <Link href="https://tinypds.com">tinypds</Link>. However, I'm open
+              <Link href="https://heyswing.com">Swing</Link>. However, I'm open
               to building almost anything - spaces I'm interested in building in
               include tech that optimizes (or replaces) email, music production
               tech, EdTech, closed-loop social networks, and any LLM-powered or
