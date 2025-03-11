@@ -54,19 +54,16 @@ export default function Home() {
               >
                 Ryland,
               </Link>{" "}
-              and I'm always hacking on one-off ideas like{" "}
-              <Link href="https://heyswing.com">Swing</Link>. However, I'm open
-              to building almost anything - spaces I'm interested in building in
-              include tech that optimizes (or replaces) email, music production
-              tech, EdTech, closed-loop social networks, and any LLM-powered or
-              agentic-powered tools that optimize tasks. I'm also going to try
-              my hand at "growth hacking," sharing my progress on{" "}
-              <Link href="https://x.com/charlie_meyer_">Twitter</Link>{" "}
-              throughout the semester off.
+              and I'm diving into RL. However, I'm open to building almost
+              anything - spaces I'm interested in scaling ML systems, MLOps, and
+              clean applications of RL (talk to me about MuZero/EfficientZero!).
             </p>
             <p className={styles.text} style={{ fontStyle: "italic" }}>
               I'm always looking to build new things. Please, <b>please</b>{" "}
-              <Link href="https://calendly.com/abs6bd-virginia/1-1-with-charlie" newWindow>
+              <Link
+                href="https://calendly.com/abs6bd-virginia/1-1-with-charlie"
+                newWindow
+              >
                 reach out
               </Link>{" "}
               to me if you're interested in building something together!
@@ -180,16 +177,21 @@ export default function Home() {
               snowboarding, guitar, and surfing.
             </p>
             <p className={styles.text}>
-              I want to build my own company, tackling problems that will
-              improve people's lives (first with software, then with hardware).
-              I'm interested in frontend/fullstack development, but also love
-              building distributed & cloud systems (AWS rocks). I eventually
-              want to build hardware, especially interested in non-invasive
-              methods to use tech to remove mundane tasks from people's lives.
+              I will run my own company. Currently exploring ideas in ML/RL.
+              Also think there's a lot of interesting problems in faciliting{" "}
+              <Link
+                href="https://www.cs.virginia.edu/~robins/YouAndYourResearch.html"
+                newWindow
+              >
+                good research
+              </Link>{" "}
+              especially with removing the engineering overhead to run
+              large-scale experiments. It shouldn't be this engineering
+              intensive to run experiments.
             </p>
             <p className={styles.text}>
-              Aside from running the SF Marathon again, I need to run in
-              the NYC Marathon. Moreover, I'd want to get to the{" "}
+              Aside from running the SF Marathon again, I need to run in the NYC
+              Marathon. Moreover, I'd want to get to the{" "}
               <Link href="https://www.cphopen.com/" newWindow>
                 Copenhagen Open
               </Link>{" "}
