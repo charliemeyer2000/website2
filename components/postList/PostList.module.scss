@@ -8,8 +8,8 @@
     padding-bottom: var(--gap-double);
 }
 
-.yearContainers {
-    display:flex;
+.topicContainers {
+    display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: var(--gap-double);
@@ -20,16 +20,15 @@
 .postListItemContainer {
     transition: opacity 0.3s;
     width: 100%;
-  }
+}
   
-  .postListItemContainer:hover {
-    opacity: 1; /* Keep the hovered one fully opaque */
-  }
+.postListItemContainer:hover {
+    opacity: 1;
+}
   
-  .postListItemContainer:not(:hover) {
+.postListItemContainer:not(:hover) {
     opacity: 0.5;
-  }
-  
+}
 
 .postList {
     display: flex;
@@ -37,14 +36,14 @@
     align-items: flex-start;
     gap: var(--gap-double);
     padding-top: var(--gap-double);
-    // make this take up full width
     width: 100%;
     margin: auto;
-
 }
 
-.year {
+.topic {
     font-size: var(--text);
+    color: var(--grey);
+    font-weight: 600;
 }
 
 

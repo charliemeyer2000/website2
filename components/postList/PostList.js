@@ -2,53 +2,73 @@ import styles from "./PostList.module.scss";
 import PostListItem from "@/components/postListItem/PostListItem";
 import classNames from "classnames";
 import { motion } from "framer-motion";
+import Topics, { TOPIC_ORDER } from "@/static/types/Topics";
 
 export default function PostList({ posts, ...props }) {
-  let currentYear = null;
-  const yearContainers = [];
+  const topicContainers = [];
+  const topicMap = {};
+
+  Object.values(Topics).forEach((topic) => {
+    topicMap[topic] = [];
+  });
 
   posts.forEach((post) => {
-    const year = new Date(post.date).getFullYear();
-
-    if (year !== currentYear) {
-      const yearPosts = posts.filter(
-        (p) => new Date(p.date).getFullYear() === year
+    if (!post.topic || post.topic === "Other") {
+      topicMap["Other"].push(post);
+    } else {
+      const matchingTopic = Object.values(Topics).find(
+        (topic) => topic === post.topic
       );
-      const postItems = yearPosts.map((yearPost, index) => (
-        <motion.div
-          className={classNames(styles.postListItemContainer)}
-          key={yearPost.slug}
-          initial={{ opacity: 0, scale: 1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 1,
-            delay: yearContainers.length * 0.1 + index * 0.1,
-          }}
-        >
-          <PostListItem
-            key={yearPost.slug}
-            date={yearPost.date}
-            title={yearPost.title}
-            slug={yearPost.slug}
-          />
-        </motion.div>
-      ));
-
-      yearContainers.push(
-        <div key={year} className={styles.yearContainer}>
-          <p className={styles.year}>{year}</p>
-          <div className={styles.postList}>{postItems}</div>
-        </div>
-      );
-      currentYear = year;
+      if (matchingTopic) {
+        topicMap[matchingTopic].push(post);
+      } else {
+        // Put into "other" if not matching any topic. 
+        topicMap["Other"].push(post);
+      }
     }
+  });
+
+  TOPIC_ORDER.forEach((topic) => {
+    const topicPosts = topicMap[topic];
+    if (topicPosts.length === 0) return; // Skip empty topics. 
+
+    const sortedPosts = topicPosts.sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    );
+
+    const postItems = sortedPosts.map((post, index) => (
+      <motion.div
+        className={classNames(styles.postListItemContainer)}
+        key={post.slug}
+        initial={{ opacity: 0, scale: 1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 1,
+          delay: topicContainers.length * 0.1 + index * 0.1,
+        }}
+      >
+        <PostListItem
+          key={post.slug}
+          date={post.date}
+          title={post.title}
+          slug={post.slug}
+        />
+      </motion.div>
+    ));
+
+    topicContainers.push(
+      <div key={topic} className={styles.topicContainer}>
+        <p className={styles.topic}>{topic}</p>
+        <div className={styles.postList}>{postItems}</div>
+      </div>
+    );
   });
 
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>All articles</h1>
       <motion.div
-        className={styles.yearContainers}
+        className={styles.topicContainers}
         initial="hidden"
         animate="visible"
         variants={{
@@ -56,7 +76,7 @@ export default function PostList({ posts, ...props }) {
           visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
         }}
       >
-        {yearContainers}
+        {topicContainers}
       </motion.div>
     </div>
   );
