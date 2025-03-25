@@ -374,3 +374,57 @@ I've filled out the Google Form on your website, but I'm also reaching out to el
 - Wrote emails to 3 professors. 
 - Read through all Streams for MATS and picked people I'd apply to.
 
+## March 25:
+
+### Jason Gross & Rajashree Agrawal Application
+
+#### Q1 What's your experience w/software development using AI?
+
+AI-Powered Coding Tools I've used:
+- Cursor (cursor.com)
+- Windsurf (codeium.com/windsurf)
+- Claude Code (docs.anthropic.com/en/docs/agents-and-tools/claude-code)
+- Copilot (github.com/features/copilot)
+
+Other:
+- Used preview of Devin (cognition.ai)
+- Compared Cursor vs. Windsurf vs. Claude Code to build the same project using only prompts
+- Built agentic tooling in conversational chatbots
+
+#### Q2 What's the most technically impressive project you've built? 
+
+In a two-week sprint I built simpletext.dev, a SMS and OTP provider. This project was a large undertaking becuase of the systems challenging of providing high-availability,  and fraud detection challenges to ensure I follow legal constraints from 10DLC phone numbers. From the systems perspective, this meant ensuring high availability and durability. This required me to build multi-AZ failover for routing, databases, and APIs, along with periodic backups, logging, and observability across the stack to catch errors. The crux of simpletext was that unlike other SMS providers that require you to register your company for a 10DLC phone number, simpletext assumes all liability of every text message sent - and therefore any message sent by a simpletext customer is my responsibility. To ensure that I followed wireless carriers' regulations to cut down on spam, I implemented fraud-detection systems, flagging potential spam/scam messages and alerting me of accounts using my service for suspicious purposes. 
+
+OR TALK ABOUT HYMN AND DIFFUSION? 
+
+Right before ChatGPT came out, I built a text-to-audio service targeted at music producers. This service turned text queries like "a simple drum progression at 127 BPM" into audio samples that users can use with their music. Initially, the ervice used Riffusion (an open-source model), but because we were focused on generating _samples_ rather than music, This required fine-tuing stable diffusion to generate images  5-second clips of audio using spectograms (visual representations of audio) which were then converted into downloadable audio files. This was also a difficult systems challenge, as our service required hosted a queuing system, the diffusion pipeline and the website on kubernetes, along with managing observability, object storage, and other frontend requirements for a high-quality user experience.
+
+#### What is a specific fact about your worldview/aesthetics/skills that makes you want to work on this project? Alternatively, this is a space to share whatever else seems relevant to your application.
+
+Most technological innovations are underpinned by mathematical breakthroughs years or decades before. I believe that mathematical superinteligence is necessary for the development of GSAI, and doing so through automated theorem proving (ATP) seems to be the most tractable way to achieve this. By contributing to this problem, I am immediately contributing to scientific progress more than I ever have before in my life. Moreover, this problem has larger implications than just having bug-free code - if a mathematically superintelligent system can prove unsolved conjectures, this impacts cryptography, physics, algorithm design, and economics drastically. The "what if this works" of ATP is why I gravitate to contributing to this problem.
+
+I think there are interesting sub-problems to explore, including:
+- RL-based (instead of LM-based approaches):
+	- How to get a "conjecture proposer" to propose meaningful conjectures to solve? 
+	- How do you evaluate the "quality" of a proof? 
+	- Given a corpus of theorems (mathlib, for example), how can we ensure proposers/solvers use the best theorems at their disposal? 
+- Evaluating fine-tuning vs few-shot vs. CORPORA-based approaches.
+
+I want to be candid that I have minimal ML experience only through small side-projects and one month of self-study, and no professional expereince. I am on a gap-semester from college through the Neo Scholars program and have spent the past month ramping up in machine learning, having previously spent most of my time building SaaS products. I am inexperienced but incredibly curious, obsessive about understanding ML systems, and enjoy how I am being pushed into an uncomfortable space, away from my product-oriented past. 
+
+#### What are 1-3 pieces of evidence that you'd be able to do good research in the stream? 
+
+- Because of my fullstack experience, I'm accustomed to shipping incredibly quickly and iterating on a well-scoped hypothesis quickly for immediate feedback. I will bring this to a research environment. 
+- In the past month, I've become comfortable learning the process of moving from paper to implementation. I'm comfortable working independently and building from first principles. 
+
+
+
+
+
+
+
+
+
+
+
+
