@@ -39,24 +39,15 @@ export default function Home() {
               of outdoor activity and building cool stuff. I just became a{" "}
               <Link href="https://neo.com">Neo Scholar</Link> and will be taking
               off from school (January → May) to build in SF with other
-              Scholars, and I'll also be in SF over the summer, as well. Super
-              excited to get to the Bay, but will definitely miss Grounds!
-              Thanks for stopping by, and take a look at some of my{" "}
+              Scholars. Super excited to get to the Bay, but will definitely
+              miss Grounds! Take a look at some of my{" "}
               <Link href="/posts">posts</Link> or leave a note in my{" "}
               <Link href="/guestbook">guestbook</Link>.
             </p>
             <p className={styles.text}>
-              In terms of technically what I'm up to, I'm scaling{" "}
-              <Link href="https://hufflo.com">Hufflo</Link> with my friend{" "}
-              <Link
-                href="https://www.linkedin.com/in/rylandbirchmeier/"
-                newWindow
-              >
-                Ryland,
-              </Link>{" "}
-              and I'm diving into RL. However, I'm open to building almost
-              anything - spaces I'm interested in scaling ML systems, MLOps, and
-              clean applications of RL (talk to me about MuZero/EfficientZero!).
+              I've built multiple SaaS products, but throughout the gap semester
+              I've spent most of my time reading and teaching myself RL, GSAI,
+              and LM safety. Talk to me about what you care about! 
             </p>
             <p className={styles.text} style={{ fontStyle: "italic" }}>
               I'm always looking to build new things. Please, <b>please</b>{" "}
@@ -73,7 +64,7 @@ export default function Home() {
             <h1 className={styles.title}>Stuff</h1>
             <div className={styles.stuffWrapper}>
               <div className={styles.stuffItem}>
-                <p className={styles.stuffItemTitle}>Hacking on:</p>
+                <p className={styles.stuffItemTitle}>Past products:</p>
                 <div className={styles.stuffItemContent}>
                   <StuffItem
                     title="Hufflo"
@@ -83,8 +74,8 @@ export default function Home() {
                     description="Put your Etsy marketing on autopilot."
                   />
                   <StuffItem
-                    title="tinypds"
-                    href="https://tinypds.com"
+                    title="tinytext"
+                    href="https://tinytext.me"
                     angle={-45}
                     newWindow={true}
                     description="BlueSky PDS hosting on your domain."
@@ -178,7 +169,7 @@ export default function Home() {
             </p>
             <p className={styles.text}>
               I will run my own company. Currently exploring ideas in ML/RL.
-              Also think there's a lot of interesting problems in faciliting{" "}
+              Also think there's a lot of interesting problems in facilitating{" "}
               <Link
                 href="https://www.cs.virginia.edu/~robins/YouAndYourResearch.html"
                 newWindow
@@ -187,7 +178,7 @@ export default function Home() {
               </Link>{" "}
               especially with removing the engineering overhead to run
               large-scale experiments. It shouldn't be this engineering
-              intensive to run experiments.
+              intensive to run experiments. I also care deeply about LM safety.
             </p>
             <p className={styles.text}>
               Aside from running the SF Marathon again, I need to run in the NYC
