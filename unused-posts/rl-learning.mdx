@@ -1,8 +1,7 @@
 ---
 title: "RL Learning"
 description: "Tracking my learning of RL and getting good (generally)"
-slug: rl-learning
-date: "March 10, 2025"
+slug: rl-learning date: "March 10, 2025"
 categories: ["RL"]
 keywords: ["RL"]
 topic: "Neo Gap Semester"
@@ -61,12 +60,12 @@ Talked with Pavla about thoughts moving forward. Conclusions:
     - [x] [Vanilla RNN](https://karpathy.github.io/2015/05/21/rnn-effectiveness/)
         - [ ] TODO: Need to review this code, both the 100-line gist and the larger implementation. 
     - [X] [LSTM](https://arxiv.org/abs/1503.04069)
-- [ ] GRU - Gated Recurrent Unit
+- [x] GRU - Gated Recurrent Unit
 - [ ] CNNs / conv layers:
-    - https://colah.github.io/posts/2014-07-Conv-Nets-Modular/
-    - https://cs231n.github.io/convolutional-networks/
+    - [x] https://colah.github.io/posts/2014-07-Conv-Nets-Modular/
+    - [x] https://cs231n.github.io/convolutional-networks/
 - [ ] resnets:
-    - https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf
+    - [x] https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf
     - https://arxiv.org/pdf/1512.03385
 - [ ] attention mechanisms + transformers
     - Review
@@ -434,9 +433,19 @@ outline:
 
 When deceptive alignment (DA) arises, models will have achieved or exceeded general intelligence according to OpenAI's definition. At this level, three significant improvements will manifest. First, models can plan using orders of magnitude of tokens larger than the current test-time compute capabilities, allowing models to formulate complex, multi-step, and long-horizon plans. Second, these plans will unfold gradually, evading immediate human detection. Finally, multiple instances of these models will implicitly coordinate through shared latent knowledge by recognizing that similar models will also independently pursue aligned goals without explicit communication to the user. This differs from current research that demonstrates LMs attempting to explicitly create side-channels towards a goal of acquiring resources (Anthropic's alignment faking or evidence of LMs sandbagging). Once DA arises naturally, models will craft long-term goals predicated on the understanding that all other models will do the same; therefore, rather than attempting a backdoor, models will create effective and widespread deceptive influence, undetectable by humans. This will manifest in more subtle but sinister ways, including influencing the general population's political beliefs in favor of candidates less concerned with AI safety policies or impacting market decisions on a mass scale. 
 
+### Nicholas Carlini 
 
+#### Notes on what he fucks with
 
-## Blurb to Haize for Connor. 
+- Can we scale attacks? Make them better than ones in the literature? 
+- Study the robustness of a system that uses llms (worst case, create that system)
+- construct cybersecurity evals that are meaningful.
+
+- Papers he's written summary:
+	- polynomial time extracting weights of a model in "hard label" (most-likely class label only scenario). 
+	- stealing part of a production language model - "how much info can we gain from a production language model by querying its api?". 
+
+### Blurb to Haize for Connor. 
 
 ### Requirements
 
