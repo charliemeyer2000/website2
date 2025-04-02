@@ -34,30 +34,33 @@ export default function Home() {
           <section className={styles.section}>
             <h1 className={styles.title}>Currently</h1>
             <p className={styles.text}>
-              I'm a third year @ UVA studying CS. I'm into weightlifting,
-              snowboarding (unabashedly an Epic pass holder), guitar, any type
-              of outdoor activity and building cool stuff. I just became a{" "}
+              {/* I'm a third year @ UVA studying CS and entrepreneurship. I'm into
+              weightlifting, snowboarding, guitar, any type of outdoor activity
+              and building cool stuff. I just became a{" "}
               <Link href="https://neo.com">Neo Scholar</Link> and will be taking
               off from school (January → May) to build in SF with other
               Scholars. Super excited to get to the Bay, but will definitely
               miss Grounds! Take a look at some of my{" "}
               <Link href="/posts">posts</Link> or leave a note in my{" "}
-              <Link href="/guestbook">guestbook</Link>.
+              <Link href="/guestbook">guestbook</Link>. */}
+              I'm a third year @ UVA studying CS and entrepreneurship. I'm
+              currently in San Francisco with other{" "}
+              <Link href="https://www.neo.com/scholars"> Neo Scholars</Link>{" "}
+              exploring what I care about. Previously, I've worked at{" "}
+              <Link href="https://www.principal.com">Principal Financial</Link>,{" "}
+              <Link href="https://www.scenthound.com">Scenthound</Link>, and{" "}
+              <Link href="https://www.vercel.com">Vercel</Link>. I'm a 2025 Neo
+              Scholar, Model UN-er, dedicated weightlifter, and decent
+              snowboarder.
             </p>
             <p className={styles.text}>
-              I've built multiple SaaS products, but throughout the gap semester
-              I've spent most of my time reading and teaching myself RL, GSAI,
-              and LM safety. Talk to me about what you care about! 
+              I've built multiple SaaS products, but throughout the my time away
+              from UVA, I've been reading and teaching myself RL and ML
+              concepts. Buzzwords include AlphaGo/AlphaZero, LM red-teaming,
+              automated theorem proving, and Ray.
             </p>
             <p className={styles.text} style={{ fontStyle: "italic" }}>
-              I'm always looking to build new things. Please, <b>please</b>{" "}
-              <Link
-                href="https://calendly.com/abs6bd-virginia/1-1-with-charlie"
-                newWindow
-              >
-                reach out
-              </Link>{" "}
-              to me if you're interested in building something together!
+              Reach out to me! Talk to me about what you care about.
             </p>
           </section>
           <section className={styles.section}>
@@ -161,11 +164,12 @@ export default function Home() {
           <section className={styles.section}>
             <h1 className={styles.title}>Future</h1>
             <p className={styles.text}>
-              My goal is to live out in SF - it's just hours from some of the
-              best hiking, skiing, and surfing in the US, and also a hub for
-              entrepreneurship. I want to work on technically challenging
-              projects while living simply and enjoying hobbies - skating,
-              snowboarding, guitar, and surfing.
+              I care about hard problems. There's a couple things I think worth
+              working on - artificial superintelligence, AI safety, the energy
+              crisis (nuclear fusion), quantum, BCI, the global climate crisis,
+              and making governments better. The intersection of what I'm good
+              at, what I care about, and what's important in the world is AGI
+              and AI safety. So I'm working on that.
             </p>
             <p className={styles.text}>
               I will run my own company. Currently exploring ideas in ML/RL.
@@ -178,26 +182,26 @@ export default function Home() {
               </Link>{" "}
               especially with removing the engineering overhead to run
               large-scale experiments. It shouldn't be this engineering
-              intensive to run experiments. I also care deeply about LM safety.
+              intensive to run experiments. Also, how can we formally verify
+              code?
             </p>
             <p className={styles.text}>
               Aside from running the SF Marathon again, I need to run in the NYC
-              Marathon. Moreover, I'd want to get to the{" "}
+              Marathon. I'd want to get to the{" "}
               <Link href="https://www.cphopen.com/" newWindow>
                 Copenhagen Open
               </Link>{" "}
               or{" "}
               <Link href="https://dimemtl.com/blogs/videos" newWindow>
-                Dime
-              </Link>{" "}
-              while participating in local skate events to support the skaters I
-              love (keeping an eye on Thrasher and Pocket Skate Mag).
+                Dime.
+              </Link>
             </p>
           </section>
           <section className={styles.section}>
             <h1 className={styles.title}>Contact</h1>
             <p className={styles.text}>
-              Reach out to me. I'm open for opportunities.{" "}
+              Reach out to me. I love to talk to people who are deeply
+              passionate about something.{" "}
             </p>
             <div className={styles.contactListWrapper}>
               <div
