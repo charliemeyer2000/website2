@@ -26,7 +26,7 @@ export default function Home() {
       <StaticTableOfContents />
       <article className={styles.main}>
         <section className={styles.section}>
-          <h1 className={styles.title}>Hey, I'm Charlie Meyer.</h1>
+          <h1 className={styles.title}>Hey, I&apos;m Charlie Meyer.</h1>
           <p className={styles.text}>
             <em>{randomQuote}</em>
           </p>
@@ -34,30 +34,17 @@ export default function Home() {
         <section className={styles.section}>
           <h1 className={styles.title}>Currently</h1>
           <p className={styles.text}>
-            {/* I'm a third year @ UVA studying CS and entrepreneurship. I'm into
-              weightlifting, snowboarding, guitar, any type of outdoor activity
-              and building cool stuff. I just became a{" "}
-              <Link href="https://neo.com">Neo Scholar</Link> and will be taking
-              off from school (January → May) to build in SF with other
-              Scholars. Super excited to get to the Bay, but will definitely
-              miss Grounds! Take a look at some of my{" "}
-              <Link href="/posts">posts</Link> or leave a note in my{" "}
-              <Link href="/guestbook">guestbook</Link>. */}
-            I'm a third year @ UVA studying CS and entrepreneurship. I'm
+            I&apos;m a third year @ UVA studying CS and entrepreneurship. I&apos;m
             currently in San Francisco with other{" "}
             <Link href="https://www.neo.com/scholars"> Neo Scholars</Link>{" "}
-            exploring what I care about. Previously, I've worked at{" "}
+            exploring what I care about. Previously, I&apos;ve worked at{" "}
             <Link href="https://www.principal.com">Principal Financial</Link>,{" "}
-            <Link href="https://www.scenthound.com">Scenthound</Link>, and (soon
-            at) <Link href="https://www.vercel.com">Vercel</Link>. I'm a 2025
-            Neo Scholar, Model UN-er, dedicated weightlifter, and decent
-            snowboarder.
+            <Link href="https://www.scenthound.com">Scenthound</Link>, and <Link href="https://www.vercel.com">Vercel</Link>. I&apos;m a 2025
+            Neo Scholar, Model UN-er, dedicated weightlifter, and decent snowboarder.
           </p>
           <p className={styles.text}>
-            I've built multiple SaaS products, but throughout the my time away
-            from UVA, I've been reading and teaching myself RL and ML concepts.
-            Buzzwords include AlphaGo/AlphaZero, LM red-teaming, automated
-            theorem proving, and Ray.
+            I work on inference research with <Link href="https://weizhepei.com/">Zhepei Wei</Link> at UVA and am independently working on AI for math research. 
+            How can we get LLMs to reason in format math (Lean)? 
           </p>
           <p className={styles.text} style={{ fontStyle: "italic" }}>
             Reach out to me! Talk to me about what you care about.
@@ -81,7 +68,7 @@ export default function Home() {
                   href="https://tinytext.me"
                   angle={-45}
                   newWindow={true}
-                  description="BlueSky PDS hosting on your domain."
+                  description="vibe coded sms reminders service."
                 />
                 <StuffItem
                   title="simpletext"
@@ -100,7 +87,7 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.stuffItem}>
-              <p className={styles.stuffItemTitle}>Certifications n' Stuff</p>
+              <p className={styles.stuffItemTitle}>Certifications n&apos; Stuff</p>
               <div className={styles.stuffItemContent}>
                 <StuffItem
                   title="Neo Scholar"
@@ -164,29 +151,16 @@ export default function Home() {
         <section className={styles.section}>
           <h1 className={styles.title}>Future</h1>
           <p className={styles.text}>
-            I care about hard problems. There's a couple things I think worth
+            I care about hard problems. There&apos;s a couple things I think worth
             working on - artificial superintelligence, AI safety, the energy
             crisis (nuclear fusion), quantum, BCI, the global climate crisis,
-            and making governments better. The intersection of what I'm good at,
-            what I care about, and what's important in the world is AGI and AI
-            safety. So I'm working on that.
-          </p>
-          <p className={styles.text}>
-            I will run my own company. Currently exploring ideas in ML/RL. Also
-            think there's a lot of interesting problems in facilitating{" "}
-            <Link
-              href="https://www.cs.virginia.edu/~robins/YouAndYourResearch.html"
-              newWindow
-            >
-              good research
-            </Link>{" "}
-            especially with removing the engineering overhead to run large-scale
-            experiments. It shouldn't be this engineering intensive to run
-            experiments. Also, how can we formally verify code?
+            and making governments better. The intersection of what I&apos;m good at,
+            what I care about, and what&apos;s important in the world is AGI and AI
+            safety. So I&apos;m working on that, and subproblems of it: inference and math reasoning.
           </p>
           <p className={styles.text}>
             Aside from running the SF Marathon again, I need to run in the NYC
-            Marathon. I'd want to get to the{" "}
+            Marathon. I&apos;d want to get to the{" "}
             <Link href="https://www.cphopen.com/" newWindow>
               Copenhagen Open
             </Link>{" "}
@@ -211,18 +185,6 @@ export default function Home() {
             >
               <Arrow angle={0} height={1} className={styles.animatedArrow} />
               <Link className={styles.contactListText}>Twitter/X</Link>
-            </div>
-            <div
-              className={styles.contactListItem}
-              onClick={() => {
-                window.open(
-                  "https://bsky.app/profile/charliemeyer.xyz",
-                  "_blank",
-                );
-              }}
-            >
-              <Arrow angle={0} height={1} className={styles.animatedArrow} />
-              <Link className={styles.contactListText}>Bluesky</Link>
             </div>
             <div
               className={styles.contactListItem}

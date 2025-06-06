@@ -50,13 +50,13 @@ If you want to clone this, it running it locally will not work because of the im
 
 ```bash
 # install dependencies
-yarn install
+pnpm install
 
 # dev - looks at .env.development
-yarn dev
+pnpm dev
 
 # prod - looks at .env.production
-yarn start
+pnpm start
 ```
 
 This was also deployed on Vercel - as easy linking my repo and clicking "Deploy." 

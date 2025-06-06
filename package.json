@@ -47,5 +47,9 @@
     "sass": "^1.65.1",
     "use-sound": "^4.0.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^13.4.12"
+  },
+  "packageManager": "pnpm@10.11.0"
 }
