@@ -147,6 +147,9 @@ export default function Home() {
             safety. So I&apos;m working on that, and subproblems of it: inference and math reasoning.
           </p>
           <p className={styles.text}>
+            I also am interested in the infrastructure that supports AI research. It&apos;s incredibly hard to do training at scale and manage all the buzzwords - tensor parallelism, pipeline parallelism, NCCL, accelerators, kubernetes, all this stuff. Training and serving models at scale should be easier.
+          </p>
+          <p className={styles.text}>
             Aside from running the SF Marathon again, I need to run in the NYC
             Marathon. I&apos;d want to get to the{" "}
             <Link href="https://www.cphopen.com/" newWindow>
