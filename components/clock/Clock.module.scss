@@ -1,0 +1,42 @@
+.clock {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--grey);
+  border-radius: 50%;
+  background: transparent;
+}
+
+.hour, .minute, .second {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center bottom;
+  background: var(--grey);
+}
+
+.hour {
+  width: 1px;
+  height: 6px;
+  margin-top: -6px;
+  margin-left: -0.5px;
+  transform: rotate(calc(var(--now-h) * 30deg + var(--now-m) * 0.5deg));
+}
+
+.minute {
+  width: 1px;
+  height: 8px;
+  margin-top: -8px;
+  margin-left: -0.5px;
+  transform: rotate(calc(var(--now-m) * 6deg));
+}
+
+.second {
+  width: 1px;
+  height: 10px;
+  margin-top: -10px;
+  margin-left: -0.5px;
+  transform: rotate(calc(var(--now-s) * 6deg));
+  background: var(--grey);
+  opacity: 0.7;
+}

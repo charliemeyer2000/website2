@@ -18,7 +18,7 @@
 .content {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     width: 100%;
     max-width: var(--main-content);
     padding: 0 var(--gap-single);
@@ -27,4 +27,15 @@
 .text {
     color: var(--grey);
     text-align: left;
+}
+
+.rightSection {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-single);
+}
+
+.year {
+    color: var(--grey);
+    font-size: var(--sub-text);
 }
