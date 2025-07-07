@@ -1,19 +1,23 @@
 .lightMode {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    cursor: pointer;
 }
 
 .lightModeActive {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
+    cursor: pointer;
 }
 
 .darkMode {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    cursor: pointer;
 }
 
 .darkModeActive {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
+    cursor: pointer;
 }
