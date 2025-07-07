@@ -34,20 +34,15 @@ export default function Home() {
         <section className={styles.section}>
           <h1 className={styles.title}>Currently</h1>
           <p className={styles.text}>
-            I&apos;m a third year @ UVA studying CS and entrepreneurship. I&apos;m
-            currently in San Francisco with other{" "}
-            <Link href="https://www.neo.com/scholars"> Neo Scholars</Link>{" "}
-            exploring what I care about. Previously, I&apos;ve worked at{" "}
+            I&apos;m a third year @ UVA studying CS and entrepreneurship. I&apos;m a 2025{" "}
+            <Link href="https://www.neo.com/scholars">Neo Scholar</Link>, Model UN-er, dedicated weightlifter, and decent snowboarder.
+            Previously, I&apos;ve worked at{" "}
             <Link href="https://www.principal.com">Principal Financial</Link>,{" "}
-            <Link href="https://www.scenthound.com">Scenthound</Link>, and <Link href="https://www.vercel.com">Vercel</Link>. I&apos;m a 2025
-            Neo Scholar, Model UN-er, dedicated weightlifter, and decent snowboarder.
+            <Link href="https://www.scenthound.com">Scenthound</Link>, and <Link href="https://www.vercel.com">Vercel</Link>.
           </p>
           <p className={styles.text}>
-            I work on inference research with <Link href="https://weizhepei.com/">Zhepei Wei</Link> at UVA and am independently working on AI for math research. 
+            I work on inference research with <Link href="https://weizhepei.com/">Zhepei Wei</Link> and am independently working on AI for math research. 
             How can we get LLMs to reason in format math (Lean)? 
-          </p>
-          <p className={styles.text} style={{ fontStyle: "italic" }}>
-            Reach out to me! Talk to me about what you care about.
           </p>
         </section>
         <section className={styles.section}>
@@ -109,13 +104,6 @@ export default function Home() {
                   angle={-45}
                   newWindow={true}
                   description="Check out my certification for SAA-C03."
-                />
-                <StuffItem
-                  title="Forge Launch 2023"
-                  href="https://www.joinforge.co/launch"
-                  angle={-45}
-                  newWindow={true}
-                  description="Completed Forge's 150hr bootcamp → internship"
                 />
               </div>
             </div>
