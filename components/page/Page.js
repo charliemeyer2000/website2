@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import CustomHead from "../customHead/CustomHead";
-import styles from './Page.module.scss'
+import styles from "./Page.module.scss";
 import Nav from "../nav/Nav";
 import useNavTitles from "@/utils/hooks/useNavTitles";
 import PageTransition from "../pageTransition/PageTransition";
@@ -18,15 +18,14 @@ export default function Page(props) {
   */
   const [isMounted, setIsMounted] = useState(false);
 
-  useEffect((() => {
+  useEffect(() => {
     setIsMounted(true);
-    newPageTransition(navArrowObject.pageTransition); // put this inside!! that causes bad routing 
-  }), [])
+    newPageTransition(navArrowObject.pageTransition); // put this inside!! that causes bad routing
+  }, []);
 
   if (!isMounted) {
     return null;
   }
-
 
   return (
     <PageTransition>

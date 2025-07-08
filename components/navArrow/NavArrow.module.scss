@@ -1,44 +1,48 @@
 .container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    cursor: pointer;
-    gap: var(--gap-quarter);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  gap: var(--gap-quarter);
 }
 
 .transform {
-    // make this a spring-like animation
-    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  // make this a spring-like animation
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .container:hover .transform {
-    transform: translate(calc(5px * cos(var(--rotate))), calc(5px * sin(var(--rotate)))) rotate(var(--rotate));
+  transform: translate(
+      calc(5px * cos(var(--rotate))),
+      calc(5px * sin(var(--rotate)))
+    )
+    rotate(var(--rotate));
 }
 
 .textWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    background: var(--button-background-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: var(--button-background-blue);
 }
 
 .text {
-    color: var(--background-white);
-    font-weight: bold;
-    font-size: var(--title);
-    padding: var(--gap-eighth) var(--gap-three-quarters) var(--gap-quarter) var(--gap-eighth);
+  color: var(--background-white);
+  font-weight: bold;
+  font-size: var(--title);
+  padding: var(--gap-eighth) var(--gap-three-quarters) var(--gap-quarter)
+    var(--gap-eighth);
 }
 
 .indicator {
-    min-width: 10px;
-    min-height: 10px;
-    background: var(--indicator-blue);
-    border-radius: var(--circle);
-    align-self: flex-end;
-    // move to the top right corner
-    position: absolute;
-    transform: translate(-2px, 2px);
-
+  min-width: 10px;
+  min-height: 10px;
+  background: var(--indicator-blue);
+  border-radius: var(--circle);
+  align-self: flex-end;
+  // move to the top right corner
+  position: absolute;
+  transform: translate(-2px, 2px);
 }

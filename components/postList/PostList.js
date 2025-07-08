@@ -22,7 +22,7 @@ export default function PostList({ posts, ...props }) {
       if (matchingTopic) {
         topicMap[matchingTopic].push(post);
       } else {
-        // Put into "other" if not matching any topic. 
+        // Put into "other" if not matching any topic.
         topicMap["Other"].push(post);
       }
     }
@@ -30,7 +30,7 @@ export default function PostList({ posts, ...props }) {
 
   TOPIC_ORDER.forEach((topic) => {
     const topicPosts = topicMap[topic];
-    if (topicPosts.length === 0) return; // Skip empty topics. 
+    if (topicPosts.length === 0) return; // Skip empty topics.
 
     const sortedPosts = topicPosts.sort(
       (a, b) => new Date(b.date) - new Date(a.date)

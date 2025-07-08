@@ -4,47 +4,47 @@ slug: keep-it-clean-keep-it-lean
 description: A short rant about websites that do too much.
 date: August 15, 2023
 topic: Web/Mobile Dev
-categories: ['web', 'rant', 'article']
-keywords: ['website', 'development', 'coding', 'overengineering']
+categories: ["web", "rant", "article"]
+keywords: ["website", "development", "coding", "overengineering"]
 ---
 
-Much to the chagrin of [Gifted Hater](https://www.youtube.com/channel/UC82d7bBOUmsE_b8crhEgSIw), "keep it clean, keep it lean" 
-is a phrase that has caught on in the skateboarding with the popularity of their Battle at the Berrics. I really like this phrase especially with respect to coding. 
+Much to the chagrin of [Gifted Hater](https://www.youtube.com/channel/UC82d7bBOUmsE_b8crhEgSIw), "keep it clean, keep it lean"
+is a phrase that has caught on in the skateboarding with the popularity of their Battle at the Berrics. I really like this phrase especially with respect to coding.
 
 # Keep it Clean
 
-When referring to the cleanliness of a website or application, it can come in two forms (in my eyes), code cleanliness and UI 
+When referring to the cleanliness of a website or application, it can come in two forms (in my eyes), code cleanliness and UI
 cleanliness - both of which hold an importance in my eyes.
 
 ## Keep it Clean - Code
 
-I know that this topic has been beaten to death by books like [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) 
-or videos like [Clean Code: Writing Code for Humans](https://www.youtube.com/watch?v=7EmboKQH8lM), so there isn't something that I could say that might 
-not have been said 10 times over. But alas, you read on, entertaining this stream-of-consciousness rant. 
+I know that this topic has been beaten to death by books like [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882)
+or videos like [Clean Code: Writing Code for Humans](https://www.youtube.com/watch?v=7EmboKQH8lM), so there isn't something that I could say that might
+not have been said 10 times over. But alas, you read on, entertaining this stream-of-consciousness rant.
 
-Clean code to me isn't doing something in the least amount of lines as possible or creating a perfect file structure, it's all 
+Clean code to me isn't doing something in the least amount of lines as possible or creating a perfect file structure, it's all
 about readability. I think a file could be cluttered with 100-200 lines of code, but if it's readable, it's clean. Entertain this example:
 
 ```javascript
-import styles from '@/path/to/styles/page.module.css';
-import fs from 'fs';
-import { useRouter } from 'next/router';
-import { smallerHook } from '@/path/to/hooks/smallerHook';
-import { useState, useEffect } from 'react';
+import styles from "@/path/to/styles/page.module.css";
+import fs from "fs";
+import { useRouter } from "next/router";
+import { smallerHook } from "@/path/to/hooks/smallerHook";
+import { useState, useEffect } from "react";
 ```
 
-It's just small, aesthetic things that can make something more difficult to read, even if it isn't the main chunk of code. 
+It's just small, aesthetic things that can make something more difficult to read, even if it isn't the main chunk of code.
 Something as simple as ordering import statements can go a long way (or just using a linter)! Look how simple this organization can be:
 
 ```javascript
-import { smallerHook } from '@/path/to/hooks/smallerHook';
-import styles from '@/path/to/styles/page.module.css';
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import fs from 'fs';
+import { smallerHook } from "@/path/to/hooks/smallerHook";
+import styles from "@/path/to/styles/page.module.css";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import fs from "fs";
 ```
 
-It's just a small thing, but it can make a big difference. Another thing about readaibility is not making your code intentionally (or unintentionally) 
+It's just a small thing, but it can make a big difference. Another thing about readaibility is not making your code intentionally (or unintentionally)
 difficult to read. For example, one of the first days at my internship, I encountered this snippet of code that I needed to edit:
 
 ```javascript
@@ -63,13 +63,13 @@ difficult to read. For example, one of the first days at my internship, I encoun
   }, [stages])
 ```
 
-Now, moving past the types and unknown that's going on here, there is realistically no way that one could understand what's going on here. 
-Using variable names like `s` or `i` make it more difficult upon first glance, and 
-the naming convention to use `stage` and `stages` and `stageKey` 
-and `orderedStages` can make this all blur together. Something as simple as adding comments, spaces, and some 
+Now, moving past the types and unknown that's going on here, there is realistically no way that one could understand what's going on here.
+Using variable names like `s` or `i` make it more difficult upon first glance, and
+the naming convention to use `stage` and `stages` and `stageKey`
+and `orderedStages` can make this all blur together. Something as simple as adding comments, spaces, and some
 explanation here and there goes a long way! Maybe how I rewrote it is not your style, but it's definitely easier for me.
 
-```javascript
+````javascript
     const indicators = useMemo(() => {
 
         const flowItems = getFlowItems({ stages })
@@ -95,22 +95,22 @@ explanation here and there goes a long way! Maybe how I rewrote it is not your s
 
 ## Keep it Clean - UI
 
-As a person relatively inexperienced with coding with only around 2 years of more serious experience, I can't comment too much on code quality. 
-However, as a kid growing up in the internet age, I've seen a **lot** of websites. While I'm no UI master, I can definitely tell when a website 
+As a person relatively inexperienced with coding with only around 2 years of more serious experience, I can't comment too much on code quality.
+However, as a kid growing up in the internet age, I've seen a **lot** of websites. While I'm no UI master, I can definitely tell when a website
 is doing too much.
 
 Now, excuse me for being a bit of a narc, but I want to shout out some websites that have such talented coders that they actually detract from the
 purpsoe of the website itself. For example, the website [KPR](https://kprverse.com/) is absolutely fantastic. I mean I quite literally would have _no idea_ where
 to start when beginning to code something like this, and from a coding standpoint, I'm in awe. But, when it comes to the actual purpose of the website - I could barely
 even tell you what they're trying to sell me. I'm navigating a cacophony of colors, parallax, sounds, animations, and scrolling features that I can't even tell
-what they're trying to sell or what they're trying to tell me. Unfortunately, a decent amount of websites featured on [Awwwards](https://awwwards.com) fall for this - 
+what they're trying to sell or what they're trying to tell me. Unfortunately, a decent amount of websites featured on [Awwwards](https://awwwards.com) fall for this -
 from a coding perspective, it's awesome, but from a user perspective, it's a nightmare.
 
 In the middle of the spectrum is [Apple.com](https://apple.com). Apple masterfully combines a clean UI with some interesting features (parallax, animations, scroll bars, etc)
 while also having its purpose incredibly clear. They (rarely) hijack the user's ablity to scroll or navigate, make information clear and concise, and have a clear call to action.
 
 On the other hand, websites can be too minimal. I can't think of one specifically, but I can envision websites that are doing so little, attempting to embrace minimalism
-too much that they're not doing their job. I think even this website starts to enter a grey area right above being too minimalistic. 
+too much that they're not doing their job. I think even this website starts to enter a grey area right above being too minimalistic.
 
 # Keep it Lean
 
@@ -118,7 +118,7 @@ Unlike keeping it clean, keeping it lean has a lot less intricacy, and is genera
 
 ## Keep it Lean - Code
 
-While the length of code most certianly doesn't indicate its quality, strength, or readability, we can generally agree that 1,000+ lines of code in a single file 
+While the length of code most certianly doesn't indicate its quality, strength, or readability, we can generally agree that 1,000+ lines of code in a single file
 is most certianly not best practice. In fact, there's a fantastic video about [how to make space-proof code](https://www.youtube.com/watch?v=GWYhtksrmhE) by Low Level
 Learning that discusses various principles used by NASA to make code incredibly safe. While we can certianly agree that having such a high standard for code is not
 necessary for a website or application, here are some of the takeaways that I try to implement in my code:
@@ -126,15 +126,16 @@ necessary for a website or application, here are some of the takeaways that I tr
 * Limit functions: _A function should do one thing_
 * Be careful of recursion: _Infinite loops can happen quickly, and can be difficult to debug_
 
-Those are two high-level ideas, and I'm sure even the code that I wrote this website with doesn't follow those principles, but hey! I'm working on it. 
+Those are two high-level ideas, and I'm sure even the code that I wrote this website with doesn't follow those principles, but hey! I'm working on it.
 
 ## Keep it Lean - UI
 
-I'm a simplistic designer when it comes to websites, and I think not only is it easier on the coder, but it's easy on the eyes. 
-I see it as `less content = less clutter`. With less clutter, the user is directed to what actually matters, 
+I'm a simplistic designer when it comes to websites, and I think not only is it easier on the coder, but it's easy on the eyes.
+I see it as `less content = less clutter`. With less clutter, the user is directed to what actually matters,
 and the website will serve its purpose more effectively, **especially** those that are selling products.
 
 
 
 
 
+````

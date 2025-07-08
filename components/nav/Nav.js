@@ -1,7 +1,7 @@
-import styles from './Nav.module.scss';
+import styles from "./Nav.module.scss";
 import NavArrow from "../navArrow/NavArrow";
 import useSound from "use-sound";
-import ThemeToggle from '../themeToggle/ThemeToggle';
+import ThemeToggle from "../themeToggle/ThemeToggle";
 import SoundToggle from "../soundToggle/SoundToggle";
 
 export default function Nav({ children, ...props }) {

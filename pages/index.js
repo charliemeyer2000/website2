@@ -34,15 +34,20 @@ export default function Home() {
         <section className={styles.section}>
           <h1 className={styles.title}>Currently</h1>
           <p className={styles.text}>
-            I&apos;m a third year @ UVA studying CS and entrepreneurship. I&apos;m a 2025{" "}
-            <Link href="https://www.neo.com/scholars">Neo Scholar</Link>, Model UN-er, dedicated weightlifter, and decent snowboarder.
-            Previously, I&apos;ve worked at{" "}
+            I&apos;m a third year @ UVA studying CS and entrepreneurship.
+            I&apos;m a 2025{" "}
+            <Link href="https://www.neo.com/scholars">Neo Scholar</Link>, Model
+            UN-er, dedicated weightlifter, and decent snowboarder. Previously,
+            I&apos;ve worked at{" "}
             <Link href="https://www.principal.com">Principal Financial</Link>,{" "}
-            <Link href="https://www.scenthound.com">Scenthound</Link>, and <Link href="https://www.vercel.com">Vercel</Link>.
+            <Link href="https://www.scenthound.com">Scenthound</Link>, and{" "}
+            <Link href="https://www.vercel.com">Vercel</Link>.
           </p>
           <p className={styles.text}>
-            I work on inference research with <Link href="https://weizhepei.com/">Zhepei Wei</Link> and am independently working on AI for math research. 
-            How can we get LLMs to reason in format math (Lean)? 
+            I work on inference research with{" "}
+            <Link href="https://weizhepei.com/">Zhepei Wei</Link> and am
+            independently working on AI for math research. How can we get LLMs
+            to reason in format math (Lean)?
           </p>
         </section>
         <section className={styles.section}>
@@ -82,7 +87,9 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.stuffItem}>
-              <p className={styles.stuffItemTitle}>Certifications n&apos; Stuff</p>
+              <p className={styles.stuffItemTitle}>
+                Certifications n&apos; Stuff
+              </p>
               <div className={styles.stuffItemContent}>
                 <StuffItem
                   title="Neo Scholar"
@@ -139,15 +146,20 @@ export default function Home() {
         <section className={styles.section}>
           <h1 className={styles.title}>Future</h1>
           <p className={styles.text}>
-            I care about hard problems. There&apos;s a couple things I think worth
-            working on - artificial superintelligence, AI safety, the energy
-            crisis (nuclear fusion), quantum, BCI, the global climate crisis,
-            and making governments better. The intersection of what I&apos;m good at,
-            what I care about, and what&apos;s important in the world is AGI and AI
-            safety. So I&apos;m working on that, and subproblems of it: inference and math reasoning.
+            I care about hard problems. There&apos;s a couple things I think
+            worth working on - artificial superintelligence, AI safety, the
+            energy crisis (nuclear fusion), quantum, BCI, the global climate
+            crisis, and making governments better. The intersection of what
+            I&apos;m good at, what I care about, and what&apos;s important in
+            the world is AGI and AI safety. So I&apos;m working on that, and
+            subproblems of it: inference and math reasoning.
           </p>
           <p className={styles.text}>
-            I also am interested in the infrastructure that supports AI research. It&apos;s incredibly hard to do training at scale and manage all the buzzwords - tensor parallelism, pipeline parallelism, NCCL, accelerators, kubernetes, all this stuff. Training and serving models at scale should be easier.
+            I also am interested in the infrastructure that supports AI
+            research. It&apos;s incredibly hard to do training at scale and
+            manage all the buzzwords - tensor parallelism, pipeline parallelism,
+            NCCL, accelerators, kubernetes, all this stuff. Training and serving
+            models at scale should be easier.
           </p>
           <p className={styles.text}>
             Aside from running the SF Marathon again, I need to run in the NYC
@@ -182,7 +194,7 @@ export default function Home() {
               onClick={() => {
                 window.open(
                   "https://linkedin.com/in/charlie-meyer-loves-you",
-                  "_blank",
+                  "_blank"
                 );
               }}
             >

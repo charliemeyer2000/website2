@@ -1,48 +1,48 @@
 .h1 {
-    font-size:var(--heading);
-    font-weight: bold;
-    margin: var(--gap-single) 0;
+  font-size: var(--heading);
+  font-weight: bold;
+  margin: var(--gap-single) 0;
 }
 
 .h2 {
-    font-size:var(--sub-heading);
-    font-weight: bold;
+  font-size: var(--sub-heading);
+  font-weight: bold;
 }
 
 .p {
-    font-size: var(--text);
-    line-height: var(--title);
-    margin: var(--gap-single) 0;
+  font-size: var(--text);
+  line-height: var(--title);
+  margin: var(--gap-single) 0;
 }
 
 .li {
-    font-size: var(--text);
-    line-height: var(--title);
-    margin: var(--gap-single) 0;
+  font-size: var(--text);
+  line-height: var(--title);
+  margin: var(--gap-single) 0;
 }
 
 .img {
-    // center the image 
-    display: block;
-    margin: 1rem auto;
-    max-width: 100%;
-    height: auto;
+  // center the image
+  display: block;
+  margin: 1rem auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .code {
-    display: inline;
-    place-content: center;
-    background: var(--grey-50);
+  display: inline;
+  place-content: center;
+  background: var(--grey-50);
 
-    padding: var(--gap-eighth) var(--gap-half);
-    border-radius: var(--small-border-radius);
-    // if you want the classic terminal look, uncomment the following line
-    font-family: var(--font-family);
+  padding: var(--gap-eighth) var(--gap-half);
+  border-radius: var(--small-border-radius);
+  // if you want the classic terminal look, uncomment the following line
+  font-family: var(--font-family);
 }
 
-[data-theme='light'] {
-    // add your styles here
-    .code {
-        background: var(--background-white-90);
-    }
+[data-theme="light"] {
+  // add your styles here
+  .code {
+    background: var(--background-white-90);
+  }
 }

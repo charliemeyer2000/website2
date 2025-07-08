@@ -1,5 +1,4 @@
 :root {
-
   /* Spacing */
   --gap-eighth: 0.125rem;
   --gap-quarter: 0.25rem;
@@ -11,9 +10,9 @@
   /* other */
   --main-content: 45rem;
   --small-border-radius: 5px;
-  --middle-border-radius:10px;
-  --large-border-radius:20px;
-  --circle:50%;
+  --middle-border-radius: 10px;
+  --large-border-radius: 20px;
+  --circle: 50%;
 
   /* Typography: Helvetica */
   --font-family: Helvetica, Arial, sans-serif;
@@ -21,8 +20,8 @@
   /* Transitions */
   --transition: 0.1s ease-in-out;
   --transition-slow: 0.3s ease-in-out;
-  --theme-transition: color 350ms ease 0s, background 350ms ease 0s; /* i snooped josh comeau's css */
-
+  --theme-transition:
+    color 350ms ease 0s, background 350ms ease 0s; /* i snooped josh comeau's css */
 
   /* font-sizes */
   --title: 2.125rem; /* 34px */
@@ -36,31 +35,32 @@
   --arrow-size-link-height: 0.694rem;
 
   /* colors */
-  --yellow: #F5D147;
-  --red: #DA4232;
-  --dark-blue: #253F8E;
-  --light-blue: #479CD5;
+  --yellow: #f5d147;
+  --red: #da4232;
+  --dark-blue: #253f8e;
+  --light-blue: #479cd5;
   --green: #398241;
-  --pink: #E48BA0;
-  --brown: #A56342;
-  --button-background-blue: #5F8AB9;
-  --grey: #7B7B7D;
-  --gray: #7B7B7D;
-  --grey-50: rgb(86, 86, 87); 
-  --gray-50: rgb(86, 86, 87); 
-  --indicator-blue: #A2C0D7;
+  --pink: #e48ba0;
+  --brown: #a56342;
+  --button-background-blue: #5f8ab9;
+  --grey: #7b7b7d;
+  --gray: #7b7b7d;
+  --grey-50: rgb(86, 86, 87);
+  --gray-50: rgb(86, 86, 87);
+  --indicator-blue: #a2c0d7;
   --black: #000000;
-  --background-white: #E9E9E9;
+  --background-white: #e9e9e9;
   --background-white-90: rgba(225, 225, 225);
   --background-black: #303030;
   --background-black-50: #232323;
-  --text-color: #47343A;
-
+  --text-color: #47343a;
 }
 
 /* courtesy of josh comeau */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -73,7 +73,11 @@ body {
   -moz-osx-font-smoothing: grayscale; /* i did this one */
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
@@ -83,11 +87,21 @@ a {
   color: inherit;
 }
 
-button, font, textarea, select, input {
+button,
+font,
+textarea,
+select,
+input {
   font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
@@ -95,7 +109,8 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* default dark theme */
 
-html, body {
+html,
+body {
   overscroll-behavior-y: none; // controversial
   padding: 0;
   background: var(--background-black);
@@ -112,8 +127,9 @@ html, body {
 
 /* light theme */
 
-[data-theme='light'] {
-  html, body {
+[data-theme="light"] {
+  html,
+  body {
     background: var(--background-white) !important;
     color: var(--text-color);
 

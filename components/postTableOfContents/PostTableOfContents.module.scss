@@ -1,50 +1,47 @@
 .root {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: var(--gap-triple);
-    
-    // positioning
-    position: fixed;
-    left: 10%;
-    // top: 20%;
-    
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-triple);
+
+  // positioning
+  position: fixed;
+  left: 10%;
+  // top: 20%;
 }
 
 .rail {
-    position: absolute;
-    width: 10px;
-    background: var(--rail-color);
-    transform: translate(10px, -10%);
-    height: 120%;
+  position: absolute;
+  width: 10px;
+  background: var(--rail-color);
+  transform: translate(10px, -10%);
+  height: 120%;
 }
 
 .stopWrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: var(--gap-single);
-    z-index: 1;
-    cursor: pointer;
-
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-single);
+  z-index: 1;
+  cursor: pointer;
 }
 
 /* copied from link.module.scss */
 .stopTitle {
-    transition: var(--transition);
-    max-width: 8rem;
+  transition: var(--transition);
+  max-width: 8rem;
 }
 
 .stopTitle:hover {
-    color: var(--grey);
-    transition: var(--transition);
-
+  color: var(--grey);
+  transition: var(--transition);
 }
 
 @media only screen and (width < 1320px) {
-    .root {
-        display: none;
-    }
+  .root {
+    display: none;
+  }
 }

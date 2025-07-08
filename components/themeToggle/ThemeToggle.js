@@ -84,11 +84,14 @@ export default function ThemeToggle() {
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className={classNames(styles.darkMode,activeTheme === "light" ||
-          activeTheme === undefined ||
-          systemTheme === undefined
-          ? styles.darkModeActive
-          : "" )} // Assign a class for styling
+          className={classNames(
+            styles.darkMode,
+            activeTheme === "light" ||
+              activeTheme === undefined ||
+              systemTheme === undefined
+              ? styles.darkModeActive
+              : ""
+          )} // Assign a class for styling
         >
           <circle cx="12" cy="12" r="12" fill="#303030" />
           <path

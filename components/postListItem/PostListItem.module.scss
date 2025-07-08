@@ -1,51 +1,51 @@
 .container {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: var(--gap-double);
-    transition: opacity 0.3s;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: var(--gap-double);
+  transition: opacity 0.3s;
 }
 
 .container:not(:hover) {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .container:hover {
-    opacity: 1 !important;
+  opacity: 1 !important;
 }
 
 .date {
-    font-size: var(--sub-text);
-    color:var(--grey);
+  font-size: var(--sub-text);
+  color: var(--grey);
 }
 
 .title {
-    font-size: var(--text);
+  font-size: var(--text);
 }
 
 .views {
-    margin-left: auto;
-    flex-basis: auto;
-    font-size: var(--sub-text);
-    color: var(--grey);
+  margin-left: auto;
+  flex-basis: auto;
+  font-size: var(--sub-text);
+  color: var(--grey);
 }
 
 .hovered {
-    cursor: pointer;
-    color: var(--grey);
+  cursor: pointer;
+  color: var(--grey);
 }
 
 @media only screen and (max-width: 555px) {
-    .container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--gap-half);
-    }
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-half);
+  }
 
-    .views {
-        margin-left: 0;
-    }
+  .views {
+    margin-left: 0;
+  }
 }

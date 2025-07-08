@@ -54,7 +54,7 @@ export default async (req, res) => {
       res.status(200).json({
         message: "Successfully created views",
       });
-      console.log('created new item');
+      console.log("created new item");
       return;
     }
 
@@ -74,10 +74,9 @@ export default async (req, res) => {
         message:
           "This user has already visited this page in the last 5 minutes",
       });
-      console.log('already viewed within 5 minutes');
+      console.log("already viewed within 5 minutes");
       return;
     }
-
 
     const newView = {
       M: {

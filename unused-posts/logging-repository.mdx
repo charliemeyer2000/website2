@@ -4,20 +4,29 @@ slug: logging-repository
 description: How I leveraged AWS API Gateway & Lambda to summarize & track commits.
 date: August 28, 2023
 topic: Web/Mobile Dev
-categories: ['web', 'web dev', 'article']
-keywords: ['nextjs', 'AWS', 'API', 'API Gateway', 'Lambda', 'serverless', 'software engineering']
+categories: ["web", "web dev", "article"]
+keywords:
+  [
+    "nextjs",
+    "AWS",
+    "API",
+    "API Gateway",
+    "Lambda",
+    "serverless",
+    "software engineering",
+  ]
 ---
 
 As I've started to learn more about AWS through taking a course on Certified Solutions
 Architect, I've learned a lot more about easy and cheap ways to execute arbitrary code
-in the cloud for whatever purpose. Thus came about the idea of my logging-repository - 
+in the cloud for whatever purpose. Thus came about the idea of my logging-repository -
 a repository [live on my GitHub](https://github.com/charliemeyer2000/logging-repository)
 that listens to pushes to any repository with the webhook configured and summarizes/offers
-full details of the commit and updates the repository. 
+full details of the commit and updates the repository.
 
 # Attempt 0 - Baby Steps
 
-I first accomplished this task locally hosting a flask server that I sent a dummy 
+I first accomplished this task locally hosting a flask server that I sent a dummy
 JSON payload to that resembled a JSON payload of a push event. With this, I made a quick script
 that would summarize the commit and push it to the repository. The main function at `/webhook`
 takes in two arguments, `request` and `response` - `request` is the payload from the webhook,
@@ -46,7 +55,7 @@ def main(request, response):
 
     # Do some processing on the data
     ...
-    
+
     # Generate a summary of the commit with OpenAI API
     commit_summary = generate_summary(code_added=lines_added, code_removed=lines_removed, commit_message=commit_message)
 
@@ -56,8 +65,8 @@ def main(request, response):
     return 'Success'
 ```
 
-The anonymous function `create_commit` creates a commit using the GitHub API, 
-with a GPT summary and the entire commit, editing the 
+The anonymous function `create_commit` creates a commit using the GitHub API,
+with a GPT summary and the entire commit, editing the
 `logs.md` file with the new commit.
 
 Ok, cool! But this worked on JSON dummy data - how do I get this to work with GitHub's webhook?
@@ -65,24 +74,24 @@ Ok, cool! But this worked on JSON dummy data - how do I get this to work with Gi
 # Attempt 1 - Ngrok
 
 I first tried to use ngrok to expose my local server to the internet. I ran the flask server locally, and then
-pointed my ngrok instance to the port that the server was running on. Great! Point the webhook to that URL 
-in the 'webhooks' tab of the repository settings, and it should work! 
+pointed my ngrok instance to the port that the server was running on. Great! Point the webhook to that URL
+in the 'webhooks' tab of the repository settings, and it should work!
 
 And it did! Until I turned off my computer, ngrok stopped running, and the webhook was no longer valid. So the obvious problem
-was that I needed it to be running 24/7. 
+was that I needed it to be running 24/7.
 
 # Attempt 2 - Lightsail
 
-My immediate thought to solve the ngrok problem was to use AWS Lightsail to quickly spin up a a server that would run the 
+My immediate thought to solve the ngrok problem was to use AWS Lightsail to quickly spin up a a server that would run the
 flask server. And, well it did work! And this was great, until i navigated to the billing tab of my AWS Console. Lightsail
 is exactly what it says it is - a quick way to spin up a server. But it's not cheap. I was paying ~$3.50 a month for a server
-that was probably being used 5-10 times a day for commits, so there was a lot of wasted money having a server up 24/7 when it 
-simply did not have to be. 
+that was probably being used 5-10 times a day for commits, so there was a lot of wasted money having a server up 24/7 when it
+simply did not have to be.
 
 # Attempt 3 - AWS Lambda & API Gateway
 
-I only really came to the conclusion that Lambda was absolutely **goated** when I was taking the AWS Certified Solutions Architect, 
-and it was like I was hit over the head. This was literally the perfect use for my logging-repository - run arbitrary code in the cloud once when 
+I only really came to the conclusion that Lambda was absolutely **goated** when I was taking the AWS Certified Solutions Architect,
+and it was like I was hit over the head. This was literally the perfect use for my logging-repository - run arbitrary code in the cloud once when
 a webhook is triggered, and only be charged for _just the time that the code is running_. So, i modified my flask server to be a lambda function:
 
 ```Python
@@ -97,7 +106,7 @@ def lambda_handler(event, context):
     return 'Success'
 ```
 
-Then, with a little bit of fanagling with API Gateway, I had this function running on POST at `api.charliemeyer.xyz/logging-repository`. 
+Then, with a little bit of fanagling with API Gateway, I had this function running on POST at `api.charliemeyer.xyz/logging-repository`.
 I then pointed the webhook to this URL, and it worked! You can also navigate to [api.charliemeyer.xyz/test](https://api.charliemeyer.xyz/test) to see lambda working in action just returning
 `Hello from Lambda!`.
 
@@ -105,6 +114,4 @@ I then pointed the webhook to this URL, and it worked! You can also navigate to 
 
 Right now the endpoint for the webhook is unsecured, so in theory anyone could have their commits logged to my repository. I'm not really worried about that Unless
 someone incredibly malicious sends billions of requests and I get charged a lot of money, but I'm not too worried about that. GitHub and AWS has a security option to verify
-the sender that I'll implement soon. 
-
-
+the sender that I'll implement soon.

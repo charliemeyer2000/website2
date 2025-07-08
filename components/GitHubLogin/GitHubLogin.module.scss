@@ -1,30 +1,29 @@
 .button {
-    background-color: transparent;
-    border-radius: var(--small-border-radius);
-    padding: var(--gap-half) var(--gap-single);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: var(--gap-half);
-    cursor: pointer;
-    border: 0.5px solid var(--background-white);
-    transition: all 0.2s ease-in-out;
+  background-color: transparent;
+  border-radius: var(--small-border-radius);
+  padding: var(--gap-half) var(--gap-single);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-half);
+  cursor: pointer;
+  border: 0.5px solid var(--background-white);
+  transition: all 0.2s ease-in-out;
 }
 
 .button:hover {
-    background-color: var(--background-white);
-    color: var(--text-color);
+  background-color: var(--background-white);
+  color: var(--text-color);
 }
 
 // data theme dark
 [data-theme="light"] {
-    .button {
-        border: 0.5px solid var(--background-black-50); 
-    }
-    .button:hover {
-        background-color: var(--background-black-50);
-        color: var(--background-white);
-    }
+  .button {
+    border: 0.5px solid var(--background-black-50);
+  }
+  .button:hover {
+    background-color: var(--background-black-50);
+    color: var(--background-white);
+  }
 }
-

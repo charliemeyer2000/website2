@@ -16,5 +16,4 @@ const quotes = [
   "If you obey all the rules, you miss all the fun - Katharine Hepburn",
 ];
 
-
 export default quotes;

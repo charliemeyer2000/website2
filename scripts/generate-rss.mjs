@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-import generateRSS from '../utils/generateRSS.js';
+import generateRSS from "../utils/generateRSS.js";
 
 try {
   generateRSS();
   process.exit(0);
 } catch (error) {
-  console.error('Error generating RSS:', error);
+  console.error("Error generating RSS:", error);
   process.exit(1);
 }

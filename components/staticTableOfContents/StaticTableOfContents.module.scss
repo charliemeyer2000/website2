@@ -1,28 +1,25 @@
 .stop {
-    position: absolute;
-    top: var(--position);
-    left: 20%; 
+  position: absolute;
+  top: var(--position);
+  left: 20%;
 }
 
 .train {
-    position: absolute;
-    left: calc(20% + 10px);
+  position: absolute;
+  left: calc(20% + 10px);
 }
-
 
 .rail {
-    position: absolute;
-    top: var(--starting-position);
-    width: 10px;
-    height: var(--rail-height);
-    background: var(--color);
-    left: calc(20% + 10px); // 20% left + 1/2 of the size of each stop
+  position: absolute;
+  top: var(--starting-position);
+  width: 10px;
+  height: var(--rail-height);
+  background: var(--color);
+  left: calc(20% + 10px); // 20% left + 1/2 of the size of each stop
 }
 
-
-
 @media only screen and (width < 1320px) {
-    .root {
-        display: none;
-    }
+  .root {
+    display: none;
+  }
 }

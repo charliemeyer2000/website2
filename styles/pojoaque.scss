@@ -9,7 +9,7 @@
 }
 
 .hljs-params {
-  color:var(--grey)
+  color: var(--grey);
 }
 
 .hljs-comment,
@@ -54,8 +54,8 @@
   color: var(--grey);
 }
 
-
-.hljs-attribute, .hljs-attr {
+.hljs-attribute,
+.hljs-attr {
   /* color: #b89859; yellowish */
   color: var(--background-white-90);
 }
@@ -83,7 +83,6 @@
 .hljs-formula {
   /* background: #073642; blackish */
   color: var(--background-black-50);
-
 }
 
 .hljs-emphasis {
@@ -101,14 +100,14 @@
 
 /* for when the theme is light, override the above */
 /* black -> grey, white -> black */
-[data-theme='light'] {
+[data-theme="light"] {
   .hljs {
     color: var(--background-black);
     background: var(--background-white-90);
   }
 
   .hljs-params {
-    color:var(--grey);
+    color: var(--grey);
   }
 
   .hljs-comment,
@@ -143,7 +142,8 @@
     color: var(--background-black-90);
   }
 
-  .hljs-attribute, .hljs-attr {
+  .hljs-attribute,
+  .hljs-attr {
     color: var(--background-black-90);
   }
 
@@ -163,11 +163,9 @@
 
   .hljs-formula {
     color: var(--grey);
-  
   }
 
   .hljs-title.function_ {
     color: var(--background-black-90);
   }
-
 }

@@ -1,92 +1,90 @@
 .main {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: var(--gap-double);
-    margin-bottom: var(--gap-double);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-double);
+  margin-bottom: var(--gap-double);
 }
 
 .section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: var(--gap-double);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-double);
 }
 
 .title {
-    font-size: var(--title);
-
+  font-size: var(--title);
 }
 
 .text {
-    font-size: var(--text);
-    line-height: var(--title);
+  font-size: var(--text);
+  line-height: var(--title);
 }
 
 .stuffWrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 5rem;
 }
 
 .stuffItem {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: var(--gap-single);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-single);
 }
 
 .stuffItemTitle {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .stuffItemContent {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: var(--gap-double);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-double);
 }
 
 .contactListWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: var(--gap-single);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-single);
 }
 
 .contactListItem {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: var(--gap-single);
-    cursor: pointer;   
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-single);
+  cursor: pointer;
 }
 
 .animatedArrow {
-    transition: var(--transition);
+  transition: var(--transition);
 }
 
 .contactListItem:hover {
-    .animatedArrow {
-        transform: translateX(0.5rem);
-        transition: var(--transition);
-    }
+  .animatedArrow {
+    transform: translateX(0.5rem);
+    transition: var(--transition);
+  }
 }
 
 @media only screen and (width < 580px) {
-
-    .stuffWrapper {
-        gap: var(--gap-single);
-        // flex-wrap: wrap;
-    }
+  .stuffWrapper {
+    gap: var(--gap-single);
+    // flex-wrap: wrap;
+  }
 }

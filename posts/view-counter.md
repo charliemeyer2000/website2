@@ -42,8 +42,8 @@ const ip = req.ip;
 // Hash the IP and turn it into a hex string
 const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(ip));
 const hash = Array.from(new Uint8Array(buf))
-.map((b) => b.toString(16).padStart(2, "0"))
-.join("");
+  .map((b) => b.toString(16).padStart(2, "0"))
+  .join("");
 ```
 
 I did the same, and stored the hashed IP address in Dynamo.
@@ -52,25 +52,26 @@ I did the same, and stored the hashed IP address in Dynamo.
 structure each slug's data like:
 
 ```json
-    {
-    "slug": {
-        "S": "todays-xkcd" // the slug of the post
-    },
-    "ips": {
-        "L": [ // a list of objects, each with an IP and a visit date
-            {
-                "M": {
-                    "ip": {
-                        "S": "eff8e..." // an abridged version of a hashed IP
-                    },
-                    "visitDate": {
-                        "N": "1698694949752" // some time in UTC
-                    }
-                }
-            },
-        ]
-    }
-    }
+{
+  "slug": {
+    "S": "todays-xkcd" // the slug of the post
+  },
+  "ips": {
+    "L": [
+      // a list of objects, each with an IP and a visit date
+      {
+        "M": {
+          "ip": {
+            "S": "eff8e..." // an abridged version of a hashed IP
+          },
+          "visitDate": {
+            "N": "1698694949752" // some time in UTC
+          }
+        }
+      }
+    ]
+  }
+}
 ```
 
 ## Implementation
@@ -97,11 +98,11 @@ const useViews = (slug) => {
     setNumViews(data.numViews);
     setIp(data.ip);
   };
-  
+
   const updateItem = async (slug) => {
     await axios.post("/api/dynamo/updateItem", { slug: slug });
     setShouldRefetch((prevState) => !prevState);
-  }
+  };
 
   useEffect(() => {
     fetchViews();
@@ -118,22 +119,22 @@ route just uses this simple query to get the object associated with a slug:
 
 ```js
 const params = {
-    TableName: process.env.DYNAMO_TABLE_NAME,
-    Key: {
-        slug: { S: slug },
-    },
+  TableName: process.env.DYNAMO_TABLE_NAME,
+  Key: {
+    slug: { S: slug },
+  },
 };
 
 const data = await dynamodb.getItem(params).promise();
 
 const ipsData = data.Item.ips.L.map((entry) => ({
-    ip: entry.M.ip.S,
-    visitDate: parseInt(entry.M.visitDate.N, 10),
+  ip: entry.M.ip.S,
+  visitDate: parseInt(entry.M.visitDate.N, 10),
 }));
 
 res.status(200).json({
-    views: ipsData,
-    numViews: ipsData.length,
+  views: ipsData,
+  numViews: ipsData.length,
 });
 ```
 
@@ -142,16 +143,16 @@ set of params:
 
 ```js
 const updateParams = {
-    TableName: process.env.DYNAMO_TABLE_NAME,
-    Key: {
-        slug: { S: slug },
-    },
-    UpdateExpression:
-        "SET ips = list_append(if_not_exists(ips, :empty_list), :new_view)",
-    ExpressionAttributeValues: {
-        ":empty_list": { L: [newView] }, // make a new one if it doesn't exist
-        ":new_view": { L: [newView] },
-    },
+  TableName: process.env.DYNAMO_TABLE_NAME,
+  Key: {
+    slug: { S: slug },
+  },
+  UpdateExpression:
+    "SET ips = list_append(if_not_exists(ips, :empty_list), :new_view)",
+  ExpressionAttributeValues: {
+    ":empty_list": { L: [newView] }, // make a new one if it doesn't exist
+    ":new_view": { L: [newView] },
+  },
 };
 const res = await dynamodb.updateItem(updateParams).promise();
 // calling, parsing, and returning the response

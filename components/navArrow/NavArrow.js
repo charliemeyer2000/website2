@@ -5,18 +5,20 @@ import Link from "next/link";
 import { useSoundContext } from "../soundToggle/SoundContext";
 
 export default function NavArrow({ angle, indicator = false, ...props }) {
-  const {soundOn } = useSoundContext();
+  const { soundOn } = useSoundContext();
   const [play, { stop }] = useSound("static/audio/cute-click.mp3", {
     volume: soundOn ? 1 : 0,
     forceSoundEnabled: true,
   });
 
   return (
-    <Link href={props.href} scroll={false} legacyBehavior={props.legacyBehavior} passHref={props.passHref}>
-      <div
-        className={styles.container}
-        onClick={play}
-      >
+    <Link
+      href={props.href}
+      scroll={false}
+      legacyBehavior={props.legacyBehavior}
+      passHref={props.passHref}
+    >
+      <div className={styles.container} onClick={play}>
         <Arrow
           angle={angle}
           height={2.27063}

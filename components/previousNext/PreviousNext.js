@@ -9,8 +9,7 @@ export default function PreviousNext({ previous, next }) {
   const mostRecentPost = next === null;
   const earliestPost = previous === null;
 
-  const {soundOn } = useSoundContext();
-
+  const { soundOn } = useSoundContext();
 
   const [play, { stop }] = useSound("static/audio/cute-click.mp3", {
     volume: soundOn ? 1 : 0,
@@ -30,7 +29,11 @@ export default function PreviousNext({ previous, next }) {
         <Link href={previous.slug} as={previous.slug}>
           <div className={styles.previous} onClick={play}>
             <div className={styles.arrowTextContainer}>
-              <Arrow angle={180} height={1.2} className={classNames(styles.arrow, styles.previousArrow)} />
+              <Arrow
+                angle={180}
+                height={1.2}
+                className={classNames(styles.arrow, styles.previousArrow)}
+              />
               <p className={styles.text}>Previous</p>
             </div>
             <p className={styles.title}>{previous.title}</p>
@@ -42,7 +45,11 @@ export default function PreviousNext({ previous, next }) {
           <div className={styles.next}>
             <div className={styles.arrowTextContainer}>
               <p className={styles.text}>Next</p>
-              <Arrow angle={0} height={1.2} className={classNames(styles.arrow, styles.nextArrow)}  />
+              <Arrow
+                angle={0}
+                height={1.2}
+                className={classNames(styles.arrow, styles.nextArrow)}
+              />
             </div>
             <p className={styles.title}>{next.title}</p>
           </div>

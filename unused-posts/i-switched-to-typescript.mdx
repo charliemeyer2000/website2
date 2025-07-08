@@ -3,35 +3,35 @@ title: Ok fine, I'll use TypeScript
 slug: i-will-use-typescript
 description: While Svelte switched back to JavaScript, I kinda like TS.
 date: Oct 17, 2023
-categories: ['web', 'software development', 'website']
-keywords: ['website', 'development', 'coding']
+categories: ["web", "software development", "website"]
+keywords: ["website", "development", "coding"]
 ---
 
 As mentioned a while ago in a [Fireship Video](https://youtu.be/5ChkQKUzDCs?si=em1hCJpiXEQAaJdI),
-some major projects are beginning to ditch TypeScript in favor of JavaScript. 
+some major projects are beginning to ditch TypeScript in favor of JavaScript.
 Despite the one true love of my life being the wild west of JavaScript (yummy [Object object]),
-my recent Software Development Essentials class has started to warm me up to type safety (🤯) and 
+my recent Software Development Essentials class has started to warm me up to type safety (🤯) and
 using design principles to make something that makes sense!!
 
 ## Dependency Injection
 
-TypeScript and the web development sphere has moved away from class components in favor of functional compoments (using hand-wavy hooks to manage state instead), 
+TypeScript and the web development sphere has moved away from class components in favor of functional compoments (using hand-wavy hooks to manage state instead),
 but that doesn't mean applying design principles of dependency injection don't apply. This could include doing something like:
 
 ```tsx
 // useApi.ts
 function useApi(props) {
-    // code to handle data, loading, requests, etc. 
-    return { data, isLoading, request, setRequest };
+  // code to handle data, loading, requests, etc.
+  return { data, isLoading, request, setRequest };
 }
 ```
 
 This way, with this hook (rather than a class, but it achieves the same effect), you can inject dependency into anything that needs to use an API.
 This obviously can also be done just using NextJS' built in API router, but if you want to make something that handles specifically working with
 some other service (any AWS service, like S3 for example), it could be easier to make a `useS3()` hook instead. This creates **abstraction**
-for working with S3! This way, each component does not have to worry about error handling, loading state, and other issues that come about 
+for working with S3! This way, each component does not have to worry about error handling, loading state, and other issues that come about
 working with excternal services - implementation details are abstracted away behind this hook. Another interesting concept would be to allow the component and the hook to work together with the DOM and `createPortal()`, so rendering
-success and failure modals would not have to be managed by a component far down the DOM. 
+success and failure modals would not have to be managed by a component far down the DOM.
 
 ## Autocomplete 😋
 
@@ -39,7 +39,6 @@ Something that I noticed quite quickly with Javascript is how much I found mysel
 I had all the necessary & correct types. It's an incredibly small thing, but the difference between having the compiler "yell" at me and tell
 me exactly what props of what type are necessary for each component makes my life _so_ much easier. While this might not be best practice, I
 simply use interfaces to specify props for a component:
-
 
 ```tsx
 // SomeComponent.tsx
@@ -60,7 +59,7 @@ export default function SomeComponent(props: SomeComponentProps) {
 }
 ```
 
-Even just having this _at the bare minimum_ changes the developer experience significantly. Having worked with Java for my Software Development 
+Even just having this _at the bare minimum_ changes the developer experience significantly. Having worked with Java for my Software Development
 class, I didn't realize how much I relied on strict typing and working with interfaces until I worked on my website again with JS. Suffice it to say,
 my next(Js) projects are using TS. Furthermore, having used relay for AppSync, being able to generate types from a GraphQL schema is _so_ nice, and always
 ensures that the types in the frontend match the database in the backend (😙🤌).
@@ -68,14 +67,10 @@ ensures that the types in the frontend match the database in the backend (😙�
 ## `As any`
 
 A lot of people speak against TypeScript becuase they just create temporary patches for problems by just using `as any` on a type
-that doesn't work. And while yes, this is something that is _incredibly_ tempting to offer quick patches to solutions, 
+that doesn't work. And while yes, this is something that is _incredibly_ tempting to offer quick patches to solutions,
 I think it's indicative of bad design if you are writing code that necessitates using `as any` or any form of TS type spell casting magic.
 
 ## Conclusion
 
 Ultimately, who cares? Use whatever helps you develop quickly but well, and the best suggestion I have is to _just start_. Don't worry about
-having AirBnB's linter setup with bun for speedy hot reload alongside a perfect `tsconfig.json`. Just start. Just start, and you'll be fine. 
-
-
-
-
+having AirBnB's linter setup with bun for speedy hot reload alongside a perfect `tsconfig.json`. Just start. Just start, and you'll be fine.

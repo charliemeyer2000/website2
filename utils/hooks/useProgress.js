@@ -13,7 +13,7 @@ const useProgress = () => {
   useMotionValueEvent(scrollY, "change", (latest) => {
     setAbsoluteProgress(parseFloat(latest.toFixed(2))); // round to 2 decimal places
   });
-  return {proportionalProgress, absoluteProgress};
+  return { proportionalProgress, absoluteProgress };
 };
 
 export default useProgress;

@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import styles from './Clock.module.scss';
+import { useState, useEffect } from "react";
+import styles from "./Clock.module.scss";
 
 export default function Clock() {
   const [time, setTime] = useState(new Date());
@@ -17,12 +17,12 @@ export default function Clock() {
   const seconds = time.getSeconds();
 
   return (
-    <div 
+    <div
       className={styles.clock}
       style={{
-        '--now-h': hours,
-        '--now-m': minutes,
-        '--now-s': seconds,
+        "--now-h": hours,
+        "--now-m": minutes,
+        "--now-s": seconds,
       }}
     >
       <div className={styles.second}></div>

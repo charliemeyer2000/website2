@@ -15,10 +15,7 @@ const options = {
     rehypePlugins: [
       [rehypeHighlight],
       // exclude anything that doesn't include katex in the class name
-      [
-        rehypeKatex,
-        { output: "math" },
-      ],
+      [rehypeKatex, { output: "math" }],
     ],
   },
 };
@@ -45,7 +42,7 @@ export async function getStaticProps({ params: { slug } }) {
 export const getStaticPaths = () => {
   return {
     paths: getPosts().map((p) => `/posts/${p.slug}`),
-    fallback: false
+    fallback: false,
   };
 };
 

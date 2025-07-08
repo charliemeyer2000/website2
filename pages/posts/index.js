@@ -11,11 +11,11 @@ export default function Blog({ posts }) {
 }
 
 export const getStaticProps = () => {
-    const posts = getPosts();
+  const posts = getPosts();
 
-    return {
-        props: {
-            posts
-        }
-    }
-}
+  return {
+    props: {
+      posts,
+    },
+  };
+};

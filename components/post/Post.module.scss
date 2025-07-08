@@ -1,25 +1,24 @@
-.headerContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: var(--gap-single);
-    padding-bottom: var(--gap-double);
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--gap-single);
+  padding-bottom: var(--gap-double);
 }
 
 .title {
-    font-size: var(--title);
-    max-width: calc(var(--main-content) / (3/2)); // or whatever you want
+  font-size: var(--title);
+  max-width: calc(var(--main-content) / (3 / 2)); // or whatever you want
 }
 
 .description {
-    font-size: var(--text);
-    color: var(--grey);
-    font-weight: normal;
-
+  font-size: var(--text);
+  color: var(--grey);
+  font-weight: normal;
 }
 
 .date {
-    color: var(--grey);
-    font-size: var(--sub-text);
+  color: var(--grey);
+  font-size: var(--sub-text);
 }

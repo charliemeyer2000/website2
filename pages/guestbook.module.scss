@@ -1,79 +1,75 @@
-.headerContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: var(--gap-single);
-    padding-bottom: var(--gap-double);
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--gap-single);
+  padding-bottom: var(--gap-double);
 }
 
 .title {
-    font-size: var(--title);
-    max-width: calc(var(--main-content) / (3/2)); // or whatever you want
+  font-size: var(--title);
+  max-width: calc(var(--main-content) / (3 / 2)); // or whatever you want
 }
 
 .description {
-    font-size: var(--text);
-    color: var(--grey);
-    font-weight: normal;
-
+  font-size: var(--text);
+  color: var(--grey);
+  font-weight: normal;
 }
 
 .date {
-    color: var(--grey);
-    font-size: var(--sub-text);
+  color: var(--grey);
+  font-size: var(--sub-text);
 }
 
 .formContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: var(--gap-half);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--gap-half);
 }
 
 .input {
-    width: 100%;
-    border: 1px solid var(--grey);
-    border-radius: var(--small-border-radius);
-    padding: var(--gap-half) var(--gap-half);
-    background-color: transparent;
-    outline: none;
-    transition: all 0.2s ease-in-out;
-
+  width: 100%;
+  border: 1px solid var(--grey);
+  border-radius: var(--small-border-radius);
+  padding: var(--gap-half) var(--gap-half);
+  background-color: transparent;
+  outline: none;
+  transition: all 0.2s ease-in-out;
 }
 
 .input:focus {
-    border: 1px solid var(--background-white);
+  border: 1px solid var(--background-white);
 }
 
 .input::placeholder {
-    font-style: italic;
-
+  font-style: italic;
 }
 
-
 .noteLength {
-    color: var(--grey);
-    font-size: var(--sub-text);
-    font-style: italic;
-    margin-left: auto;
+  color: var(--grey);
+  font-size: var(--sub-text);
+  font-style: italic;
+  margin-left: auto;
 }
 
 .submitNote {
-    color: var(--grey);
-    font-size: var(--sub-text);
-    font-style: italic;
-    align-self: flex-start;
+  color: var(--grey);
+  font-size: var(--sub-text);
+  font-style: italic;
+  align-self: flex-start;
 }
 
 .userContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .listWrapper {
-    padding-bottom: var(--gap-single);
+  padding-bottom: var(--gap-single);
 }

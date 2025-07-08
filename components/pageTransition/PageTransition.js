@@ -4,7 +4,6 @@ import styles from "./PageTransition.module.scss";
 import { usePageTransitionContext } from "./PageTransitionContext";
 
 export default function PageTransition({ children, ...props }) {
-
   const { pageTransition } = usePageTransitionContext();
 
   return (

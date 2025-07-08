@@ -1,32 +1,32 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: var(--gap-half);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-half);
 }
 
 .top {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: var(--gap-quarter);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-quarter);
 }
 
 .text {
-    color: var(--grey);
-    font-size: var(--sub-text);
-    max-width: 70%;
+  color: var(--grey);
+  font-size: var(--sub-text);
+  max-width: 70%;
 }
 
 .animatedArrow {
-    transition: var(--transition);
+  transition: var(--transition);
 }
 
 .top:hover {
-    .animatedArrow {
-        transform: translate(5px, -5px) rotate(-45deg);
-        transition: var(--transition);
-    }
+  .animatedArrow {
+    transform: translate(5px, -5px) rotate(-45deg);
+    transition: var(--transition);
+  }
 }

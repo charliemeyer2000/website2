@@ -1,20 +1,19 @@
 .link {
-    // border-bottom: 0.5px solid var(--grey);
-    text-decoration: underline;
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    text-decoration-color: var(--grey);
-    text-underline-offset: 5px;
-    text-decoration-thickness: 0.5px;
-    color: inherit;
-    transition: var(--transition);
+  // border-bottom: 0.5px solid var(--grey);
+  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: var(--grey);
+  text-underline-offset: 5px;
+  text-decoration-thickness: 0.5px;
+  color: inherit;
+  transition: var(--transition);
 
-    font-size: var(--text);
-    line-height: calc(var(--heading) - 5px);
+  font-size: var(--text);
+  line-height: calc(var(--heading) - 5px);
 }
 
 .link:hover {
-    color: var(--grey);
-    transition: var(--transition);
+  color: var(--grey);
+  transition: var(--transition);
 }
-
