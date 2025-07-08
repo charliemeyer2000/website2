@@ -7,7 +7,7 @@ export default function getPosts() {
 
   const postFiles = fs
     .readdirSync(postsDirectory)
-    .filter((file) => file.match(/\.mdx?$/));
+    .filter((file) => file.match(/\.mdx$/));
 
   const posts = postFiles
     .map((file) => {

@@ -4,6 +4,14 @@ const nextConfig = {
   images: {
     domains: ['imgs.xkcd.com'],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/posts/:slug.md',
+        destination: '/api/markdown/:slug',
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

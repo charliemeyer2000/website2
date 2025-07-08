@@ -2,14 +2,14 @@
   "name": "website",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate-rss": "node scripts/generate-rss.js",
-    "pre-commit": "node scripts/pre-commit-build.js",
+    "generate-rss": "node scripts/generate-rss.mjs",
+    "generate-markdown": "node -e \"import('./utils/generateMarkdown.js').then(m => m.default())\"",
+    "pre-commit": "node scripts/pre-commit-build.mjs",
     "prepare": "husky"
   },
   "dependencies": {
@@ -54,7 +54,11 @@
   "devDependencies": {
     "eslint": "^8.57.0",
     "eslint-config-next": "^13.4.12",
-    "husky": "^9.1.7"
+    "husky": "^9.1.7",
+    "mdast-util-from-markdown": "^2.0.2",
+    "mdast-util-mdx": "^3.0.0",
+    "mdast-util-to-markdown": "^2.1.2",
+    "micromark-extension-mdxjs": "^3.0.0"
   },
   "packageManager": "pnpm@10.11.0"
 }
