@@ -30,19 +30,43 @@ jobs:
       - name: Build website
         run: pnpm build
 
-      - name: Start server in background
+      - name: Install Playwright
         run: |
-          pnpm dev &
-          sleep 15
+          npx playwright install --with-deps chromium
 
-      - name: Take screenshot
-        uses: swinton/screenshot-website@v1.x
-        with:
-          source: http://localhost:3000
-          destination: static/images/website-screenshot.png
-          width: 1280
-          height: 720
-          full-page: false
+      - name: Start server and take screenshot
+        run: |
+          # Start the production server in background
+          pnpm start &
+          SERVER_PID=$!
+          
+          # Wait for server to be ready
+          timeout=30
+          while [ $timeout -gt 0 ]; do
+            if curl -f http://localhost:3000 > /dev/null 2>&1; then
+              echo "Server is ready"
+              break
+            fi
+            echo "Waiting for server to start... ($timeout seconds left)"
+            sleep 1
+            timeout=$((timeout - 1))
+          done
+          
+          if [ $timeout -eq 0 ]; then
+            echo "Server failed to start"
+            exit 1
+          fi
+          
+          # Take screenshot
+          npx playwright screenshot \
+            --viewport-size=1280,720 \
+            --full-page \
+            --wait-for-timeout=3000 \
+            http://localhost:3000 \
+            static/images/website-screenshot.png
+          
+          # Clean up
+          kill $SERVER_PID
 
       - name: Commit screenshot
         run: |
