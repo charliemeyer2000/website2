@@ -1,6 +1,4 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
+#!/usr/bin/env sh
 echo "🔧 Running pre-commit hooks..."
 
 # Run linter and automatically fix issues

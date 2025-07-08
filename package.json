@@ -10,7 +10,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "generate-rss": "node scripts/generate-rss.mjs",
-    "generate-markdown": "node -e \"import('./utils/generateMarkdown.js').then(m => m.default())\"",
+    "generate-markdown": "node -e \"import('./utils/generateMarkdown.mjs').then(m => m.default())\"",
     "pre-commit": "node scripts/pre-commit-build.mjs",
     "prepare": "husky"
   },

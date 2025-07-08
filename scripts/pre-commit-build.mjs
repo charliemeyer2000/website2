@@ -3,8 +3,8 @@
 import fs from "fs";
 import path from "path";
 import { execSync } from "child_process";
-import generateRSS from "../utils/generateRSS.js";
-import generateMarkdown from "../utils/generateMarkdown.js";
+import generateRSS from "../utils/generateRSS.mjs";
+import generateMarkdown from "../utils/generateMarkdown.mjs";
 
 function getPostsModificationTime() {
   const postsDirectory = path.join(process.cwd(), "posts");

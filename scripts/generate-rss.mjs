@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import generateRSS from "../utils/generateRSS.js";
+import generateRSS from "../utils/generateRSS.mjs";
 
 try {
   generateRSS();
