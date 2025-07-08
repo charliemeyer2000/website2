@@ -10,8 +10,7 @@ export default function Arrow({ angle = 0, height = 2.25, className }) {
     <Image
       src={
         activeTheme === "dark" ||
-        activeTheme === undefined ||
-        systemTheme === "light"
+        (activeTheme === "system" && systemTheme === "dark")
           ? lightArrow
           : darkArrow
       }
