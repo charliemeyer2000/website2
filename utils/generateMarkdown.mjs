@@ -41,6 +41,8 @@ export default function generateMarkdown() {
     .readdirSync(postsDirectory)
     .filter((file) => file.match(/\.mdx$/));
 
+  let filesGenerated = 0;
+
   postFiles.forEach((file) => {
     const postFilePath = path.join(postsDirectory, file);
     const postContent = fs.readFileSync(postFilePath, "utf8");
@@ -51,6 +53,21 @@ export default function generateMarkdown() {
     // Skip unpublished posts
     if (frontmatter.published === false) {
       return;
+    }
+
+    const slug = frontmatter.slug || file.replace(".mdx", "");
+    const markdownPath = path.join(postsDirectory, `${slug}.md`);
+
+    // Check if .md file exists and compare modification times
+    if (fs.existsSync(markdownPath)) {
+      const mdxStat = fs.statSync(postFilePath);
+      const mdStat = fs.statSync(markdownPath);
+
+      // If .md file is newer than .mdx file, skip generation
+      if (mdStat.mtime >= mdxStat.mtime) {
+        console.log(`Skipping ${slug} - .md file is up to date`);
+        return;
+      }
     }
 
     try {
@@ -72,9 +89,8 @@ export default function generateMarkdown() {
       const markdownFile = matter.stringify(markdownContent, frontmatter);
 
       // Write to .md file
-      const slug = frontmatter.slug || file.replace(".mdx", "");
-      const markdownPath = path.join(postsDirectory, `${slug}.md`);
       fs.writeFileSync(markdownPath, markdownFile);
+      filesGenerated++;
 
       console.log(`Generated markdown for: ${slug}`);
     } catch (error) {
@@ -82,5 +98,9 @@ export default function generateMarkdown() {
     }
   });
 
-  console.log("All markdown files generated successfully!");
+  if (filesGenerated > 0) {
+    console.log(`Generated ${filesGenerated} markdown files successfully!`);
+  } else {
+    console.log("No markdown files needed generation - all up to date!");
+  }
 }

@@ -2,7 +2,7 @@
 title: How I added a view counter to my blog
 description: How I leveraged DynamoDB to add a view counter to my blog
 slug: view-counter
-date: 'October 31, 2023'
+date: "October 31, 2023"
 topic: Web/Mobile Dev
 keywords:
   - dynamodb
@@ -14,6 +14,7 @@ categories:
   - nextjs
   - website
 ---
+
 After stumbling across [chronark.com](https://chronark.com) (and admiring how damn beautiful it is),
 I realized Andreas' blog had something mine doesn't - a view counter. Luckily, the tool he's building,
 [upstash](https://upstash.com/), has an easy-to-use package & tutorial to use their Redis
@@ -23,10 +24,10 @@ copy and paste mindlessly. I had to do it myself.
 ## Pre-Code Design Decisions
 
 **DynamoDB** - While never having used Dynamo before, I knew it would be a quick and easy way to store unstructured data,
-and bascially just *dump some json* into a table. The configuration for Dynamo was smooth, barring warnings reminding me to shift to the
+and bascially just _dump some json_ into a table. The configuration for Dynamo was smooth, barring warnings reminding me to shift to the
 [AWS SDK for JS (v3)](https://a.co/7PzMCcy), which, admittely, would have made the coding experience significantly
 better. I also was consistently reminded that AWS doesn't want you to directly interface with Dynamo and generate keys for a Dynamo
-role, as they *really* try to get you to use Lambda/API Gateway to access Dynamo. Yes, this is absolute best practice, but not necessary
+role, as they _really_ try to get you to use Lambda/API Gateway to access Dynamo. Yes, this is absolute best practice, but not necessary
 for a simple view counter.
 
 **What is a view?** - Before actually implementing a view counter, I had to decide what constitutes a view. Facebook
@@ -79,7 +80,7 @@ structure each slug's data like:
 With the design decisions made, I leveraged NextJs' built in API routes coupled with abstraction using hooks
 to create a clean, easy-to-use view counter. To do this, I knew I needed to implement a few key features:
 
-**A `useViews()` hook** - This entire hook only took *30 lines of code*. With a useable interface
+**A `useViews()` hook** - This entire hook only took _30 lines of code_. With a useable interface
 of `const { views, numViews, ip, updateItem } = useViews(slug)`, I abstracted away the complexity of
 interfacing with Dynamo and the API routes. Through this, each post & the post list merely needed to
 get `numViews` for its slug, and the view counter was done. Just look at how clean, readable, and understandable this is!

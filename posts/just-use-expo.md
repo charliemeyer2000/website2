@@ -2,7 +2,7 @@
 title: Just Use Expo
 slug: just-use-expo
 description: null
-date: 'May 31, 2024'
+date: "May 31, 2024"
 topic: Web/Mobile Dev
 categories:
   - app
@@ -13,6 +13,7 @@ keywords:
   - development
   - coding
 ---
+
 After building and shipping an MVP for my first phone application [DoorShop](https://apps.apple.com/us/app/doorshop/id6496682406), I want to discuss the process and importance of picking a tech stack.
 
 ![Just Use Expo](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ZGnT6ZkxnJBkWbUYqRdzeA.jpeg)
@@ -32,7 +33,7 @@ Allow me to explain why you should use Expo by showing you why everything else s
 
 # The Trader Joes of App Dev
 
-I think of Expo like Next for the phone - its a framework that is *just so good* that you actively want to give them your money. I mean they make it *painfully easy*
+I think of Expo like Next for the phone - its a framework that is _just so good_ that you actively want to give them your money. I mean they make it _painfully easy_
 to do things like notifications, building, CI, deployment, and publication to the app store with EAS Build.
 
 Moreover, Expo supports tons of open-source packages to interface with native modules - camera, barcode scanning, maps, photos, and more. Plus, you can easily manage
