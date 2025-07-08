@@ -4,7 +4,7 @@ This is the second iteration of my [personal website](https://charliemeyer.xyz).
 
 ![Website Screenshot](static/images/website-screenshot.png)
 
-*Screenshot automatically updated on every commit*
+_Screenshot automatically updated on every commit_
 
 ## Stack
 
