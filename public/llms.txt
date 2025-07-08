@@ -1,0 +1,9 @@
+# Charlie Meyer
+
+Third year CS and entrepreneurship student at UVA. 2025 Neo Scholar.
+
+Previously worked at Principal Financial, Scenthound, and Vercel. Currently doing inference research with Zhepei Wei and working on AI for formal math reasoning (Lean).
+
+Cares deeply about AI safety, and wants to work on general intelligence or the infrastructure behind it. 
+
+Contact: charlie@charliemeyer.xyz
