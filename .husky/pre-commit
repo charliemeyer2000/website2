@@ -1,4 +1,43 @@
-pnpm run format
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🔧 Running pre-commit hooks..."
+
+# Run linter and automatically fix issues
+echo "Running ESLint with --fix..."
+if ! pnpm lint -- --fix; then
+  echo "❌ ESLint failed. Please fix the remaining issues."
+  exit 1
+fi
+
+# Run Prettier to format code
+echo "Running Prettier..."
+if ! pnpm format; then
+  echo "❌ Prettier failed."
+  exit 1
+fi
+
+# Add any files that were modified by the linters/formatters
+echo "Adding fixed files to commit..."
+git add .
+
+# Run RSS generation
+echo "Generating RSS..."
 pnpm run generate-rss
+
+# Run markdown generation
+echo "Generating markdown..."
 pnpm run generate-markdown
-pnpm run pre-commit
+
+# Run the custom pre-commit build script
+echo "Running pre-commit build script..."
+if ! pnpm pre-commit; then
+  echo "❌ Pre-commit build failed."
+  exit 1
+fi
+
+# Add any files that were modified by the build/generation scripts
+echo "Adding generated files to commit..."
+git add .
+
+echo "✅ Pre-commit hooks completed successfully!"
