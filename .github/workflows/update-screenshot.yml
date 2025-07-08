@@ -36,8 +36,8 @@ jobs:
 
       - name: Start server and take screenshot
         run: |
-          # Start the production server in background
-          pnpm start &
+          # Start the development server in background
+          pnpm dev &
           SERVER_PID=$!
 
           # Wait for server to be ready
