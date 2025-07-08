@@ -1,0 +1,53 @@
+name: Update Website Screenshot
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  update-screenshot:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'pnpm'
+        
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 8
+        
+    - name: Install dependencies
+      run: pnpm install
+      
+    - name: Build website
+      run: pnpm build
+      
+    - name: Start server in background
+      run: |
+        pnpm dev &
+        sleep 30
+        
+    - name: Take screenshot
+      uses: swinton/screenshot-website@v1.x
+      with:
+        source: http://localhost:3000
+        destination: static/images/website-screenshot.png
+        width: 1280
+        height: 720
+        full-page: false
+        
+    - name: Commit screenshot
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add static/images/website-screenshot.png
+        git diff --staged --quiet || git commit -m "Update website screenshot [skip ci]"
+        git push

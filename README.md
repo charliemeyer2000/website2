@@ -1,5 +1,11 @@
 This is the second iteration of my [personal website](https://charliemeyer.xyz). The repo to my first ever website is [here](https://github.com/charliemeyer2000/website).
 
+## Current Website
+
+![Website Screenshot](static/images/website-screenshot.png)
+
+*Screenshot automatically updated on every commit*
+
 ## Stack
 
 1. This is a [Next.js](https://nextjs.org/) application (13.4.12) using the pages router & JS.
