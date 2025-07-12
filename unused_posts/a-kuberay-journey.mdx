@@ -1,0 +1,19 @@
+---
+title: A Kuberay Journey
+slug: a-kuberay-journey
+description: Exploring using Ray and kubernetes for distributed inference
+date: June 15, 2025
+topic: AI/ML
+categories: ["ai", "ml", "kubernetes", "ray"]
+keywords: ["ai", "ml", "kubernetes", "ray"]
+---
+
+At my job at Vercel, I demonstrated the dangers of MCPs and LLM-powered applications. Most apps are shifting to architectures like _frontend_ → _LLM_ → _backend_.
+Although its a slightly contrived example, giving LLMs the ability to call the `run_sql()` (not joking, the
+[Neon MCP has this](https://github.com/neondatabase-labs/mcp-server-neon/blob/main/src/tools/tools.ts#L85)) is begging for a [Bobby Tables](https://xkcd.com/327/)
+moment. Therefore, LLM security and observability is paramount if you are shipping customer-facing AI applications or AI agents. I adressed this by building
+a distributed inference system serving a [prompt injection detection model](https://huggingface.co/protectai/deberta-v3-base-prompt-injection-v2).
+
+## Ray
+
+Ray is a great way to get started with distributed inference.
