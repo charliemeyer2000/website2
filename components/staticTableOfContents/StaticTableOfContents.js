@@ -12,8 +12,7 @@ export default function StaticTableOfContents({ ...props }) {
 
   const isDarkMode =
     activeTheme === "dark" ||
-    activeTheme === undefined ||
-    systemTheme === "light";
+    (activeTheme === "system" && systemTheme === "dark");
 
   const [ids, setIds] = useState([]);
   const [railStartingPosition, setRailStartingPosition] = useState(0);
@@ -52,7 +51,7 @@ export default function StaticTableOfContents({ ...props }) {
               Math.floor(Math.random() * MetroTrackStops.darkMode.length)
             ]
           : MetroTrackStops.lightMode[
-              Math.floor(Math.random() * MetroTrackStops.darkMode.length)
+              Math.floor(Math.random() * MetroTrackStops.lightMode.length)
             ],
       };
     });

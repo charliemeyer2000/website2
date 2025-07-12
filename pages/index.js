@@ -41,7 +41,16 @@ export default function Home() {
             I&apos;ve worked at{" "}
             <Link href="https://www.principal.com">Principal Financial</Link>,{" "}
             <Link href="https://www.scenthound.com">Scenthound</Link>, and{" "}
-            <Link href="https://www.vercel.com">Vercel</Link>.
+            <Link href="https://www.vercel.com">Vercel</Link>. I also hack on
+            things like{" "}
+            <Link href="https://hufflo.com" target="_blank">
+              Hufflo
+            </Link>{" "}
+            and{" "}
+            <Link href="https://simpletext.dev" target="_blank">
+              simpletext
+            </Link>
+            .
           </p>
           <p className={styles.text}>
             I work on inference research with{" "}
@@ -49,99 +58,6 @@ export default function Home() {
             independently working on AI for math research. How can we get LLMs
             to reason in format math (Lean)?
           </p>
-        </section>
-        <section className={styles.section}>
-          <h1 className={styles.title}>Stuff</h1>
-          <div className={styles.stuffWrapper}>
-            <div className={styles.stuffItem}>
-              <p className={styles.stuffItemTitle}>Past products:</p>
-              <div className={styles.stuffItemContent}>
-                <StuffItem
-                  title="Hufflo"
-                  href="https://hufflo.com"
-                  angle={-45}
-                  newWindow={true}
-                  description="Put your Etsy marketing on autopilot."
-                />
-                <StuffItem
-                  title="tinytext"
-                  href="https://tinytext.me"
-                  angle={-45}
-                  newWindow={true}
-                  description="vibe coded sms reminders service."
-                />
-                <StuffItem
-                  title="simpletext"
-                  href="https://simpletext.dev"
-                  angle={-45}
-                  newWindow={true}
-                  description="Stupidly simple sms & otp service."
-                />
-                {/* <StuffItem
-                    title="DoorShop"
-                    href="https://apps.apple.com/us/app/doorshop/id6496682406"
-                    angle={-45}
-                    newWindow={true}
-                    description="Download DoorShop on the App Store."
-                  /> */}
-              </div>
-            </div>
-            <div className={styles.stuffItem}>
-              <p className={styles.stuffItemTitle}>
-                Certifications n&apos; Stuff
-              </p>
-              <div className={styles.stuffItemContent}>
-                <StuffItem
-                  title="Neo Scholar"
-                  href="https://neo.com"
-                  angle={-45}
-                  newWindow={true}
-                  description="Just became a Neo Scholar!"
-                />
-                <StuffItem
-                  title="AWS Cloud Practitioner"
-                  href="https://www.credly.com/badges/4d6f0528-03d5-4e23-8ee9-92a1f288ff7b/public_url"
-                  angle={-45}
-                  newWindow={true}
-                  description="Check out my certificate for CLF-C02."
-                />
-                <StuffItem
-                  title="AWS Solutions Architect"
-                  href="https://www.credly.com/badges/f70da3a7-8b88-4fe4-8e78-96ada999bba2/public_url"
-                  angle={-45}
-                  newWindow={true}
-                  description="Check out my certification for SAA-C03."
-                />
-              </div>
-            </div>
-            <div className={styles.stuffItem}>
-              <p className={styles.stuffItemTitle}>Other</p>
-              <div className={styles.stuffItemContent}>
-                <StuffItem
-                  title="Posts"
-                  href="/posts"
-                  newWindow={false}
-                  angle={-45}
-                  description="Check out stuff I've written."
-                />
-
-                <StuffItem
-                  title="Guestbook"
-                  newWindow={false}
-                  href="/guestbook"
-                  angle={-45}
-                  description="Add your name to the guestbook."
-                />
-                <StuffItem
-                  title="Resume"
-                  href="static/images/resume.pdf"
-                  angle={-45}
-                  newWindow={true}
-                  description="Take a look at my general resume."
-                />
-              </div>
-            </div>
-          </div>
         </section>
         <section className={styles.section}>
           <h1 className={styles.title}>Future</h1>

@@ -13,8 +13,7 @@ export default function PostTableOfContents() {
   const { proportionalProgress, absoluteProgress } = useProgress();
   const isDarkMode =
     activeTheme === "dark" ||
-    activeTheme === undefined ||
-    systemTheme === "light";
+    (activeTheme === "system" && systemTheme === "dark");
   const [ids, setIds] = useState([]);
   const [railColor, setRailColor] = useState(colors[0]);
   const { soundOn } = useSoundContext();
@@ -40,7 +39,7 @@ export default function PostTableOfContents() {
               Math.floor(Math.random() * MetroTrackStops.darkMode.length)
             ]
           : MetroTrackStops.lightMode[
-              Math.floor(Math.random() * MetroTrackStops.darkMode.length)
+              Math.floor(Math.random() * MetroTrackStops.lightMode.length)
             ],
       };
     });

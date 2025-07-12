@@ -7,7 +7,11 @@
   text-underline-offset: 5px;
   text-decoration-thickness: 0.5px;
   color: inherit;
-  transition: var(--transition);
+  // Override the theme transition to prevent fade effect during theme changes
+  // Disable color transition, only keep text-decoration-color transition
+  transition:
+    color 0s,
+    text-decoration-color var(--transition);
 
   font-size: var(--text);
   line-height: calc(var(--heading) - 5px);
@@ -15,5 +19,9 @@
 
 .link:hover {
   color: var(--grey);
-  transition: var(--transition);
+  // Override the theme transition to prevent fade effect during theme changes
+  // Disable color transition, only keep text-decoration-color transition
+  transition:
+    color 0s,
+    text-decoration-color var(--transition);
 }
