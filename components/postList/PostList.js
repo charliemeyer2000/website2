@@ -5,6 +5,12 @@ import { motion } from "framer-motion";
 import Topics, { TOPIC_ORDER } from "@/static/types/Topics";
 
 export default function PostList({ posts, ...props }) {
+  // Detect Safari and disable animations to prevent flicker
+  const isSafari =
+    typeof window !== "undefined" &&
+    /Safari/.test(navigator.userAgent) &&
+    !/Chrome/.test(navigator.userAgent);
+
   const topicContainers = [];
   const topicMap = {};
 
@@ -36,25 +42,45 @@ export default function PostList({ posts, ...props }) {
       (a, b) => new Date(b.date) - new Date(a.date)
     );
 
-    const postItems = sortedPosts.map((post, index) => (
-      <motion.div
-        className={classNames(styles.postListItemContainer)}
-        key={post.slug}
-        initial={{ opacity: 0, scale: 1 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 1,
-          delay: topicContainers.length * 0.1 + index * 0.1,
-        }}
-      >
-        <PostListItem
+    const postItems = sortedPosts.map((post, index) => {
+      // For Safari, use regular div without animation
+      if (isSafari) {
+        return (
+          <div
+            className={classNames(styles.postListItemContainer)}
+            key={post.slug}
+          >
+            <PostListItem
+              key={post.slug}
+              date={post.date}
+              title={post.title}
+              slug={post.slug}
+            />
+          </div>
+        );
+      }
+
+      // For other browsers, use animated motion.div
+      return (
+        <motion.div
+          className={classNames(styles.postListItemContainer)}
           key={post.slug}
-          date={post.date}
-          title={post.title}
-          slug={post.slug}
-        />
-      </motion.div>
-    ));
+          initial={{ opacity: 0, scale: 1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 1,
+            delay: topicContainers.length * 0.1 + index * 0.1,
+          }}
+        >
+          <PostListItem
+            key={post.slug}
+            date={post.date}
+            title={post.title}
+            slug={post.slug}
+          />
+        </motion.div>
+      );
+    });
 
     topicContainers.push(
       <div key={topic} className={styles.topicContainer}>
@@ -67,17 +93,23 @@ export default function PostList({ posts, ...props }) {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>All articles</h1>
-      <motion.div
-        className={styles.topicContainers}
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0 },
-          visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
-        }}
-      >
-        {topicContainers}
-      </motion.div>
+      {isSafari ? (
+        // For Safari, use regular div without animation
+        <div className={styles.topicContainers}>{topicContainers}</div>
+      ) : (
+        // For other browsers, use animated motion.div
+        <motion.div
+          className={styles.topicContainers}
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+          }}
+        >
+          {topicContainers}
+        </motion.div>
+      )}
     </div>
   );
 }

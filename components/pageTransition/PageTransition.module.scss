@@ -1,4 +1,16 @@
 .root {
   max-height: 100%;
   overflow: hidden;
+
+  // Force hardware acceleration to prevent rendering issues in Safari
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+
+  // Prevent font smoothing issues during animation
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+
+  // Ensure proper stacking context for animations
+  position: relative;
+  z-index: 1;
 }

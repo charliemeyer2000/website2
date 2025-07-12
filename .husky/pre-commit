@@ -1,6 +1,10 @@
 #!/usr/bin/env sh
 echo "🔧 Running pre-commit hooks..."
 
+# Get the list of currently staged files
+STAGED_FILES=$(git diff --cached --name-only)
+echo "📝 Staged files: $STAGED_FILES"
+
 # Run linter and automatically fix issues
 echo "Running ESLint with --fix..."
 if ! pnpm lint -- --fix; then
@@ -15,27 +19,19 @@ if ! pnpm format; then
   exit 1
 fi
 
-# Add any files that were modified by the linters/formatters
-echo "Adding fixed files to commit..."
-git add .
+# Add any staged files that were modified by the linters/formatters
+echo "Adding fixed staged files to commit..."
+for file in $STAGED_FILES; do
+  if [ -f "$file" ]; then
+    git add "$file"
+  fi
+done
 
-# Run RSS generation
-echo "Generating RSS..."
-pnpm run generate-rss
-
-# Run markdown generation
-echo "Generating markdown..."
-pnpm run generate-markdown
-
-# Run the custom pre-commit build script
+# Run the custom pre-commit build script (handles RSS/markdown generation intelligently)
 echo "Running pre-commit build script..."
 if ! pnpm pre-commit; then
   echo "❌ Pre-commit build failed."
   exit 1
 fi
-
-# Add any files that were modified by the build/generation scripts
-echo "Adding generated files to commit..."
-git add .
 
 echo "✅ Pre-commit hooks completed successfully!"

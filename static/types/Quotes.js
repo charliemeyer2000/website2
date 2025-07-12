@@ -9,11 +9,11 @@ const quotes = [
   "In the end its not the years in your life that count, its the life in your years - Abraham Lincoln",
   "If I'd followed all the rules, I'd never have gotten anywhere - Marilyn Monroe",
   "Action expresses priorities - Mahatma Gandhi",
-  "'What if this works' is more important than 'what if this fails' - Tommy Nicholas",
   "Wow! What a ride - Hunter S Thompson",
-  "Live the dash - Eric Martin & Linda Ellis",
+  "Live the dash - Linda Ellis",
   "Do, or do not. There is no try - Yoda",
   "If you obey all the rules, you miss all the fun - Katharine Hepburn",
+  "Assume this works. Then what? - me",
 ];
 
 export default quotes;
