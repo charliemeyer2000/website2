@@ -64,15 +64,14 @@ export default function Home() {
           <p className={styles.text}>
             The intersection of what I&apos;m good at, what I care about, and
             what&apos;s important in the world is AGI and AI safety. So I&apos;m
-            working on that, and subproblems of it: inference and math
-            reasoning.
+            working on that, and the many subproblems of it.
           </p>
           <p className={styles.text}>
-            I also am interested in the infrastructure that supports AI
+            I&apos;m also interested in the infrastructure that supports AI
             research. It&apos;s incredibly hard to do training at scale and
             manage all the buzzwords - tensor parallelism, pipeline parallelism,
-            NCCL, accelerators, kubernetes, all this stuff. Training and serving
-            models at scale should be easier.
+            NCCL, accelerators, kubernetes, all this stuff. Running experiments,
+            training, and serving models at scale should be easier.
           </p>
           <p className={styles.text}>
             Aside from running the SF Marathon again, I need to run in the NYC
@@ -90,7 +89,7 @@ export default function Home() {
           <h1 className={styles.title}>Contact</h1>
           <p className={styles.text}>
             Reach out to me. I love to talk to people who are deeply passionate
-            about something.{" "}
+            about something. I am also open to work if you want to hire me.
           </p>
           <div className={styles.contactListWrapper}>
             <div
