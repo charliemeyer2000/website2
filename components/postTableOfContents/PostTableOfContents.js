@@ -7,6 +7,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import useSound from "use-sound";
 import { useSoundContext } from "../soundToggle/SoundContext";
+import classNames from "classnames";
 
 export default function PostTableOfContents() {
   const { theme: activeTheme, systemTheme, setTheme } = useTheme();
@@ -79,7 +80,11 @@ export default function PostTableOfContents() {
               <Image
                 src={header.imageSrc}
                 alt="metro track stop"
-                className={styles.stopImage}
+                className={classNames(
+                  styles.stopImage,
+                  header.imageSrc.src.includes("triangle") &&
+                    styles.stopImageTriangle
+                )}
               />
               <p className={styles.stopTitle}>{header.title}</p>
             </div>

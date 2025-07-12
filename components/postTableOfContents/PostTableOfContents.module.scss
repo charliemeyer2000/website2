@@ -40,6 +40,17 @@
   transition: var(--transition);
 }
 
+.stopImage {
+  // Default styling for all metro stop images
+}
+
+.stopImageTriangle {
+  // Scale up triangles to match visual weight of squares/circles
+  // Use transform-origin to scale from center and prevent jumping
+  transform: scale(1.2);
+  transform-origin: center center;
+}
+
 @media only screen and (width < 1320px) {
   .root {
     display: none;

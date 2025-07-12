@@ -6,6 +6,7 @@ import MetroTrackStops from "@/static/types/MetroTrackStops";
 import Image from "next/image";
 import { motion, useTransform, useViewportScroll } from "framer-motion";
 import colors from "@/static/types/Colors";
+import classNames from "classnames";
 
 export default function StaticTableOfContents({ ...props }) {
   const { theme: activeTheme, systemTheme, setTheme } = useTheme();
@@ -94,7 +95,15 @@ export default function StaticTableOfContents({ ...props }) {
                 "--position": `${item.position + (index !== 0 ? 10 : 0)}px`, // weird visual bug
               }}
             >
-              <Image src={item.imageSrc} alt="square" />
+              <Image
+                src={item.imageSrc}
+                alt="metro stop"
+                className={classNames(
+                  styles.stopImage,
+                  item.imageSrc.src.includes("triangle") &&
+                    styles.stopImageTriangle
+                )}
+              />
             </div>
           );
         })}

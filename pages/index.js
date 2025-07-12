@@ -62,13 +62,10 @@ export default function Home() {
         <section className={styles.section}>
           <h1 className={styles.title}>Future</h1>
           <p className={styles.text}>
-            I care about hard problems. There&apos;s a couple things I think
-            worth working on - artificial superintelligence, AI safety, the
-            energy crisis (nuclear fusion), quantum, BCI, the global climate
-            crisis, and making governments better. The intersection of what
-            I&apos;m good at, what I care about, and what&apos;s important in
-            the world is AGI and AI safety. So I&apos;m working on that, and
-            subproblems of it: inference and math reasoning.
+            The intersection of what I&apos;m good at, what I care about, and
+            what&apos;s important in the world is AGI and AI safety. So I&apos;m
+            working on that, and subproblems of it: inference and math
+            reasoning.
           </p>
           <p className={styles.text}>
             I also am interested in the infrastructure that supports AI

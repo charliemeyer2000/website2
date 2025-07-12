@@ -7,7 +7,7 @@
     <language>en-us</language>
     <managingEditor>charlie@charliemeyer.xyz (Charlie Meyer)</managingEditor>
     <webMaster>charlie@charliemeyer.xyz (Charlie Meyer)</webMaster>
-    <lastBuildDate>Sat, 12 Jul 2025 20:16:13 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 12 Jul 2025 20:34:40 GMT</lastBuildDate>
     <atom:link href="https://charliemeyer.xyz/rss.xml" rel="self" type="application/rss+xml"/>
     
     <item>
@@ -16,14 +16,6 @@
       <guid isPermaLink="true">https://charliemeyer.xyz/posts/just-use-expo</guid>
       <description><![CDATA[]]></description>
       <pubDate>Fri, 31 May 2024 07:00:00 GMT</pubDate>
-      <author>charlie@charliemeyer.xyz (Charlie Meyer)</author>
-    </item>
-    <item>
-      <title><![CDATA[How I added a view counter to my blog]]></title>
-      <link>https://charliemeyer.xyz/posts/view-counter</link>
-      <guid isPermaLink="true">https://charliemeyer.xyz/posts/view-counter</guid>
-      <description><![CDATA[How I leveraged DynamoDB to add a view counter to my blog]]></description>
-      <pubDate>Tue, 31 Oct 2023 07:00:00 GMT</pubDate>
       <author>charlie@charliemeyer.xyz (Charlie Meyer)</author>
     </item>
     <item>
