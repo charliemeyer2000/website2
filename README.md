@@ -1,4 +1,6 @@
-This is the second iteration of my [personal website](https://charliemeyer.xyz). The repo to my first ever website is [here](https://github.com/charliemeyer2000/website).
+This is the second iteration of my [personal website](https://charliemeyer.xyz). You can find the repository for my first website [here](https://github.com/charliemeyer2000/website).
+
+I am now on version 3. This repository is for the old website. For the latest version, see [website3](https://github.com/charliemeyer2000/website3).
 
 ## Stack
 
